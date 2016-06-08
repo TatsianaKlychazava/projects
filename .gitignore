@@ -6,3 +6,12 @@
 /ApotekaShop/ApotekaShop.WebApi/obj/Debug
 /ApotekaShop/ApotekaShop.WebApi/bin
 /ApotekaShop/ApotekaShop.Services/obj/Debug
+/source/ApotekaShop.Services/obj/Debug
+/source/ApotekaShop.WebApi/bin/roslyn
+/source/ApotekaShop.WebApi/bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+/source/ApotekaShop.WebApi/bin/Newtonsoft.Json.xml
+/source/ApotekaShop.WebApi/bin/System.Net.Http.Formatting.xml
+/source/ApotekaShop.WebApi/bin/System.Web.Http.WebHost.xml
+/source/ApotekaShop.WebApi/bin/System.Web.Http.xml
+/source/packages
+/source/ApotekaShop.WebApi/obj/Debug

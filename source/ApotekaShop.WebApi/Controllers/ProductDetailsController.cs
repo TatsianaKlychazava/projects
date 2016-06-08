@@ -21,7 +21,7 @@ namespace ApotekaShop.WebApi.Controllers
         }
 
         // GET: api/ProductDetails/5
-        [Route("")]
+        [Route("{id: int}")]
         [HttpGet]
         public IHttpActionResult GetByPackageId(int id)
         {
