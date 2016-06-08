@@ -3,3 +3,6 @@
 ################################################################################
 
 /ApotekaShop/packages
+/ApotekaShop/ApotekaShop.WebApi/obj/Debug
+/ApotekaShop/ApotekaShop.WebApi/bin
+/ApotekaShop/ApotekaShop.Services/obj/Debug
