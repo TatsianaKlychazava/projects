@@ -69,6 +69,16 @@ namespace ApotekaShop.UnitTest
             return request;
         }
 
+        public HttpRequestMessage CreateDeletetRequest(string address)
+        {
+            HttpRequestMessage request = new HttpRequestMessage();
+            request.RequestUri = new Uri(_baseAddress + address);
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            request.Method = HttpMethod.Delete;
+
+            return request;
+        }
+
         public HttpRequestMessage CreatePutRequest(string address, object data)
         {
             return CreateHttpRequest(address, data, HttpMethod.Put);
