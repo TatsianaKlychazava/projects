@@ -15,3 +15,5 @@
 /source/ApotekaShop.WebApi/bin/System.Web.Http.xml
 /source/packages
 /source/ApotekaShop.WebApi/obj/Debug
+/source/ApotekaShop.Services/bin/Debug
+/source/ApotekaShop.WebApi/bin

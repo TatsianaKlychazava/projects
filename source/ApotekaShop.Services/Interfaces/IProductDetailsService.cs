@@ -11,5 +11,7 @@ namespace ApotekaShop.Services.Interfaces
     {
         ProductDetailsDTO GetByPackageId(int id);
         void AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails);
+        IEnumerable<ProductDetailsDTO> Search(string query, FilterOptionsModel filters);
+        void ImportProductDetalils();
     }
 }

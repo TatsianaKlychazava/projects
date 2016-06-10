@@ -1,1 +1,3027 @@
-[{"ProductId":72769,"PackageId":104902,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Erwinase","Synonyms":[]}],"ATCCodes":[{"Name":"L01XX02","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72770,"PackageId":104903,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Levocetirizindihydrochlorid \"teva\"","Synonyms":[]}],"ATCCodes":[{"Name":"R06AE09","Synonyms":[]}],"Indications":[{"Name":"Mod høfeber","Synonyms":[]},{"Name":"Mod løbenæse","Synonyms":[]},{"Name":"Mod nældefeber","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72772,"PackageId":104905,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Numeta g19e","Synonyms":[]}],"ATCCodes":[{"Name":"B05BA10","Synonyms":[]}],"Indications":[{"Name":"Ernæringstilskud","Synonyms":[]},{"Name":"Parenteral ernæring","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72773,"PackageId":104906,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Fragmin","Synonyms":[]}],"ATCCodes":[{"Name":"B01AB04","Synonyms":[]}],"Indications":[{"Name":"Til behandling af trombose","Synonyms":[]},{"Name":"Tromboseprofylakse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72774,"PackageId":104907,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Epirubicin \"fresenius kabi\"","Synonyms":[]}],"ATCCodes":[{"Name":"L01DB03","Synonyms":[]}],"Indications":[{"Name":"Behandling af blærecancer","Synonyms":[]},{"Name":"Behandling af brystcancer","Synonyms":[]},{"Name":"Behandling af cancer","Synonyms":[]},{"Name":"Behandling af lungecancer","Synonyms":[]},{"Name":"Behandling af mavecancer","Synonyms":[]},{"Name":"Behandling af ovariecancer","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72775,"PackageId":104908,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Voltaren","Synonyms":[]}],"ATCCodes":[{"Name":"S01BC03","Synonyms":[]}],"Indications":[{"Name":"Forebyggelse af miosis","Synonyms":[]},{"Name":"Mod inflammation efter øjenoperation","Synonyms":[]},{"Name":"Mod øjensmerter","Synonyms":[]},{"Name":"Mod øjensmerter efter operation","Synonyms":[]},{"Name":"Mod øjensygdom","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72776,"PackageId":104909,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Cidron","Synonyms":[]}],"ATCCodes":[{"Name":"R06AE07","Synonyms":[]}],"Indications":[{"Name":"Mod høfeber","Synonyms":[]},{"Name":"Mod nældefeber","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72777,"PackageId":104910,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Lamotrigin \"copyfarm\"","Synonyms":[]}],"ATCCodes":[{"Name":"ANDREANTIEPILEPTIKA,N03AX09","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72778,"PackageId":104911,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Innovair","Synonyms":[]}],"ATCCodes":[{"Name":"R03AK08","Synonyms":[]}],"Indications":[{"Name":"Mod astma","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72778,"PackageId":112576,"NormalizedPackageSize":120.00000,"NormalizedUnit":"dosis","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Innovair","Synonyms":[]}],"ATCCodes":[{"Name":"R03AK08","Synonyms":[]}],"Indications":[{"Name":"Mod astma","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72779,"PackageId":104912,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Alzen sr","Synonyms":[]}],"ATCCodes":[{"Name":"N05AH04","Synonyms":[]}],"Indications":[{"Name":"Behandling af bipolær lidelse","Synonyms":[]},{"Name":"Behandling af skizofreni","Synonyms":[]},{"Name":"Mod depression","Synonyms":[]},{"Name":"Mod sindslidelse","Synonyms":[]},{"Name":"Nervemedicin","Synonyms":[]},{"Name":"Ved mani","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72780,"PackageId":104913,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Porcilis app vet","Synonyms":[]}],"ATCCodes":[{"Name":"TERAPEUTISKKLASSIFIKATION:QI09AB07","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72781,"PackageId":104914,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Epirubicin \"teva\"","Synonyms":[]}],"ATCCodes":[{"Name":"L01DB03","Synonyms":[]}],"Indications":[{"Name":"Behandling af blærecancer","Synonyms":[]},{"Name":"Behandling af brystcancer","Synonyms":[]},{"Name":"Behandling af cancer","Synonyms":[]},{"Name":"Behandling af lungecancer","Synonyms":[]},{"Name":"Behandling af mavecancer","Synonyms":[]},{"Name":"Behandling af ovariecancer","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72782,"PackageId":104915,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Alk 312 artemisia vulgaris (gråbynke)","Synonyms":[]}],"ATCCodes":[{"Name":"V01AA10","Synonyms":[]}],"Indications":[{"Name":"Mod høfeber","Synonyms":[]},{"Name":"Mod astma","Synonyms":[]},{"Name":"Mod allergi","Synonyms":[]},{"Name":"Over for allergi","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72783,"PackageId":104916,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Noriday","Synonyms":[]}],"ATCCodes":[{"Name":"G03AC01","Synonyms":[]}],"Indications":[{"Name":"Minipiller","Synonyms":[]},{"Name":"Svangerskabsforebyggende","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72784,"PackageId":104917,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Norlevo","Synonyms":[]}],"ATCCodes":[{"Name":"FARMAKOTERAPEUTISKKLASSIFIKATION:NØDPRÆVENTION","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72785,"PackageId":104918,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Paracetamol \"panpharma\"","Synonyms":[]}],"ATCCodes":[{"Name":"N02BE01","Synonyms":[]}],"Indications":[{"Name":"Febernedsættende","Synonyms":[]},{"Name":"Mod smerter","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72787,"PackageId":104920,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Temgesic","Synonyms":[]}],"ATCCodes":[{"Name":"N02AE01","Synonyms":[]}],"Indications":[{"Name":"Mod stærke smerter","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72788,"PackageId":104921,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Fluorouracil \"accord\"","Synonyms":[]}],"ATCCodes":[{"Name":"L01BC02","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72789,"PackageId":104922,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Fleet klar-til-brug","Synonyms":[]}],"ATCCodes":[{"Name":"ATCA06AG01-KLYSTERMIDLER","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72790,"PackageId":104923,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Carvedilol \"orion pharma\"","Synonyms":[]}],"ATCCodes":[{"Name":"FARMAKOTERAPEUTISKKLASSIFIKATION:ALFA-OGBETABLOKKERE,C07AG02","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72791,"PackageId":104924,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Elektrolyt \"sad\"","Synonyms":[]}],"ATCCodes":[{"Name":"B05BB02","Synonyms":[]}],"Indications":[{"Name":"Til væsketerapi","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72792,"PackageId":104925,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Celia","Synonyms":[]}],"ATCCodes":[{"Name":"G03AA10","Synonyms":[]}],"Indications":[{"Name":"Svangerskabsforebyggende","Synonyms":[]},{"Name":"P-piller","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72793,"PackageId":104926,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Zemplar","Synonyms":[]}],"ATCCodes":[{"Name":"H05BX02","Synonyms":[]}],"Indications":[{"Name":"Mod forstyrrelser i kalkstofskiftet","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72794,"PackageId":104927,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Atrosan","Synonyms":[]}],"ATCCodes":[{"Name":"M01AX","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72795,"PackageId":104928,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Montelukast \"arrow\"","Synonyms":[]}],"ATCCodes":[{"Name":"R03DC03","Synonyms":[]}],"Indications":[{"Name":"Mod astma","Synonyms":[]},{"Name":"Til forebyggelse af astma","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72796,"PackageId":104929,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Glucosamin \"copyfarm\"","Synonyms":[]}],"ATCCodes":[{"Name":"FARMAKOTERAPEUTISKKLASSIFIKATION:ANDRENON-STEROIDEANTIINFLAMMATORISKEOGANTIRHEUMATISKEMIDLER,M01AX05","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72797,"PackageId":104930,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Ropivacain \"fresenius kabi\"","Synonyms":[]}],"ATCCodes":[{"Name":"N01BB09","Synonyms":[]}],"Indications":[{"Name":"Perifer nerveblokade","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72798,"PackageId":104931,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Moclostad","Synonyms":[]}],"ATCCodes":[{"Name":"N06AG02","Synonyms":[]}],"Indications":[{"Name":"Mod depression","Synonyms":[]},{"Name":"Nervemedicin","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72799,"PackageId":104932,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Telfast","Synonyms":[]}],"ATCCodes":[{"Name":"R06AX26","Synonyms":[]}],"Indications":[{"Name":"Mod høfeber","Synonyms":[]},{"Name":"Mod løbenæse","Synonyms":[]},{"Name":"Mod nældefeber","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72800,"PackageId":104933,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Combar","Synonyms":[]}],"ATCCodes":[{"Name":"N06AX11","Synonyms":[]}],"Indications":[{"Name":"Mod depression","Synonyms":[]},{"Name":"Nervemedicin","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72801,"PackageId":104934,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Zomacton","Synonyms":[]}],"ATCCodes":[{"Name":"H01AC01","Synonyms":[]}],"Indications":[{"Name":"Ved prader-willis syndrom","Synonyms":[]},{"Name":"Ved turners syndrom","Synonyms":[]},{"Name":"Vækstfremmende","Synonyms":[]},{"Name":"Væksthormonmangel","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72802,"PackageId":104935,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Requip depot","Synonyms":[]}],"ATCCodes":[{"Name":"DOPAMINERGESTOFFER,DOPAMIN-AGONISTER,N04BC04","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72804,"PackageId":104937,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Simvastatin \"teva\"","Synonyms":[]}],"ATCCodes":[{"Name":"C10AA01","Synonyms":[]}],"Indications":[{"Name":"Forebyggende mod hjertekarsygdomme","Synonyms":[]},{"Name":"Mod forhøjet kolesterol","Synonyms":[]},{"Name":"Til forebyggelse af blodprop","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72805,"PackageId":104938,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Treosulfan \"medac\"","Synonyms":[]}],"ATCCodes":[{"Name":"L01AB02","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72806,"PackageId":104939,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Alfuzosin \"teva pharma\"","Synonyms":[]}],"ATCCodes":[{"Name":"G04CA01","Synonyms":[]}],"Indications":[{"Name":"Mod vandladningsbesvær","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72807,"PackageId":104940,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Tobi","Synonyms":[]}],"ATCCodes":[{"Name":"AMINOGLYKOSIDER,J01GB01","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72808,"PackageId":104941,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Bricanyl","Synonyms":[]}],"ATCCodes":[{"Name":"R03AC03","Synonyms":[]}],"Indications":[{"Name":"Mod astma","Synonyms":[]},{"Name":"Ved bronkospasme","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72809,"PackageId":104942,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Aurorix","Synonyms":[]}],"ATCCodes":[{"Name":"N06AG02","Synonyms":[]}],"Indications":[{"Name":"Mod depression","Synonyms":[]},{"Name":"Nervemedicin","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72810,"PackageId":104943,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Questran loc","Synonyms":[]}],"ATCCodes":[{"Name":"C10AC01","Synonyms":[]}],"Indications":[{"Name":"Mod forhøjet kolesterol","Synonyms":[]},{"Name":"Mod diarre","Synonyms":[]},{"Name":"Mod hudkløe ved gulsot","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72811,"PackageId":104944,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Klexane","Synonyms":[]}],"ATCCodes":[{"Name":"B01AB05","Synonyms":[]}],"Indications":[{"Name":"Til behandling af trombose","Synonyms":[]},{"Name":"Tromboseprofylakse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72812,"PackageId":104945,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Oxycodonhydrochlorid \"acino\"","Synonyms":[]}],"ATCCodes":[{"Name":"N02AA05","Synonyms":[]}],"Indications":[{"Name":"Mod stærke smerter","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72813,"PackageId":104946,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Paroxetin \"teva\"","Synonyms":[]}],"ATCCodes":[{"Name":"N06AB05","Synonyms":[]}],"Indications":[{"Name":"Mod depression","Synonyms":[]},{"Name":"Nervemedicin","Synonyms":[]},{"Name":"Behandling af obsessiv-kompulsiv tilstand","Synonyms":[]},{"Name":"Behandling af posttraumatisk stresssyndrom","Synonyms":[]},{"Name":"Mod angst","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72814,"PackageId":104947,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Cetirizin \"mylan\" 10 mg film-overtrukne tabletter","Synonyms":[]}],"ATCCodes":[{"Name":"FARMAKOTERAPEUTISKGRUPPE:PIPERAZINDERIVATER,R06AE07","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72815,"PackageId":104948,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Qlaira","Synonyms":[]}],"ATCCodes":[{"Name":"G03AB","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72821,"PackageId":104956,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Seroquel xr","Synonyms":[]}],"ATCCodes":[{"Name":"N05AH04","Synonyms":[]}],"Indications":[{"Name":"Behandling af bipolær lidelse","Synonyms":[]},{"Name":"Behandling af skizofreni","Synonyms":[]},{"Name":"Mod depression","Synonyms":[]},{"Name":"Mod sindslidelse","Synonyms":[]},{"Name":"Nervemedicin","Synonyms":[]},{"Name":"Ved mani","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72822,"PackageId":104957,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Bicalutamid \"orion\"","Synonyms":[]}],"ATCCodes":[{"Name":"L02BB03","Synonyms":[]}],"Indications":[{"Name":"Behandling af prostatacancer","Synonyms":[]},{"Name":"Mod prostatalidelse","Synonyms":[]},{"Name":"Mod sygdom","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72823,"PackageId":104958,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Flavamed","Synonyms":[]}],"ATCCodes":[{"Name":"R05CB06","Synonyms":[]}],"Indications":[{"Name":"Slimløsnende","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72824,"PackageId":104959,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Lisinopril \"2k\"","Synonyms":[]}],"ATCCodes":[{"Name":"C09AA03","Synonyms":[]}],"Indications":[{"Name":"For blodtrykket","Synonyms":[]},{"Name":"For hjertet","Synonyms":[]},{"Name":"Mod forhøjet blodtryk","Synonyms":[]},{"Name":"Ved hjerteinsufficiens","Synonyms":[]},{"Name":"Mod blodprop i hjertet","Synonyms":[]},{"Name":"Mod nefropati","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72825,"PackageId":104960,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Natriumklorid \"pro-med\" smartdose","Synonyms":[]}],"ATCCodes":[{"Name":"V07AB","Synonyms":[]}],"Indications":[{"Name":"Til skylning","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72826,"PackageId":104961,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Provigil","Synonyms":[]}],"ATCCodes":[{"Name":"FARMAKOTERAPEUTISKKLASSIFIKATION:PSYKOANALEPTIKA,CENTRALTVIRKENDESYMPATOMIMETIK,N06BA07","Synonyms":[]}],"Indications":[],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72828,"PackageId":104963,"NormalizedPackageSize":1.00000,"NormalizedUnit":"pakning","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Kabiven perifer","Synonyms":[]}],"ATCCodes":[{"Name":"B05BA10","Synonyms":[]}],"Indications":[{"Name":"Ernæringstilskud","Synonyms":[]},{"Name":"Parenteral ernæring","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72829,"PackageId":104964,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Kemadrin","Synonyms":[]}],"ATCCodes":[{"Name":"N04AA04","Synonyms":[]}],"Indications":[{"Name":"Mod parkinsons sygdom","Synonyms":[]},{"Name":"Mod rystelammelse","Synonyms":[]},{"Name":"Mod bivirkninger","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72830,"PackageId":104965,"NormalizedPackageSize":10.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Marzine","Synonyms":[]}],"ATCCodes":[{"Name":"R06AE03","Synonyms":[]}],"Indications":[{"Name":"Mod transportsyge","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72830,"PackageId":104966,"NormalizedPackageSize":30.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Marzine","Synonyms":[]}],"ATCCodes":[{"Name":"R06AE03","Synonyms":[]}],"Indications":[{"Name":"Mod transportsyge","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72831,"PackageId":104967,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Eltroxin","Synonyms":[]}],"ATCCodes":[{"Name":"H03AA01","Synonyms":[]}],"Indications":[{"Name":"Mod nedsat stofskifte","Synonyms":[]},{"Name":"Mod struma","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72832,"PackageId":104968,"NormalizedPackageSize":10.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Postafen","Synonyms":[]}],"ATCCodes":[{"Name":"R06AE05","Synonyms":[]}],"Indications":[{"Name":"Mod transportsyge","Synonyms":[]},{"Name":"Mod overfølsomhed","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72832,"PackageId":104969,"NormalizedPackageSize":25.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Postafen","Synonyms":[]}],"ATCCodes":[{"Name":"R06AE05","Synonyms":[]}],"Indications":[{"Name":"Mod transportsyge","Synonyms":[]},{"Name":"Mod overfølsomhed","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72832,"PackageId":104970,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Postafen","Synonyms":[]}],"ATCCodes":[{"Name":"R06AE05","Synonyms":[]}],"Indications":[{"Name":"Mod transportsyge","Synonyms":[]},{"Name":"Mod overfølsomhed","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72833,"PackageId":104971,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Diamox","Synonyms":[]}],"ATCCodes":[{"Name":"S01EC01","Synonyms":[]}],"Indications":[{"Name":"Mod grøn stær","Synonyms":[]},{"Name":"Mod stær","Synonyms":[]},{"Name":"Ved glaukom","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72834,"PackageId":104972,"NormalizedPackageSize":30.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Methergin","Synonyms":[]}],"ATCCodes":[{"Name":"G02AB01","Synonyms":[]}],"Indications":[{"Name":"Mod blødning","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72835,"PackageId":104973,"NormalizedPackageSize":5.00000,"NormalizedUnit":"g","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Hydrocortison med Terramycin","Synonyms":[]}],"ATCCodes":[{"Name":"D07CA01","Synonyms":[]}],"Indications":[{"Name":"Mod inficeret eksem","Synonyms":[]},{"Name":"Mod psoriasis med infektion","Synonyms":[]},{"Name":"Mod betændelse i øregangen","Synonyms":[]},{"Name":"Mod øregangseksem","Synonyms":[]},{"Name":"Til hudlidelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72835,"PackageId":104974,"NormalizedPackageSize":15.00000,"NormalizedUnit":"g","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Hydrocortison med Terramycin","Synonyms":[]}],"ATCCodes":[{"Name":"D07CA01","Synonyms":[]}],"Indications":[{"Name":"Mod inficeret eksem","Synonyms":[]},{"Name":"Mod psoriasis med infektion","Synonyms":[]},{"Name":"Mod betændelse i øregangen","Synonyms":[]},{"Name":"Mod øregangseksem","Synonyms":[]},{"Name":"Til hudlidelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72836,"PackageId":104975,"NormalizedPackageSize":25.00000,"NormalizedUnit":"ml","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Heparin \"Leo\"","Synonyms":[]}],"ATCCodes":[{"Name":"B01AB01","Synonyms":[]}],"Indications":[{"Name":"Til behandling af trombose","Synonyms":[]},{"Name":"Tromboseprofylakse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72837,"PackageId":104976,"NormalizedPackageSize":15.00000,"NormalizedUnit":"g","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Terramycin-Polymyxin B","Synonyms":[]}],"ATCCodes":[{"Name":"D06AA03","Synonyms":[]}],"Indications":[{"Name":"Mod betændelse på huden","Synonyms":[]},{"Name":"Mod infektion på huden","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72838,"PackageId":104977,"NormalizedPackageSize":10.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Aspirin","Synonyms":[]}],"ATCCodes":[{"Name":"N02BA01","Synonyms":[]}],"Indications":[{"Name":"Mod smerter","Synonyms":[]},{"Name":"Til forebyggelse af blodprop","Synonyms":[]},{"Name":"Blodfortyndende","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72839,"PackageId":104978,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Neo-mercazole","Synonyms":[]}],"ATCCodes":[{"Name":"H03BB01","Synonyms":[]}],"Indications":[{"Name":"Før operation for struma","Synonyms":[]},{"Name":"Mod forhøjet stofskifte","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72840,"PackageId":104979,"NormalizedPackageSize":40.00000,"NormalizedUnit":"g","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Hirudoid","Synonyms":[]}],"ATCCodes":[{"Name":"C05BA01","Synonyms":[]}],"Indications":[{"Name":"Mod årebetændelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72840,"PackageId":104980,"NormalizedPackageSize":100.00000,"NormalizedUnit":"g","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Hirudoid","Synonyms":[]}],"ATCCodes":[{"Name":"C05BA01","Synonyms":[]}],"Indications":[{"Name":"Mod årebetændelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72841,"PackageId":104981,"NormalizedPackageSize":125.00000,"NormalizedUnit":"ml","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Benylan","Synonyms":[]}],"ATCCodes":[{"Name":"R06AA02","Synonyms":[]}],"Indications":[{"Name":"Hostedæmpende","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72842,"PackageId":104982,"NormalizedPackageSize":50.00000,"NormalizedUnit":"ml","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Xylocain","Synonyms":[]}],"ATCCodes":[{"Name":"N01BB02","Synonyms":[]}],"Indications":[{"Name":"Lokalbedøvende","Synonyms":[]},{"Name":"Mod postherpetisk neuralgi","Synonyms":[]},{"Name":"Mod uregelmæssig hjerterytme","Synonyms":[]},{"Name":"Overfladebedøvende","Synonyms":[]},{"Name":"Til lokalbedøvelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72842,"PackageId":104983,"NormalizedPackageSize":100.00000,"NormalizedUnit":"ml","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Xylocain","Synonyms":[]}],"ATCCodes":[{"Name":"N01BB02","Synonyms":[]}],"Indications":[{"Name":"Lokalbedøvende","Synonyms":[]},{"Name":"Mod postherpetisk neuralgi","Synonyms":[]},{"Name":"Mod uregelmæssig hjerterytme","Synonyms":[]},{"Name":"Overfladebedøvende","Synonyms":[]},{"Name":"Til lokalbedøvelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72843,"PackageId":104984,"NormalizedPackageSize":100.00000,"NormalizedUnit":"ml","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Xylocain-adrenalin","Synonyms":[]}],"ATCCodes":[{"Name":"N01BB52","Synonyms":[]}],"Indications":[{"Name":"Lokalbedøvende","Synonyms":[]},{"Name":"Overfladebedøvende","Synonyms":[]},{"Name":"Til overfladebedøvelse af hud","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72844,"PackageId":104985,"NormalizedPackageSize":20.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Buscopan","Synonyms":[]}],"ATCCodes":[{"Name":"A03BB01","Synonyms":[]}],"Indications":[{"Name":"Mod koliksmerter","Synonyms":[]},{"Name":"Mod tyktarmskatar","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72844,"PackageId":104986,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Buscopan","Synonyms":[]}],"ATCCodes":[{"Name":"A03BB01","Synonyms":[]}],"Indications":[{"Name":"Mod koliksmerter","Synonyms":[]},{"Name":"Mod tyktarmskatar","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72845,"PackageId":104987,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Salazopyrin","Synonyms":[]}],"ATCCodes":[{"Name":"A07EC01","Synonyms":[]}],"Indications":[{"Name":"Mod betændelse i tarmen","Synonyms":[]},{"Name":"Mod colitis ulcerosa","Synonyms":[]},{"Name":"Mod leddegigt","Synonyms":[]},{"Name":"Mod morbus crohn","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72845,"PackageId":104988,"NormalizedPackageSize":300.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Salazopyrin","Synonyms":[]}],"ATCCodes":[{"Name":"A07EC01","Synonyms":[]}],"Indications":[{"Name":"Mod betændelse i tarmen","Synonyms":[]},{"Name":"Mod colitis ulcerosa","Synonyms":[]},{"Name":"Mod leddegigt","Synonyms":[]},{"Name":"Mod morbus crohn","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72845,"PackageId":111242,"NormalizedPackageSize":336.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Salazopyrin","Synonyms":[]}],"ATCCodes":[{"Name":"A07EC01","Synonyms":[]}],"Indications":[{"Name":"Mod betændelse i tarmen","Synonyms":[]},{"Name":"Mod colitis ulcerosa","Synonyms":[]},{"Name":"Mod leddegigt","Synonyms":[]},{"Name":"Mod morbus crohn","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72846,"PackageId":104989,"NormalizedPackageSize":100.00000,"NormalizedUnit":"ml","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Phenergan","Synonyms":[]}],"ATCCodes":[{"Name":"R06AD02","Synonyms":[]}],"Indications":[{"Name":"Mod høfeber","Synonyms":[]},{"Name":"Mod nældefeber","Synonyms":[]},{"Name":"Mod søvnløshed","Synonyms":[]},{"Name":"Mod transportsyge","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72847,"PackageId":104990,"NormalizedPackageSize":1.00000,"NormalizedUnit":"ml","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Konakion Novum","Synonyms":[]}],"ATCCodes":[{"Name":"B02BA01","Synonyms":[]}],"Indications":[{"Name":"Mod k-vitaminmangel","Synonyms":[]},{"Name":"Til forebyggelse af blødning","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72847,"PackageId":104991,"NormalizedPackageSize":5.00000,"NormalizedUnit":"ml","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Konakion Novum","Synonyms":[]}],"ATCCodes":[{"Name":"B02BA01","Synonyms":[]}],"Indications":[{"Name":"Mod k-vitaminmangel","Synonyms":[]},{"Name":"Til forebyggelse af blødning","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72848,"PackageId":104992,"NormalizedPackageSize":1.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Solu-cortef","Synonyms":[]}],"ATCCodes":[{"Name":"H02AB09","Synonyms":[]}],"Indications":[{"Name":"Binyrebarkhormontilskud","Synonyms":[]},{"Name":"Binyrebarkinsufficiens","Synonyms":[]},{"Name":"Ved addisons sygdom","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72848,"PackageId":104993,"NormalizedPackageSize":5.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Solu-cortef","Synonyms":[]}],"ATCCodes":[{"Name":"H02AB09","Synonyms":[]}],"Indications":[{"Name":"Binyrebarkhormontilskud","Synonyms":[]},{"Name":"Binyrebarkinsufficiens","Synonyms":[]},{"Name":"Ved addisons sygdom","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72849,"PackageId":104994,"NormalizedPackageSize":250.00000,"NormalizedUnit":"ml","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Hibitane","Synonyms":[]}],"ATCCodes":[{"Name":"D08AC02","Synonyms":[]}],"Indications":[{"Name":"Til desinfektion","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72850,"PackageId":104995,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Arcosal","Synonyms":[]}],"ATCCodes":[{"Name":"A10BB03","Synonyms":[]}],"Indications":[{"Name":"Mod sukkersyge","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72850,"PackageId":104996,"NormalizedPackageSize":250.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Arcosal","Synonyms":[]}],"ATCCodes":[{"Name":"A10BB03","Synonyms":[]}],"Indications":[{"Name":"Mod sukkersyge","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72851,"PackageId":104997,"NormalizedPackageSize":30.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Ritalin","Synonyms":[]}],"ATCCodes":[{"Name":"N06BA04","Synonyms":[]}],"Indications":[{"Name":"Mod hyperaktivitet","Synonyms":[]},{"Name":"Mod narkolepsi","Synonyms":[]},{"Name":"Mod opmærksomheds- forstyrrelser","Synonyms":[]},{"Name":"Til behandling af adhd","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72852,"PackageId":104998,"NormalizedPackageSize":30.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Perilax","Synonyms":[]}],"ATCCodes":[{"Name":"A06AB02","Synonyms":[]}],"Indications":[{"Name":"Mod forstoppelse","Synonyms":[]},{"Name":"Tarmtømning før undersøgelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72852,"PackageId":104999,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Perilax","Synonyms":[]}],"ATCCodes":[{"Name":"A06AB02","Synonyms":[]}],"Indications":[{"Name":"Mod forstoppelse","Synonyms":[]},{"Name":"Tarmtømning før undersøgelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72852,"PackageId":105000,"NormalizedPackageSize":250.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Perilax","Synonyms":[]}],"ATCCodes":[{"Name":"A06AB02","Synonyms":[]}],"Indications":[{"Name":"Mod forstoppelse","Synonyms":[]},{"Name":"Tarmtømning før undersøgelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72853,"PackageId":105001,"NormalizedPackageSize":5.00000,"NormalizedUnit":"g","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Ultracortenol","Synonyms":[]}],"ATCCodes":[{"Name":"S01BA04","Synonyms":[]}],"Indications":[{"Name":"Mod øjensygdom","Synonyms":[]},{"Name":"Mod allergisk øjenbetændelse","Synonyms":[]},{"Name":"Mod regnbuehinde- betændelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72854,"PackageId":105002,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Akineton","Synonyms":[]}],"ATCCodes":[{"Name":"N04AA02","Synonyms":[]}],"Indications":[{"Name":"Mod parkinsons sygdom","Synonyms":[]},{"Name":"Mod rystelammelse","Synonyms":[]},{"Name":"Mod bivirkninger","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72855,"PackageId":105003,"NormalizedPackageSize":30.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Dulcolax","Synonyms":[]}],"ATCCodes":[{"Name":"A06AB02","Synonyms":[]}],"Indications":[{"Name":"Mod forstoppelse","Synonyms":[]},{"Name":"Tarmtømning før undersøgelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72855,"PackageId":105004,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Dulcolax","Synonyms":[]}],"ATCCodes":[{"Name":"A06AB02","Synonyms":[]}],"Indications":[{"Name":"Mod forstoppelse","Synonyms":[]},{"Name":"Tarmtømning før undersøgelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72855,"PackageId":105005,"NormalizedPackageSize":200.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Dulcolax","Synonyms":[]}],"ATCCodes":[{"Name":"A06AB02","Synonyms":[]}],"Indications":[{"Name":"Mod forstoppelse","Synonyms":[]},{"Name":"Tarmtømning før undersøgelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72856,"PackageId":105006,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Stemetil","Synonyms":[]}],"ATCCodes":[{"Name":"N05AB04","Synonyms":[]}],"Indications":[{"Name":"Mod sindslidelse","Synonyms":[]},{"Name":"Mod kvalme","Synonyms":[]},{"Name":"Mod opkastninger","Synonyms":[]},{"Name":"Beroligende","Synonyms":[]},{"Name":"Mod nervøs lidelse","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72857,"PackageId":105007,"NormalizedPackageSize":5.00000,"NormalizedUnit":"ml","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Syntocinon","Synonyms":[]}],"ATCCodes":[{"Name":"H01BB02","Synonyms":[]}],"Indications":[{"Name":"Blødning i efterbyrds- perioden","Synonyms":[]},{"Name":"Igangsættelse af fødsel","Synonyms":[]},{"Name":"Mod brystspænding","Synonyms":[]},{"Name":"Vestimulation","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72858,"PackageId":105008,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Medrol","Synonyms":[]}],"ATCCodes":[{"Name":"H02AB04","Synonyms":[]}],"Indications":[{"Name":"Mod høfeber","Synonyms":[]},{"Name":"Binyrebarkhormontilskud","Synonyms":[]},{"Name":"Til injektionsbehandling af led","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72859,"PackageId":105009,"NormalizedPackageSize":5.00000,"NormalizedUnit":"ml","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Akineton","Synonyms":[]}],"ATCCodes":[{"Name":"N04AA02","Synonyms":[]}],"Indications":[{"Name":"Mod parkinsons sygdom","Synonyms":[]},{"Name":"Mod rystelammelse","Synonyms":[]},{"Name":"Mod bivirkninger","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null},{"ProductId":72860,"PackageId":105010,"NormalizedPackageSize":100.00000,"NormalizedUnit":"stk","DisplayText":null,"LCID":1030,"NormalizedPrice":0.0,"ProductDescription":null,"ProductNames":[{"Name":"Plaquenil","Synonyms":[]}],"ATCCodes":[{"Name":"P01BA02","Synonyms":[]}],"Indications":[{"Name":"Mod leddegigt","Synonyms":[]},{"Name":"Forebyggende mod lysudslæt","Synonyms":[]},{"Name":"Mod bindevævssygdom","Synonyms":[]},{"Name":"Mod lupus","Synonyms":[]},{"Name":"Mod lysudslæt","Synonyms":[]},{"Name":"Mod malaria","Synonyms":[]},{"Name":"Til forebyggelse af malaria","Synonyms":[]}],"Treaments":null,"Substances":null,"Substitutions":null}]
+[{
+	"ProductId": 72769,
+	"PackageId": 104902,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakninglol",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 2.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Erwinase",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "L01XX02",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72770,
+	"PackageId": 104903,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 223.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Levocetirizindihydrochlorid \"teva\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R06AE09",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod høfeber",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod løbenæse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod nældefeber",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72772,
+	"PackageId": 104905,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 22.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Numeta g19e",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "B05BA10",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Ernæringstilskud",
+		"Synonyms": []
+	},
+	{
+		"Name": "Parenteral ernæring",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72773,
+	"PackageId": 104906,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Fragmin",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "B01AB04",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Til behandling af trombose",
+		"Synonyms": []
+	},
+	{
+		"Name": "Tromboseprofylakse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72774,
+	"PackageId": 104907,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Epirubicin \"fresenius kabi\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "L01DB03",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Behandling af blærecancer",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af brystcancer",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af cancer",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af lungecancer",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af mavecancer",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af ovariecancer",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72775,
+	"PackageId": 104908,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Voltaren",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "S01BC03",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Forebyggelse af miosis",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod inflammation efter øjenoperation",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod øjensmerter",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod øjensmerter efter operation",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod øjensygdom",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72776,
+	"PackageId": 104909,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Cidron",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R06AE07",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod høfeber",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod nældefeber",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72777,
+	"PackageId": 104910,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Lamotrigin \"copyfarm\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "ANDREANTIEPILEPTIKA,N03AX09",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72778,
+	"PackageId": 104911,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Innovair",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R03AK08",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod astma",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72778,
+	"PackageId": 112576,
+	"NormalizedPackageSize": 120.00000,
+	"NormalizedUnit": "dosis",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Innovair",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R03AK08",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod astma",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72779,
+	"PackageId": 104912,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Alzen sr",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N05AH04",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Behandling af bipolær lidelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af skizofreni",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod depression",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod sindslidelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Nervemedicin",
+		"Synonyms": []
+	},
+	{
+		"Name": "Ved mani",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72780,
+	"PackageId": 104913,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Porcilis app vet",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "TERAPEUTISKKLASSIFIKATION:QI09AB07",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72781,
+	"PackageId": 104914,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Epirubicin \"teva\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "L01DB03",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Behandling af blærecancer",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af brystcancer",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af cancer",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af lungecancer",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af mavecancer",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af ovariecancer",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72782,
+	"PackageId": 104915,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Alk 312 artemisia vulgaris (gråbynke)",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "V01AA10",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod høfeber",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod astma",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod allergi",
+		"Synonyms": []
+	},
+	{
+		"Name": "Over for allergi",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72783,
+	"PackageId": 104916,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Noriday",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "G03AC01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Minipiller",
+		"Synonyms": []
+	},
+	{
+		"Name": "Svangerskabsforebyggende",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72784,
+	"PackageId": 104917,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Norlevo",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "FARMAKOTERAPEUTISKKLASSIFIKATION:NØDPRÆVENTION",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72785,
+	"PackageId": 104918,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Paracetamol \"panpharma\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N02BE01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Febernedsættende",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod smerter",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72787,
+	"PackageId": 104920,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Temgesic",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N02AE01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod stærke smerter",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72788,
+	"PackageId": 104921,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Fluorouracil \"accord\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "L01BC02",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72789,
+	"PackageId": 104922,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Fleet klar-til-brug",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "ATCA06AG01-KLYSTERMIDLER",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72790,
+	"PackageId": 104923,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Carvedilol \"orion pharma\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "FARMAKOTERAPEUTISKKLASSIFIKATION:ALFA-OGBETABLOKKERE,C07AG02",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72791,
+	"PackageId": 104924,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Elektrolyt \"sad\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "B05BB02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Til væsketerapi",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72792,
+	"PackageId": 104925,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Celia",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "G03AA10",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Svangerskabsforebyggende",
+		"Synonyms": []
+	},
+	{
+		"Name": "P-piller",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72793,
+	"PackageId": 104926,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Zemplar",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "H05BX02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod forstyrrelser i kalkstofskiftet",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72794,
+	"PackageId": 104927,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Atrosan",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "M01AX",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72795,
+	"PackageId": 104928,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Montelukast \"arrow\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R03DC03",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod astma",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til forebyggelse af astma",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72796,
+	"PackageId": 104929,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Glucosamin \"copyfarm\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "FARMAKOTERAPEUTISKKLASSIFIKATION:ANDRENON-STEROIDEANTIINFLAMMATORISKEOGANTIRHEUMATISKEMIDLER,M01AX05",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72797,
+	"PackageId": 104930,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Ropivacain \"fresenius kabi\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N01BB09",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Perifer nerveblokade",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72798,
+	"PackageId": 104931,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Moclostad",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N06AG02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod depression",
+		"Synonyms": []
+	},
+	{
+		"Name": "Nervemedicin",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72799,
+	"PackageId": 104932,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Telfast",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R06AX26",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod høfeber",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod løbenæse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod nældefeber",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72800,
+	"PackageId": 104933,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Combar",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N06AX11",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod depression",
+		"Synonyms": []
+	},
+	{
+		"Name": "Nervemedicin",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72801,
+	"PackageId": 104934,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Zomacton",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "H01AC01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Ved prader-willis syndrom",
+		"Synonyms": []
+	},
+	{
+		"Name": "Ved turners syndrom",
+		"Synonyms": []
+	},
+	{
+		"Name": "Vækstfremmende",
+		"Synonyms": []
+	},
+	{
+		"Name": "Væksthormonmangel",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72802,
+	"PackageId": 104935,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Requip depot",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "DOPAMINERGESTOFFER,DOPAMIN-AGONISTER,N04BC04",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72804,
+	"PackageId": 104937,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Simvastatin \"teva\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "C10AA01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Forebyggende mod hjertekarsygdomme",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod forhøjet kolesterol",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til forebyggelse af blodprop",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72805,
+	"PackageId": 104938,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Treosulfan \"medac\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "L01AB02",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72806,
+	"PackageId": 104939,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Alfuzosin \"teva pharma\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "G04CA01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod vandladningsbesvær",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72807,
+	"PackageId": 104940,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Tobi",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "AMINOGLYKOSIDER,J01GB01",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72808,
+	"PackageId": 104941,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Bricanyl",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R03AC03",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod astma",
+		"Synonyms": []
+	},
+	{
+		"Name": "Ved bronkospasme",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72809,
+	"PackageId": 104942,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Aurorix",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N06AG02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod depression",
+		"Synonyms": []
+	},
+	{
+		"Name": "Nervemedicin",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72810,
+	"PackageId": 104943,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Questran loc",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "C10AC01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod forhøjet kolesterol",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod diarre",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod hudkløe ved gulsot",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72811,
+	"PackageId": 104944,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Klexane",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "B01AB05",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Til behandling af trombose",
+		"Synonyms": []
+	},
+	{
+		"Name": "Tromboseprofylakse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72812,
+	"PackageId": 104945,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Oxycodonhydrochlorid \"acino\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N02AA05",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod stærke smerter",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72813,
+	"PackageId": 104946,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Paroxetin \"teva\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N06AB05",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod depression",
+		"Synonyms": []
+	},
+	{
+		"Name": "Nervemedicin",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af obsessiv-kompulsiv tilstand",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af posttraumatisk stresssyndrom",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod angst",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72814,
+	"PackageId": 104947,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Cetirizin \"mylan\" 10 mg film-overtrukne tabletter",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "FARMAKOTERAPEUTISKGRUPPE:PIPERAZINDERIVATER,R06AE07",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72815,
+	"PackageId": 104948,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Qlaira",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "G03AB",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72821,
+	"PackageId": 104956,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Seroquel xr",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N05AH04",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Behandling af bipolær lidelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Behandling af skizofreni",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod depression",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod sindslidelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Nervemedicin",
+		"Synonyms": []
+	},
+	{
+		"Name": "Ved mani",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72822,
+	"PackageId": 104957,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Bicalutamid \"orion\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "L02BB03",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Behandling af prostatacancer",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod prostatalidelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod sygdom",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72823,
+	"PackageId": 104958,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Flavamed",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R05CB06",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Slimløsnende",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72824,
+	"PackageId": 104959,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Lisinopril \"2k\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "C09AA03",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "For blodtrykket",
+		"Synonyms": []
+	},
+	{
+		"Name": "For hjertet",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod forhøjet blodtryk",
+		"Synonyms": []
+	},
+	{
+		"Name": "Ved hjerteinsufficiens",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod blodprop i hjertet",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod nefropati",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72825,
+	"PackageId": 104960,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Natriumklorid \"pro-med\" smartdose",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "V07AB",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Til skylning",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72826,
+	"PackageId": 104961,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Provigil",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "FARMAKOTERAPEUTISKKLASSIFIKATION:PSYKOANALEPTIKA,CENTRALTVIRKENDESYMPATOMIMETIK,N06BA07",
+		"Synonyms": []
+	}],
+	"Indications": [],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72828,
+	"PackageId": 104963,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "pakning",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Kabiven perifer",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "B05BA10",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Ernæringstilskud",
+		"Synonyms": []
+	},
+	{
+		"Name": "Parenteral ernæring",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72829,
+	"PackageId": 104964,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Kemadrin",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N04AA04",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod parkinsons sygdom",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod rystelammelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod bivirkninger",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72830,
+	"PackageId": 104965,
+	"NormalizedPackageSize": 10.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Marzine",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R06AE03",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod transportsyge",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72830,
+	"PackageId": 104966,
+	"NormalizedPackageSize": 30.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Marzine",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R06AE03",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod transportsyge",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72831,
+	"PackageId": 104967,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Eltroxin",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "H03AA01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod nedsat stofskifte",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod struma",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72832,
+	"PackageId": 104968,
+	"NormalizedPackageSize": 10.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Postafen",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R06AE05",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod transportsyge",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod overfølsomhed",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72832,
+	"PackageId": 104969,
+	"NormalizedPackageSize": 25.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Postafen",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R06AE05",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod transportsyge",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod overfølsomhed",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72832,
+	"PackageId": 104970,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Postafen",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R06AE05",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod transportsyge",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod overfølsomhed",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72833,
+	"PackageId": 104971,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Diamox",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "S01EC01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod grøn stær",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod stær",
+		"Synonyms": []
+	},
+	{
+		"Name": "Ved glaukom",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72834,
+	"PackageId": 104972,
+	"NormalizedPackageSize": 30.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Methergin",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "G02AB01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod blødning",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72835,
+	"PackageId": 104973,
+	"NormalizedPackageSize": 5.00000,
+	"NormalizedUnit": "g",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Hydrocortison med Terramycin",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "D07CA01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod inficeret eksem",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod psoriasis med infektion",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod betændelse i øregangen",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod øregangseksem",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til hudlidelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72835,
+	"PackageId": 104974,
+	"NormalizedPackageSize": 15.00000,
+	"NormalizedUnit": "g",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Hydrocortison med Terramycin",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "D07CA01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod inficeret eksem",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod psoriasis med infektion",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod betændelse i øregangen",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod øregangseksem",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til hudlidelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72836,
+	"PackageId": 104975,
+	"NormalizedPackageSize": 25.00000,
+	"NormalizedUnit": "ml",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Heparin \"Leo\"",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "B01AB01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Til behandling af trombose",
+		"Synonyms": []
+	},
+	{
+		"Name": "Tromboseprofylakse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72837,
+	"PackageId": 104976,
+	"NormalizedPackageSize": 15.00000,
+	"NormalizedUnit": "g",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Terramycin-Polymyxin B",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "D06AA03",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod betændelse på huden",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod infektion på huden",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72838,
+	"PackageId": 104977,
+	"NormalizedPackageSize": 10.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Aspirin",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N02BA01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod smerter",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til forebyggelse af blodprop",
+		"Synonyms": []
+	},
+	{
+		"Name": "Blodfortyndende",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72839,
+	"PackageId": 104978,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Neo-mercazole",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "H03BB01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Før operation for struma",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod forhøjet stofskifte",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72840,
+	"PackageId": 104979,
+	"NormalizedPackageSize": 40.00000,
+	"NormalizedUnit": "g",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Hirudoid",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "C05BA01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod årebetændelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72840,
+	"PackageId": 104980,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "g",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Hirudoid",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "C05BA01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod årebetændelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72841,
+	"PackageId": 104981,
+	"NormalizedPackageSize": 125.00000,
+	"NormalizedUnit": "ml",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Benylan",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R06AA02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Hostedæmpende",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72842,
+	"PackageId": 104982,
+	"NormalizedPackageSize": 50.00000,
+	"NormalizedUnit": "ml",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Xylocain",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N01BB02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Lokalbedøvende",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod postherpetisk neuralgi",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod uregelmæssig hjerterytme",
+		"Synonyms": []
+	},
+	{
+		"Name": "Overfladebedøvende",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til lokalbedøvelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72842,
+	"PackageId": 104983,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "ml",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Xylocain",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N01BB02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Lokalbedøvende",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod postherpetisk neuralgi",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod uregelmæssig hjerterytme",
+		"Synonyms": []
+	},
+	{
+		"Name": "Overfladebedøvende",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til lokalbedøvelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72843,
+	"PackageId": 104984,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "ml",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Xylocain-adrenalin",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N01BB52",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Lokalbedøvende",
+		"Synonyms": []
+	},
+	{
+		"Name": "Overfladebedøvende",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til overfladebedøvelse af hud",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72844,
+	"PackageId": 104985,
+	"NormalizedPackageSize": 20.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Buscopan",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A03BB01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod koliksmerter",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod tyktarmskatar",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72844,
+	"PackageId": 104986,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Buscopan",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A03BB01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod koliksmerter",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod tyktarmskatar",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72845,
+	"PackageId": 104987,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Salazopyrin",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A07EC01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod betændelse i tarmen",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod colitis ulcerosa",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod leddegigt",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod morbus crohn",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72845,
+	"PackageId": 104988,
+	"NormalizedPackageSize": 300.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Salazopyrin",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A07EC01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod betændelse i tarmen",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod colitis ulcerosa",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod leddegigt",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod morbus crohn",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72845,
+	"PackageId": 111242,
+	"NormalizedPackageSize": 336.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Salazopyrin",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A07EC01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod betændelse i tarmen",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod colitis ulcerosa",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod leddegigt",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod morbus crohn",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72846,
+	"PackageId": 104989,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "ml",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Phenergan",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "R06AD02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod høfeber",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod nældefeber",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod søvnløshed",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod transportsyge",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72847,
+	"PackageId": 104990,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "ml",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Konakion Novum",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "B02BA01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod k-vitaminmangel",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til forebyggelse af blødning",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72847,
+	"PackageId": 104991,
+	"NormalizedPackageSize": 5.00000,
+	"NormalizedUnit": "ml",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Konakion Novum",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "B02BA01",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod k-vitaminmangel",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til forebyggelse af blødning",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72848,
+	"PackageId": 104992,
+	"NormalizedPackageSize": 1.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Solu-cortef",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "H02AB09",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Binyrebarkhormontilskud",
+		"Synonyms": []
+	},
+	{
+		"Name": "Binyrebarkinsufficiens",
+		"Synonyms": []
+	},
+	{
+		"Name": "Ved addisons sygdom",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72848,
+	"PackageId": 104993,
+	"NormalizedPackageSize": 5.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Solu-cortef",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "H02AB09",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Binyrebarkhormontilskud",
+		"Synonyms": []
+	},
+	{
+		"Name": "Binyrebarkinsufficiens",
+		"Synonyms": []
+	},
+	{
+		"Name": "Ved addisons sygdom",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72849,
+	"PackageId": 104994,
+	"NormalizedPackageSize": 250.00000,
+	"NormalizedUnit": "ml",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Hibitane",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "D08AC02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Til desinfektion",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72850,
+	"PackageId": 104995,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Arcosal",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A10BB03",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod sukkersyge",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72850,
+	"PackageId": 104996,
+	"NormalizedPackageSize": 250.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Arcosal",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A10BB03",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod sukkersyge",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72851,
+	"PackageId": 104997,
+	"NormalizedPackageSize": 30.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Ritalin",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N06BA04",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod hyperaktivitet",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod narkolepsi",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod opmærksomheds- forstyrrelser",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til behandling af adhd",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72852,
+	"PackageId": 104998,
+	"NormalizedPackageSize": 30.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Perilax",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A06AB02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod forstoppelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Tarmtømning før undersøgelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72852,
+	"PackageId": 104999,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Perilax",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A06AB02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod forstoppelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Tarmtømning før undersøgelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72852,
+	"PackageId": 105000,
+	"NormalizedPackageSize": 250.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Perilax",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A06AB02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod forstoppelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Tarmtømning før undersøgelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72853,
+	"PackageId": 105001,
+	"NormalizedPackageSize": 5.00000,
+	"NormalizedUnit": "g",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Ultracortenol",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "S01BA04",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod øjensygdom",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod allergisk øjenbetændelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod regnbuehinde- betændelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72854,
+	"PackageId": 105002,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Akineton",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N04AA02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod parkinsons sygdom",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod rystelammelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod bivirkninger",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72855,
+	"PackageId": 105003,
+	"NormalizedPackageSize": 30.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Dulcolax",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A06AB02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod forstoppelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Tarmtømning før undersøgelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72855,
+	"PackageId": 105004,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Dulcolax",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A06AB02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod forstoppelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Tarmtømning før undersøgelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72855,
+	"PackageId": 105005,
+	"NormalizedPackageSize": 200.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Dulcolax",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "A06AB02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod forstoppelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Tarmtømning før undersøgelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72856,
+	"PackageId": 105006,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Stemetil",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N05AB04",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod sindslidelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod kvalme",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod opkastninger",
+		"Synonyms": []
+	},
+	{
+		"Name": "Beroligende",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod nervøs lidelse",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72857,
+	"PackageId": 105007,
+	"NormalizedPackageSize": 5.00000,
+	"NormalizedUnit": "ml",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Syntocinon",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "H01BB02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Blødning i efterbyrds- perioden",
+		"Synonyms": []
+	},
+	{
+		"Name": "Igangsættelse af fødsel",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod brystspænding",
+		"Synonyms": []
+	},
+	{
+		"Name": "Vestimulation",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72858,
+	"PackageId": 105008,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Medrol",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "H02AB04",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod høfeber",
+		"Synonyms": []
+	},
+	{
+		"Name": "Binyrebarkhormontilskud",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til injektionsbehandling af led",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72859,
+	"PackageId": 105009,
+	"NormalizedPackageSize": 5.00000,
+	"NormalizedUnit": "ml",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Akineton",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "N04AA02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod parkinsons sygdom",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod rystelammelse",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod bivirkninger",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+},
+{
+	"ProductId": 72860,
+	"PackageId": 105010,
+	"NormalizedPackageSize": 100.00000,
+	"NormalizedUnit": "stk",
+	"DisplayText": null,
+	"LCID": 1030,
+	"NormalizedPrice": 0.0,
+	"ProductDescription": null,
+	"ProductNames": [{
+		"Name": "Plaquenil",
+		"Synonyms": []
+	}],
+	"ATCCodes": [{
+		"Name": "P01BA02",
+		"Synonyms": []
+	}],
+	"Indications": [{
+		"Name": "Mod leddegigt",
+		"Synonyms": []
+	},
+	{
+		"Name": "Forebyggende mod lysudslæt",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod bindevævssygdom",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod lupus",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod lysudslæt",
+		"Synonyms": []
+	},
+	{
+		"Name": "Mod malaria",
+		"Synonyms": []
+	},
+	{
+		"Name": "Til forebyggelse af malaria",
+		"Synonyms": []
+	}],
+	"Treaments": null,
+	"Substances": null,
+	"Substitutions": null
+}]
