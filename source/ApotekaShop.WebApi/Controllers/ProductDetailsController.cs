@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Http;
 using ApotekaShop.Services.Models;
 using ApotekaShop.Services.Interfaces;
+using Microsoft.Practices.Unity;
 
 namespace ApotekaShop.WebApi.Controllers
 {
@@ -81,13 +82,28 @@ namespace ApotekaShop.WebApi.Controllers
         } 
 
         //For tests
-        [Route("Import")]
+        [Route("ImportIndex")]
         [HttpGet]
         public IHttpActionResult ImportIndex()
         {
             try
             {
                 _productDetailsService.ImportProductDetalils();
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+        }
+
+        [Route("RemoveIndex")]
+        [HttpGet]
+        public IHttpActionResult RemoveIndex()
+        {
+            try
+            {
+                _productDetailsService.RemoveIndex();
                 return Ok();
             }
             catch (Exception e)

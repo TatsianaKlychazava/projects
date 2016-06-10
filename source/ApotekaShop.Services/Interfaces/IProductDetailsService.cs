@@ -10,5 +10,6 @@ namespace ApotekaShop.Services.Interfaces
         IEnumerable<ProductDetailsDTO> Search(string query, FilterOptionsModel filters);
         void ImportProductDetalils();
         void Delete(int id);
+        void RemoveIndex();
     }
 }

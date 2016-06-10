@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Web;
 using System.Web.Hosting;
+using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 using Newtonsoft.Json;
 
 namespace ApotekaShop.Services
 {
-    public class ProductDetailsDataProvider
+    public class ProductDetailsDataProvider: IProductDetailsDataProvider
     {
-        public static List<ProductDetailsDTO> ImportProductDetalils()
+        public List<ProductDetailsDTO> ImportProductDetalils()
         {
             var path = HostingEnvironment.MapPath(@"~/App_Data/productdetails.json");
             if (!File.Exists(path))

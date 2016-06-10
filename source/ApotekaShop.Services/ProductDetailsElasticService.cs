@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 using Nest;
@@ -11,14 +12,18 @@ namespace ApotekaShop.Services
     /// </summary>
     public class ProductDetailsElasticService : IProductDetailsService
     {
+        private readonly IProductDetailsDataProvider _productDetailsDataProvider;
+        private readonly string _defaultIndex;
         private readonly ElasticClient _elasticClient;
-        private const string DefaultIndex = "apatekashop-productdetails";
 
-        public ProductDetailsElasticService(Uri elasticNode, string defaultIndex)
+        public ProductDetailsElasticService(IProductDetailsDataProvider productDetailsDataProvider, Uri elasticNode, string defaultIndex)
         {
+            _productDetailsDataProvider = productDetailsDataProvider;
+            _defaultIndex = defaultIndex;
+
             var settings = new ConnectionSettings(elasticNode);
 
-            settings.DefaultIndex(defaultIndex);
+            settings.DefaultIndex(_defaultIndex);
 
             _elasticClient = new ElasticClient(settings);
 
@@ -60,7 +65,7 @@ namespace ApotekaShop.Services
         /// </summary>
         public void ImportProductDetalils()
         {
-            List<ProductDetailsDTO> details = ProductDetailsDataProvider.ImportProductDetalils();
+            List<ProductDetailsDTO> details = _productDetailsDataProvider.ImportProductDetalils();
 
             AddOrUpdate(details);
         }
@@ -68,6 +73,11 @@ namespace ApotekaShop.Services
         public void Delete(int id)
         {
             _elasticClient.Delete<ProductDetailsDTO>(id);
+        }
+
+        public void RemoveIndex()
+        {
+            _elasticClient.DeleteIndex(_defaultIndex);
         }
 
         private static IQueryContainer CreateQuery(string query, FilterOptionsModel filter)

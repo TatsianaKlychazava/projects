@@ -17,7 +17,8 @@ namespace ApotekaShop.WebApi
             string defaultIndex = ConfigurationManager.AppSettings["defaultIndex"];
             if (string.IsNullOrEmpty(elasticNodeUrl) || string.IsNullOrEmpty(defaultIndex)) throw new Exception("Elastic node Url or default index are not specified in web config");
 
-            container.RegisterType<IProductDetailsService, ProductDetailsElasticService>(new InjectionConstructor(new Uri(elasticNodeUrl),defaultIndex));
+            container.RegisterType<IProductDetailsDataProvider, ProductDetailsDataProvider>();
+            container.RegisterType<IProductDetailsService, ProductDetailsElasticService>(new InjectionConstructor(typeof(IProductDetailsDataProvider),new Uri(elasticNodeUrl),defaultIndex));
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
