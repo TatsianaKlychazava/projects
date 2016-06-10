@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApotekaShop.WebApi", "Apote
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApotekaShop.Services", "ApotekaShop.Services\ApotekaShop.Services.csproj", "{8B66F057-849A-467F-92C8-F63188C54764}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApotekaShop.UnitTest", "ApotekaShop.UnitTest\ApotekaShop.UnitTest.csproj", "{EA497F2F-3200-46CE-877A-0A4177DEF20D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8B66F057-849A-467F-92C8-F63188C54764}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B66F057-849A-467F-92C8-F63188C54764}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B66F057-849A-467F-92C8-F63188C54764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA497F2F-3200-46CE-877A-0A4177DEF20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA497F2F-3200-46CE-877A-0A4177DEF20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA497F2F-3200-46CE-877A-0A4177DEF20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA497F2F-3200-46CE-877A-0A4177DEF20D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

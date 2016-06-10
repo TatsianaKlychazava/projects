@@ -14,10 +14,10 @@ namespace ApotekaShop.WebApi
         {
 			var container = new UnityContainer();
             string elasticNodeUrl = ConfigurationManager.AppSettings["elasticNodeUrl"];
+            string defaultIndex = ConfigurationManager.AppSettings["defaultIndex"];
+            if (string.IsNullOrEmpty(elasticNodeUrl) || string.IsNullOrEmpty(defaultIndex)) throw new Exception("Elastic node Url or default index are not specified in web config");
 
-            if (string.IsNullOrEmpty(elasticNodeUrl)) throw new Exception("Elastic node Url is not specified in web config");
-
-            container.RegisterType<IProductDetailsService, ProductDetailsElasticService>(new InjectionConstructor(new Uri(elasticNodeUrl)));
+            container.RegisterType<IProductDetailsService, ProductDetailsElasticService>(new InjectionConstructor(new Uri(elasticNodeUrl),defaultIndex));
 
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }

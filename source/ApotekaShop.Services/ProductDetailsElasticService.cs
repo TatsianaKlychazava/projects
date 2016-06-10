@@ -6,16 +6,19 @@ using Nest;
 
 namespace ApotekaShop.Services
 {
+    /// <summary>
+    /// Use elasticsearch-2.3.3
+    /// </summary>
     public class ProductDetailsElasticService : IProductDetailsService
     {
         private readonly ElasticClient _elasticClient;
         private const string DefaultIndex = "apatekashop-productdetails";
 
-        public ProductDetailsElasticService(Uri elasticNode)
+        public ProductDetailsElasticService(Uri elasticNode, string defaultIndex)
         {
             var settings = new ConnectionSettings(elasticNode);
 
-            settings.DefaultIndex(DefaultIndex);
+            settings.DefaultIndex(defaultIndex);
 
             _elasticClient = new ElasticClient(settings);
 
