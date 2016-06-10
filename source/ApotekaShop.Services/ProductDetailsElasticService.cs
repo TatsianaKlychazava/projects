@@ -15,9 +15,12 @@ namespace ApotekaShop.Services
     {
         private readonly ElasticClient _elasticClient;
         private const string DefaultIndex = "apatekashop-productdetails";
+        private readonly IProductDetailsDataProvider _productDetailsDataProvider;
 
-        public ProductDetailsElasticService(Uri elasticNode, string defaultIndex)
+        public ProductDetailsElasticService((IProductDetailsDataProvider productDetailsDataProvider, Uri elasticNode, string defaultIndex)
         {
+            _productDetailsDataProvider = productDetailsDataProvider;
+
             var settings = new ConnectionSettings(elasticNode);
 
             settings.DefaultIndex(defaultIndex);
@@ -61,7 +64,7 @@ namespace ApotekaShop.Services
         /// </summary>
         public async Task ImportProductDetalils()
         {
-            List<ProductDetailsDTO> details = ProductDetailsDataProvider.ImportProductDetalils();
+            List<ProductDetailsDTO> details = _productDetailsDataProvider.ImportProductDetalils();
             await AddOrUpdate(details);
         }
 

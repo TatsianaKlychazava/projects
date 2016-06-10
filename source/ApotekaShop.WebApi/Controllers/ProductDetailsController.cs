@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using ApotekaShop.Services.Models;
 using ApotekaShop.Services.Interfaces;
+using Microsoft.Practices.Unity;
 
 namespace ApotekaShop.WebApi.Controllers
 {
@@ -84,7 +85,7 @@ namespace ApotekaShop.WebApi.Controllers
         } 
 
         //For tests
-        [Route("Import")]
+        [Route("ImportIndex")]
         [HttpGet]
         public async Task<IHttpActionResult> ImportIndex()
         {
@@ -92,6 +93,21 @@ namespace ApotekaShop.WebApi.Controllers
             {
                 await _productDetailsService.ImportProductDetalils();
                 return Ok(DONE);
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+        }
+
+        [Route("RemoveIndex")]
+        [HttpGet]
+        public IHttpActionResult RemoveIndex()
+        {
+            try
+            {
+                _productDetailsService.RemoveIndex();
+                return Ok();
             }
             catch (Exception e)
             {
