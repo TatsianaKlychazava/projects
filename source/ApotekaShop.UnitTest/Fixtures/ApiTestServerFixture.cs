@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Formatting;
@@ -22,6 +23,8 @@ namespace ApotekaShop.UnitTest.Fixtures
     public class ApiTestServerFixture: IDisposable
     {
         private const string _baseAddress = @"http://localhost";
+        private const string JsonMediaTypeString = "application/json";
+
         private readonly HttpServer _server;
         private readonly HttpConfiguration _config;
         private readonly HttpClient _client;
@@ -29,7 +32,6 @@ namespace ApotekaShop.UnitTest.Fixtures
         private readonly Mock<HttpContextBase> _context = new Mock<HttpContextBase>();
         private readonly Mock<HttpResponseBase> _response = new Mock<HttpResponseBase>();
         private readonly Mock<IProductDetailsDataProvider> _dataprovider = new Mock<IProductDetailsDataProvider>();
-
         protected readonly IUnityContainer _container;
 
         public ApiTestServerFixture()
@@ -43,8 +45,8 @@ namespace ApotekaShop.UnitTest.Fixtures
             
             _container = new UnityContainer();
 
-            string elasticNodeUrl = "http://localhost:9200";
-            string defaultIndex = "testindex";
+            string elasticNodeUrl = ConfigurationManager.AppSettings["elasticNodeUrl"]; 
+            string defaultIndex = ConfigurationManager.AppSettings["defaultIndex"];
 
             _dataprovider.Setup(x => x.ImportProductDetalils()).Returns(LoadTestData());
            
@@ -61,22 +63,12 @@ namespace ApotekaShop.UnitTest.Fixtures
 
         public HttpRequestMessage CreateGetRequest(string address)
         {
-            HttpRequestMessage request = new HttpRequestMessage();
-            request.RequestUri = new Uri(_baseAddress + address);
-            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            request.Method = HttpMethod.Get;
-
-            return request;
+            return CreateHttpRequest(address, null, HttpMethod.Get);
         }
 
         public HttpRequestMessage CreateDeletetRequest(string address)
         {
-            HttpRequestMessage request = new HttpRequestMessage();
-            request.RequestUri = new Uri(_baseAddress + address);
-            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            request.Method = HttpMethod.Delete;
-
-            return request;
+            return CreateHttpRequest(address, null, HttpMethod.Delete);
         }
 
         public HttpRequestMessage CreatePutRequest(string address, object data)
@@ -93,33 +85,29 @@ namespace ApotekaShop.UnitTest.Fixtures
         {
             HttpRequestMessage request = new HttpRequestMessage();
             request.RequestUri = new Uri(_baseAddress + address);
-            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(JsonMediaTypeString));
             request.Method = method;
-            request.Content = new ObjectContent<dynamic>(data, new JsonMediaTypeFormatter());
+
+            if (method != HttpMethod.Delete || method != HttpMethod.Get)
+            {
+                request.Content = new ObjectContent<dynamic>(data, new JsonMediaTypeFormatter());
+            }
 
             return request;
         }
 
-        public void SendRequest(HttpRequestMessage request, Action<HttpResponseMessage> sucessAction)
+        public void SendRequest(HttpRequestMessage request, Action<HttpResponseMessage> action)
         {
             using (HttpResponseMessage response = _client.SendAsync(request).Result)
             {
-                if (response.IsSuccessStatusCode)
-                {
-                    sucessAction(response);
-                }
-                else
-                {
-                    var result = response.Content.ReadAsStringAsync().Result;
-                    Assert.True(response.IsSuccessStatusCode, result);
-                }
+                action(response);  
             }
         }
 
         private List<ProductDetailsDTO> LoadTestData()
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "ApotekaShop.UnitTest.Data.ProductDetails.json";
+            var resourceName = ConfigurationManager.AppSettings["dataResourceName"];
             string json;
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))

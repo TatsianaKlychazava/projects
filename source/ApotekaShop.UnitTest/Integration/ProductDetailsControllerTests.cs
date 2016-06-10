@@ -43,13 +43,18 @@ namespace ApotekaShop.UnitTest.Integration
             {
                 new ProductDetailsDTO()
                 {
-                    PackageId = 104977
+                    PackageId = 123456
                 }
             };
 
             var postRequest = _apiTestServerFixture.CreatePostRequest("/api/ProductDetails/", details);
-
             _apiTestServerFixture.SendRequest(postRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+            });
+
+            var getRequest = _apiTestServerFixture.CreateGetRequest("/api/ProductDetails/123456");
+            _apiTestServerFixture.SendRequest(getRequest, message =>
             {
                 Assert.True(message.StatusCode == HttpStatusCode.OK);
             });
@@ -74,6 +79,12 @@ namespace ApotekaShop.UnitTest.Integration
             _apiTestServerFixture.SendRequest(deleteRequest, message =>
             {
                 Assert.True(message.StatusCode == HttpStatusCode.OK);
+            });
+            
+            var getRequest = _apiTestServerFixture.CreateGetRequest("/api/ProductDetails/104977");
+            _apiTestServerFixture.SendRequest(getRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.NotFound);
             });
         }
 
