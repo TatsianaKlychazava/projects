@@ -14,10 +14,9 @@ namespace ApotekaShop.Services
     public class ProductDetailsElasticService : IProductDetailsService
     {
         private readonly ElasticClient _elasticClient;
-        private const string DefaultIndex = "apatekashop-productdetails";
         private readonly IProductDetailsDataProvider _productDetailsDataProvider;
 
-        public ProductDetailsElasticService((IProductDetailsDataProvider productDetailsDataProvider, Uri elasticNode, string defaultIndex)
+        public ProductDetailsElasticService(IProductDetailsDataProvider productDetailsDataProvider, Uri elasticNode, string defaultIndex)
         {
             _productDetailsDataProvider = productDetailsDataProvider;
 
