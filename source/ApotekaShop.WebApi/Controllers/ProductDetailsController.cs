@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web.Http;
 using ApotekaShop.Services.Models;
 using ApotekaShop.Services.Interfaces;
@@ -11,6 +12,8 @@ namespace ApotekaShop.WebApi.Controllers
     [RoutePrefix("api/ProductDetails")]
     public class ProductDetailsController : ApiController
     {
+        private const string DONE = "Done";
+
         private readonly IProductDetailsService _productDetailsService;
 
         public ProductDetailsController(IProductDetailsService productDetailsService)
@@ -21,9 +24,9 @@ namespace ApotekaShop.WebApi.Controllers
         // GET: api/ProductDetails/5
         [Route("{id:int}")]
         [HttpGet]
-        public IHttpActionResult GetByPackageId(int id)
+        public async Task<IHttpActionResult> GetByPackageId(int id)
         {
-            ProductDetailsDTO productDetails = _productDetailsService.GetByPackageId(id);
+            ProductDetailsDTO productDetails = await _productDetailsService.GetByPackageId(id);
 
             if (productDetails == null)
             {
@@ -36,11 +39,11 @@ namespace ApotekaShop.WebApi.Controllers
         // POST: api/ProductDetails
         [Route("")]
         [HttpPost]
-        public IHttpActionResult AddOrUpdate([FromBody]IEnumerable<ProductDetailsDTO> productDetails)
+        public async Task<IHttpActionResult> AddOrUpdate([FromBody]IEnumerable<ProductDetailsDTO> productDetails)
         {
             try
             {
-                _productDetailsService.AddOrUpdate(productDetails);
+                await _productDetailsService.AddOrUpdate(productDetails);
                 return Ok();
             }
             catch (Exception e)
@@ -53,12 +56,12 @@ namespace ApotekaShop.WebApi.Controllers
         // DELETE: api/ProductDetails/5
         [Route("{id:int}")]
         [HttpDelete]
-        public IHttpActionResult Delete(int id)
+        public async Task<IHttpActionResult> Delete(int id)
         {
             try
             {
-                _productDetailsService.Delete(id);
-                return Ok();
+                await _productDetailsService.Delete(id);
+                return Ok(DONE);
             }
             catch (Exception e)
             {
@@ -69,9 +72,9 @@ namespace ApotekaShop.WebApi.Controllers
         // GET: api/ProductDetails/Search
         [Route("Search")]
         [HttpGet]
-        public IHttpActionResult Search([FromUri]string query = "", [FromUri]FilterOptionsModel filters = null)
+        public async Task<IHttpActionResult> Search([FromUri]string query = "", [FromUri]FilterOptionsModel filters = null)
         {
-            List<ProductDetailsDTO> result = _productDetailsService.Search(query, filters).ToList();
+            List<ProductDetailsDTO> result = (await _productDetailsService.Search(query, filters)).ToList();
 
             if (result.Any())
             {
@@ -84,12 +87,12 @@ namespace ApotekaShop.WebApi.Controllers
         //For tests
         [Route("ImportIndex")]
         [HttpGet]
-        public IHttpActionResult ImportIndex()
+        public async Task<IHttpActionResult> ImportIndex()
         {
             try
             {
-                _productDetailsService.ImportProductDetalils();
-                return Ok();
+                await _productDetailsService.ImportProductDetalils();
+                return Ok(DONE);
             }
             catch (Exception e)
             {
