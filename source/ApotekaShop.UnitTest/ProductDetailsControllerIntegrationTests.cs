@@ -55,6 +55,24 @@ namespace ApotekaShop.UnitTest
             });
         }
 
+        [Fact]
+        public void Search_ProductDetails_ReturnsProductDetail()
+        {
+            List<ProductDetailsDTO> details = new List<ProductDetailsDTO>()
+            {
+                new ProductDetailsDTO()
+                {
+                    PackageId = 123456
+                }
+            };
+
+            var postRequest = _apiTestServerFixture.CreateGetRequest("/api/ProductDetails/Search/?");
+
+            _apiTestServerFixture.SendRequest(postRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+            });
+        }
 
         public void Dispose()
         {

@@ -44,7 +44,7 @@ namespace ApotekaShop.WebApi.Controllers
             try
             {
                 await _productDetailsService.AddOrUpdate(productDetails);
-                return Ok();
+                return Ok(DONE);
             }
             catch (Exception e)
             {
@@ -102,12 +102,12 @@ namespace ApotekaShop.WebApi.Controllers
 
         [Route("RemoveIndex")]
         [HttpGet]
-        public IHttpActionResult RemoveIndex()
+        public async Task<IHttpActionResult> RemoveIndex()
         {
             try
             {
-                _productDetailsService.RemoveIndex();
-                return Ok();
+                await _productDetailsService.DeleteIndex();
+                return Ok(DONE);
             }
             catch (Exception e)
             {
