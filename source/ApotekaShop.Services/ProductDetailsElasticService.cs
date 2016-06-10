@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 using Nest;
@@ -23,51 +25,54 @@ namespace ApotekaShop.Services
             _elasticClient = new ElasticClient(settings);
 
             IClusterHealthResponse healthResponse = _elasticClient.ClusterHealth();
-            
-            if(healthResponse.ApiCall.Success == false) throw healthResponse.ApiCall.OriginalException;
+
+            if (healthResponse.ApiCall.Success == false) throw healthResponse.ApiCall.OriginalException;
         }
 
-        public ProductDetailsDTO GetByPackageId(int id)
+        public async Task<ProductDetailsDTO> GetByPackageId(int id)
         {
-            IGetResponse<ProductDetailsDTO> resGet = _elasticClient.Get<ProductDetailsDTO>(id);
+            var resGet = await _elasticClient.GetAsync<ProductDetailsDTO>(id);
             return resGet.Source;
         }
 
-        public void AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails)
+        public async Task AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails)
         {
-            foreach (var productDetail in productDetails)
-            {
-                _elasticClient.Index(productDetail, i => i.Id(productDetail.PackageId).Refresh());
-            }
+            var descriptor = new BulkDescriptor();
+            descriptor.IndexMany(productDetails, (indexDescriptor, dto) => indexDescriptor.Id(dto.PackageId));
+            await _elasticClient.BulkAsync(descriptor);
         }
 
-        public IEnumerable<ProductDetailsDTO> Search(string query, FilterOptionsModel filters)
+        public async Task<IEnumerable<ProductDetailsDTO>> Search(string query, FilterOptionsModel filters)
         {
             IQueryContainer queryContainer = CreateQuery(query, filters);
-            
+
             var searchRequest = new SearchRequest()
             {
                 Query = queryContainer as QueryContainer
             };
 
-            ISearchResponse<ProductDetailsDTO> result = _elasticClient.Search<ProductDetailsDTO>(searchRequest);
-         
+            ISearchResponse<ProductDetailsDTO> result = await _elasticClient.SearchAsync<ProductDetailsDTO>(searchRequest);
+
             return result.Documents;
         }
 
         /// <summary>
         /// Implementation for testing stage
         /// </summary>
-        public void ImportProductDetalils()
+        public async Task ImportProductDetalils()
         {
             List<ProductDetailsDTO> details = ProductDetailsDataProvider.ImportProductDetalils();
-
-            AddOrUpdate(details);
+            await AddOrUpdate(details);
         }
 
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
-            _elasticClient.Delete<ProductDetailsDTO>(id);
+            await _elasticClient.DeleteAsync<ProductDetailsDTO>(id);
+        }
+
+        public async Task DeleteIndex()
+        {
+            await _elasticClient.DeleteIndexAsync(_elasticClient.ConnectionSettings.DefaultIndex);
         }
 
         private static IQueryContainer CreateQuery(string query, FilterOptionsModel filter)
