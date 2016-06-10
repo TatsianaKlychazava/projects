@@ -119,7 +119,7 @@ namespace ApotekaShop.UnitTest.Fixtures
         private List<ProductDetailsDTO> LoadTestData()
         {
             var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "ApotekaShop.UnitTest.TestData.ProductDetails.json";
+            var resourceName = "ApotekaShop.UnitTest.Data.ProductDetails.json";
             string json;
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
