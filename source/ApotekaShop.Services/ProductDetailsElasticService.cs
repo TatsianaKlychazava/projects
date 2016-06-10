@@ -90,18 +90,22 @@ namespace ApotekaShop.Services
                 };
             }
 
-            if (filter.MaxPrice > 0)
+            //set filter
+            if (filter != null)
             {
-                queryContainer &= new QueryContainerDescriptor<ProductDetailsDTO>()
-                    .Range(r => r.LessThanOrEquals(filter.MaxPrice).Field(f => f.NormalizedPrice)
-                );
-            }
+                if (filter.MaxPrice > 0)
+                {
+                    queryContainer &= new QueryContainerDescriptor<ProductDetailsDTO>()
+                        .Range(r => r.LessThanOrEquals(filter.MaxPrice).Field(f => f.NormalizedPrice)
+                        );
+                }
 
-            if (filter.MinPrice > 0)
-            {
-                queryContainer &= new QueryContainerDescriptor<ProductDetailsDTO>()
-                    .Range(r => r.GreaterThanOrEquals(filter.MinPrice).Field(f => f.NormalizedPrice)
-                );
+                if (filter.MinPrice > 0)
+                {
+                    queryContainer &= new QueryContainerDescriptor<ProductDetailsDTO>()
+                        .Range(r => r.GreaterThanOrEquals(filter.MinPrice).Field(f => f.NormalizedPrice)
+                        );
+                }
             }
             return queryContainer;
         }
