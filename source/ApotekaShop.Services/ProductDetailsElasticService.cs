@@ -20,8 +20,8 @@ namespace ApotekaShop.Services
             _elasticClient = new ElasticClient(settings);
 
             IClusterHealthResponse healthResponse = _elasticClient.ClusterHealth();
-            
-            if(healthResponse.ApiCall.Success == false) throw healthResponse.ApiCall.OriginalException;
+
+            if (healthResponse.ApiCall.Success == false) throw healthResponse.ApiCall.OriginalException;
         }
 
         public ProductDetailsDTO GetByPackageId(int id)
@@ -41,14 +41,14 @@ namespace ApotekaShop.Services
         public IEnumerable<ProductDetailsDTO> Search(string query, FilterOptionsModel filters)
         {
             IQueryContainer queryContainer = CreateQuery(query, filters);
-            
+
             var searchRequest = new SearchRequest()
             {
                 Query = queryContainer as QueryContainer
             };
 
             ISearchResponse<ProductDetailsDTO> result = _elasticClient.Search<ProductDetailsDTO>(searchRequest);
-         
+
             return result.Documents;
         }
 
@@ -71,6 +71,7 @@ namespace ApotekaShop.Services
         {
             QueryContainer queryContainer = null;
 
+            //Query part
             if (!string.IsNullOrEmpty(query))
             {
                 queryContainer &= new QueryStringQuery()
@@ -80,18 +81,23 @@ namespace ApotekaShop.Services
                 };
             }
 
-            if (filter.MaxPrice > 0)
+            //Filter
+            if (filter != null)
             {
-                queryContainer &= new QueryContainerDescriptor<ProductDetailsDTO>()
-                    .Range(r => r.LessThanOrEquals(filter.MaxPrice).Field(f => f.NormalizedPrice)
-                );
-            }
 
-            if (filter.MinPrice > 0)
-            {
-                queryContainer &= new QueryContainerDescriptor<ProductDetailsDTO>()
-                    .Range(r => r.GreaterThanOrEquals(filter.MinPrice).Field(f => f.NormalizedPrice)
-                );
+                if (filter.MaxPrice > 0)
+                {
+                    queryContainer &= new QueryContainerDescriptor<ProductDetailsDTO>()
+                        .Range(r => r.LessThanOrEquals(filter.MaxPrice).Field(f => f.NormalizedPrice)
+                        );
+                }
+
+                if (filter.MinPrice > 0)
+                {
+                    queryContainer &= new QueryContainerDescriptor<ProductDetailsDTO>()
+                        .Range(r => r.GreaterThanOrEquals(filter.MinPrice).Field(f => f.NormalizedPrice)
+                        );
+                }
             }
             return queryContainer;
         }
