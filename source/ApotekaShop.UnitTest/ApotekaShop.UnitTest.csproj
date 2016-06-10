@@ -127,13 +127,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ApiTestServerFixture.cs" />
-    <Compile Include="ProductDetailsControllerIntegrationTests.cs" />
+    <Compile Include="Fixtures\ApiTestServerFixture.cs" />
+    <Compile Include="Integration\ProductDetailsControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EmbeddedResource Include="TestData\ProductDetails.json">
+    <EmbeddedResource Include="Data\ProductDetails.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <None Include="packages.config" />
