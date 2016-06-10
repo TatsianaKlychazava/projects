@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net;
-using System.Net.Http;
 using ApotekaShop.Services.Models;
+using ApotekaShop.UnitTest.Fixtures;
 using Xunit;
 
-namespace ApotekaShop.UnitTest
+namespace ApotekaShop.UnitTest.Integration
 {
-    public class ProductDetailsControllerIntegrationTests: IClassFixture<ApiTestServerFixture>, IDisposable
+    public class ProductDetailsControllerTests: IClassFixture<ApiTestServerFixture>, IDisposable
     {
         private readonly ApiTestServerFixture _apiTestServerFixture;
 
-        public ProductDetailsControllerIntegrationTests(ApiTestServerFixture apiTestServerFixture)
+        public ProductDetailsControllerTests(ApiTestServerFixture apiTestServerFixture)
         {
             _apiTestServerFixture = apiTestServerFixture;
 

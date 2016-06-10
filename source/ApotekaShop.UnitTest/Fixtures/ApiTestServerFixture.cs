@@ -17,7 +17,7 @@ using Newtonsoft.Json;
 using Unity.WebApi;
 using Xunit;
 
-namespace ApotekaShop.UnitTest
+namespace ApotekaShop.UnitTest.Fixtures
 {
     public class ApiTestServerFixture: IDisposable
     {
