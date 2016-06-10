@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 using Nest;
@@ -19,6 +18,10 @@ namespace ApotekaShop.Services
             settings.DefaultIndex(DefaultIndex);
 
             _elasticClient = new ElasticClient(settings);
+
+            IClusterHealthResponse healthResponse = _elasticClient.ClusterHealth();
+            
+            if(healthResponse.ApiCall.Success == false) throw healthResponse.ApiCall.OriginalException;
         }
 
         public ProductDetailsDTO GetByPackageId(int id)
@@ -49,11 +52,19 @@ namespace ApotekaShop.Services
             return result.Documents;
         }
 
+        /// <summary>
+        /// Implementation for testing stage
+        /// </summary>
         public void ImportProductDetalils()
         {
             List<ProductDetailsDTO> details = ProductDetailsDataProvider.ImportProductDetalils();
 
             AddOrUpdate(details);
+        }
+
+        public void Delete(int id)
+        {
+            _elasticClient.Delete<ProductDetailsDTO>(id);
         }
 
         private static IQueryContainer CreateQuery(string query, FilterOptionsModel filter)

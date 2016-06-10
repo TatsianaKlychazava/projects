@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using ApotekaShop.Services.Models;
 
 namespace ApotekaShop.Services.Interfaces
@@ -13,5 +9,6 @@ namespace ApotekaShop.Services.Interfaces
         void AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails);
         IEnumerable<ProductDetailsDTO> Search(string query, FilterOptionsModel filters);
         void ImportProductDetalils();
+        void Delete(int id);
     }
 }

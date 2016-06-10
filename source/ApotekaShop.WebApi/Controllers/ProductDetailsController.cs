@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
-using System.Web.Http.Results;
-using ApotekaShop.Services;
 using ApotekaShop.Services.Models;
 using ApotekaShop.Services.Interfaces;
 
@@ -54,26 +50,50 @@ namespace ApotekaShop.WebApi.Controllers
         }
 
         // DELETE: api/ProductDetails/5
-        [Route("")]
-        public void Delete(int id)
+        [Route("{id:int}")]
+        [HttpDelete]
+        public IHttpActionResult Delete(int id)
         {
-
+            try
+            {
+                _productDetailsService.Delete(id);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
         }
 
         // GET: api/ProductDetails/Search
         [Route("Search")]
         [HttpGet]
-        public IEnumerable<ProductDetailsDTO> Search([FromUri]string query = "", [FromUri]FilterOptionsModel filters = null)
+        public IHttpActionResult Search([FromUri]string query = "", [FromUri]FilterOptionsModel filters = null)
         {
-            return _productDetailsService.Search(query, filters);
+            List<ProductDetailsDTO> result = _productDetailsService.Search(query, filters).ToList();
+
+            if (result.Any())
+            {
+                return Ok(result);
+            }
+
+            return NotFound();
         } 
 
         //For tests
         [Route("Import")]
         [HttpGet]
-        public void ImportIndex()
+        public IHttpActionResult ImportIndex()
         {
-            _productDetailsService.ImportProductDetalils();
+            try
+            {
+                _productDetailsService.ImportProductDetalils();
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
         }
     }
 }
