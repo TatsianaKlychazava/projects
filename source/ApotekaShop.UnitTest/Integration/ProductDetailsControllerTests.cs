@@ -136,7 +136,23 @@ namespace ApotekaShop.UnitTest.Integration
             });
         }
 
-        
+        [Fact]
+        public void Delete_ProductDetails_ReturnsDone()
+        {
+            var deleteRequest = _apiTestServerFixture.CreateDeletetRequest(string.Format(BaseUrl, 104977));
+
+            _apiTestServerFixture.SendRequest(deleteRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+            });
+
+            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, 104977));
+            _apiTestServerFixture.SendRequest(getRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.NotFound);
+            });
+        }
+
         [Fact]
         public void Search_ProductDetails_ReturnsProductDetail()
         {
@@ -147,27 +163,10 @@ namespace ApotekaShop.UnitTest.Integration
                 Assert.True(message.StatusCode == HttpStatusCode.OK);
             });
         }
-
-        [Fact]
-        public void Delete_ProductDetails_ReturnsDone()
-        {
-            var deleteRequest = _apiTestServerFixture.CreateDeletetRequest("/api/ProductDetails/104977");
-
-            _apiTestServerFixture.SendRequest(deleteRequest, message =>
-            {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
-            });
-            
-            var getRequest = _apiTestServerFixture.CreateGetRequest("/api/ProductDetails/104977");
-            _apiTestServerFixture.SendRequest(getRequest, message =>
-            {
-                Assert.True(message.StatusCode == HttpStatusCode.NotFound);
-            });
-        }
-
+    
         public void Dispose()
         {
-            var removeReques = _apiTestServerFixture.CreateGetRequest("/api/ProductDetails/RemoveIndex");
+            var removeReques = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "RemoveIndex"));
             _apiTestServerFixture.SendRequest(removeReques, message => { });
         }
     }

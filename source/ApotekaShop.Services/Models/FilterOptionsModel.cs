@@ -2,7 +2,9 @@
 {
     public class FilterOptionsModel
     {
-        public double MinPrice { get; set; }
-        public double MaxPrice { get; set; }
+        public int MinPrice { get; set; }
+        public int MaxPrice { get; set; }
+        public int From { get; set; }
+        public int Size { get; set; }
     }
 }

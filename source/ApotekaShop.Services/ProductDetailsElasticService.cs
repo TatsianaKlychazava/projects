@@ -15,6 +15,7 @@ namespace ApotekaShop.Services
     {
         private readonly ElasticClient _elasticClient;
         private readonly IProductDetailsDataProvider _productDetailsDataProvider;
+        private const int DefaultSize = 10;
 
         public ProductDetailsElasticService(IProductDetailsDataProvider productDetailsDataProvider, Uri elasticNode, string defaultIndex)
         {
@@ -50,6 +51,8 @@ namespace ApotekaShop.Services
 
             var searchRequest = new SearchRequest()
             {
+                From = filters.From,
+                Size = filters.Size,
                 Query = queryContainer as QueryContainer
             };
 
@@ -89,7 +92,7 @@ namespace ApotekaShop.Services
                     DefaultField = "_all"
                 };
             }
-
+            
             //set filter
             if (filter != null)
             {
@@ -106,7 +109,13 @@ namespace ApotekaShop.Services
                         .Range(r => r.GreaterThanOrEquals(filter.MinPrice).Field(f => f.NormalizedPrice)
                         );
                 }
+
+                if (filter.Size == 0)
+                {
+                    filter.Size = DefaultSize;
+                }
             }
+
             return queryContainer;
         }
     }
