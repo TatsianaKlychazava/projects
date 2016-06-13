@@ -6,16 +6,18 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using ApotekaShop.Services;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 using ApotekaShop.WebApi;
-using Microsoft.Practices.Unity;
+using ApotekaShop.WebApi.Controllers;
+using Autofac;
+using Autofac.Integration.WebApi;
 using Moq;
 using Newtonsoft.Json;
-using Unity.WebApi;
 using Xunit;
 
 namespace ApotekaShop.UnitTest.Fixtures
@@ -32,28 +34,38 @@ namespace ApotekaShop.UnitTest.Fixtures
         private readonly Mock<HttpContextBase> _context = new Mock<HttpContextBase>();
         private readonly Mock<HttpResponseBase> _response = new Mock<HttpResponseBase>();
         private readonly Mock<IProductDetailsDataProvider> _dataprovider = new Mock<IProductDetailsDataProvider>();
-        protected readonly IUnityContainer _container;
+
 
         public ApiTestServerFixture()
         {
             _config = new HttpConfiguration();
             WebApiConfig.Register(_config);
-          
+
 
             _context.SetupGet(c => c.Response).Returns(_response.Object);
             _response.SetupGet(c => c.Cookies).Returns(_cookies);
-            
-            _container = new UnityContainer();
 
-            string elasticNodeUrl = ConfigurationManager.AppSettings["elasticNodeUrl"]; 
+            string elasticNodeUrl = ConfigurationManager.AppSettings["elasticNodeUrl"];
             string defaultIndex = ConfigurationManager.AppSettings["defaultIndex"];
 
             _dataprovider.Setup(x => x.ImportProductDetalils()).Returns(LoadTestData());
-           
-            _container.RegisterType<IProductDetailsService, ProductDetailsElasticService>(
-                    new InjectionConstructor(_dataprovider.Object, new Uri(elasticNodeUrl), defaultIndex));
+            var builder = new ContainerBuilder();
 
-            _config.DependencyResolver = new UnityDependencyResolver(_container);
+            builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterWebApiFilterProvider(_config);
+
+            builder.RegisterInstance(_dataprovider.Object).As<IProductDetailsDataProvider>();
+            builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsService>()
+                .WithParameter(new TypedParameter(typeof (IProductDetailsDataProvider), _dataprovider.Object))
+                .WithParameter(new TypedParameter(typeof (Uri), new Uri(elasticNodeUrl)))
+                .WithParameter(new TypedParameter(typeof (string), defaultIndex));
+
+            builder.RegisterType<ProductDetailsController>().InstancePerRequest();
+
+            var container = builder.Build();
+
+            _config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+
             _config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
 
             _server = new HttpServer(_config);
@@ -104,6 +116,12 @@ namespace ApotekaShop.UnitTest.Fixtures
             }
         }
 
+        public T GetContent<T>(HttpContent content)
+        {
+            Task<string> responseBody = content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<T>(responseBody.Result);
+        }
+
         private List<ProductDetailsDTO> LoadTestData()
         {
             var assembly = Assembly.GetExecutingAssembly();
@@ -120,7 +138,7 @@ namespace ApotekaShop.UnitTest.Fixtures
 
             return details;
         }
-
+        
         public void Dispose()
         {
             _server.Dispose();

@@ -10,7 +10,7 @@ namespace ApotekaShop.Services.Models
         public string NormalizedUnit { get; set; }
         public string DisplayText { get; set; }
         public int LCID { get; set; }
-        public decimal NormalizedPrice { get; set; }
+        public int? NormalizedPrice { get; set; }
         public string ProductDescription { get; set; }
 
         public IEnumerable<ProductName> ProductNames { get; set; }

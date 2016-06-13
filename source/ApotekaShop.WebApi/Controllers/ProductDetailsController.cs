@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using ApotekaShop.Services.Models;
 using ApotekaShop.Services.Interfaces;
-using Microsoft.Practices.Unity;
 
 namespace ApotekaShop.WebApi.Controllers
 {
@@ -41,6 +40,8 @@ namespace ApotekaShop.WebApi.Controllers
         [HttpPost]
         public async Task<IHttpActionResult> AddOrUpdate([FromBody]IEnumerable<ProductDetailsDTO> productDetails)
         {
+            if (productDetails == null || !productDetails.Any()) return BadRequest();
+
             try
             {
                 await _productDetailsService.AddOrUpdate(productDetails);
