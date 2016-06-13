@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 using ApotekaShop.Services.Models;
 using ApotekaShop.UnitTest.Fixtures;
 using Xunit;
@@ -154,16 +153,128 @@ namespace ApotekaShop.UnitTest.Integration
         }
 
         [Fact]
-        public void Search_ProductDetails_ReturnsProductDetail()
+        public void Search_ProductDetails_WithCorrectEncodedQueryParameter_ReturnsProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest("/api/ProductDetails/Search/?query=aspirin");
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin%20kardio"));
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.True(message.StatusCode == HttpStatusCode.OK);
+                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+                
+                Assert.True(productDetailsList.Count() == 1);
+                Assert.True(productDetailsList.First().ProductNames.First().Name == "aspirin kardio");
             });
         }
-    
+
+        [Fact]
+        public void Search_ProductDetails_WithCorrectQueryParameter_ReturnsProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin kardio"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+                
+                Assert.True(productDetailsList.Count() == 1);
+                Assert.True(productDetailsList.First().ProductNames.First().Name == "aspirin kardio");
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithMinPriceFilter_ReturnsProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?minprice=40000000"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+
+                foreach (var productDetails in productDetailsList)
+                {
+                    Assert.True(productDetails.NormalizedPrice >= 40000000);
+                }
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithMaxPriceFilter_ReturnsProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?maxprice=100000"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+                
+                foreach (var productDetails in productDetailsList)
+                {
+                    Assert.True(productDetails.NormalizedPrice <= 100000);
+                }
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithMinAndMaxPriceFilter_ReturnsProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?minprice=100000&maxprice=40000000"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+
+                foreach (var productDetails in productDetailsList)
+                {
+                    Assert.True(productDetails.NormalizedPrice >= 100000 && productDetails.NormalizedPrice <= 40000000);
+                }
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithIncorrectMinAndMaxPriceFilter_ReturnsNotFound()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?minprice=40000000&maxprice=100000"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+               Assert.True(message.StatusCode == HttpStatusCode.NotFound);        
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithQueryAndMinAndMaxPriceFilter_ReturnsProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=ultravist&minprice=100000&maxprice=40000000"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+
+                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+
+                foreach(var productDetails in productDetailsList)
+                {
+                    Assert.True(productDetails.NormalizedPrice >= 100000 && productDetails.NormalizedPrice <= 40000000);
+                    Assert.True(productDetailsList.First().ProductNames.First().Name == "ultravist");
+                }
+
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithInvalidQueryAndMinAndMaxPriceFilter_ReturnsProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin&minprice=100000&maxprice=40000000"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.NotFound);
+            });
+        }
+
         public void Dispose()
         {
             var removeReques = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "RemoveIndex"));
