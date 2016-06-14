@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
@@ -15,15 +13,17 @@ namespace ApotekaShop.Services
     {
         private readonly ElasticClient _elasticClient;
         private readonly IProductDetailsDataProvider _productDetailsDataProvider;
-        private const int DefaultSize = 10;
+        private ConfigurationSettingsModel _configurationSettings;
 
-        public ProductDetailsElasticService(IProductDetailsDataProvider productDetailsDataProvider, Uri elasticNode, string defaultIndex)
+        public ProductDetailsElasticService(IProductDetailsDataProvider productDetailsDataProvider, IConfigurationSettingsProvider configurationSettingsProvider)
         {
             _productDetailsDataProvider = productDetailsDataProvider;
 
-            var settings = new ConnectionSettings(elasticNode);
+            _configurationSettings = configurationSettingsProvider.GetConfiguration();
 
-            settings.DefaultIndex(defaultIndex);
+            var settings = new ConnectionSettings(_configurationSettings.ElasticNodeUrl);
+
+            settings.DefaultIndex(_configurationSettings.DefaultIndex);
 
             _elasticClient = new ElasticClient(settings);
 
@@ -80,7 +80,7 @@ namespace ApotekaShop.Services
             await _elasticClient.DeleteIndexAsync(_elasticClient.ConnectionSettings.DefaultIndex);
         }
 
-        private static IQueryContainer CreateQuery(string query, FilterOptionsModel filter)
+        private IQueryContainer CreateQuery(string query, FilterOptionsModel filter)
         {
             QueryContainer queryContainer = null;
 
@@ -88,9 +88,10 @@ namespace ApotekaShop.Services
             {
                 queryContainer &= new QueryStringQuery()
                 {
-                    Query = $"{query}*",
+                    Query = $"{query}",
                     DefaultField = "_all",
-                    DefaultOperator = Operator.And
+                    DefaultOperator = Operator.And,
+                    
                 };
             }
             
@@ -113,7 +114,7 @@ namespace ApotekaShop.Services
 
                 if (filter.Size == 0)
                 {
-                    filter.Size = DefaultSize;
+                    filter.Size = _configurationSettings.DefaultPageSize;
                 }
             }
 

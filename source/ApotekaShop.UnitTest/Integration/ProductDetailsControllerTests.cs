@@ -89,6 +89,9 @@ namespace ApotekaShop.UnitTest.Integration
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
                 Assert.True(message.StatusCode == HttpStatusCode.OK);
+                ProductDetailsDTO productDetails = _apiTestServerFixture.GetContent<ProductDetailsDTO>(message.Content);
+
+                Assert.Equal(123456, productDetails.PackageId);
             });
         }
 

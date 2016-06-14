@@ -7,6 +7,7 @@ using ApotekaShop.Services.Interfaces;
 using Autofac;
 using Autofac.Core;
 using Autofac.Integration.WebApi;
+using System.Net;
 
 namespace ApotekaShop.WebApi
 {
@@ -17,18 +18,14 @@ namespace ApotekaShop.WebApi
             var builder = new ContainerBuilder();
 
             var config = GlobalConfiguration.Configuration;
-
-            string elasticNodeUrl = ConfigurationManager.AppSettings["elasticNodeUrl"];
-            string defaultIndex = ConfigurationManager.AppSettings["defaultIndex"];
-            if (string.IsNullOrEmpty(elasticNodeUrl) || string.IsNullOrEmpty(defaultIndex)) throw new Exception("Elastic node Url or default index are not specified in web config");
-
+                     
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterWebApiFilterProvider(config);
 
+            builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>();
             builder.RegisterType<ProductDetailsDataProvider>().As<IProductDetailsDataProvider>();
-            builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsService>()
-                .WithParameter(new TypedParameter(typeof(Uri), new Uri(elasticNodeUrl)))
-                .WithParameter(new TypedParameter(typeof(string), defaultIndex));
+            builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsService>();
+
 
             var container = builder.Build();
 

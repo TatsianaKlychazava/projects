@@ -43,6 +43,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
@@ -53,8 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigurationSettingsProvider.cs" />
+    <Compile Include="Interfaces\IConfigurationSettingsProvider.cs" />
     <Compile Include="Interfaces\IProductDetailsDataProvider.cs" />
     <Compile Include="Interfaces\IProductDetailsService.cs" />
+    <Compile Include="Models\ConfigurationSettingsModel.cs" />
     <Compile Include="Models\FilterOptionsModel.cs" />
     <Compile Include="Models\ProductDetailsDTO.cs" />
     <Compile Include="ProductDetailsDataProvider.cs" />

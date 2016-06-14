@@ -35,7 +35,6 @@ namespace ApotekaShop.UnitTest.Fixtures
         private readonly Mock<HttpResponseBase> _response = new Mock<HttpResponseBase>();
         private readonly Mock<IProductDetailsDataProvider> _dataprovider = new Mock<IProductDetailsDataProvider>();
 
-
         public ApiTestServerFixture()
         {
             _config = new HttpConfiguration();
@@ -44,21 +43,17 @@ namespace ApotekaShop.UnitTest.Fixtures
 
             _context.SetupGet(c => c.Response).Returns(_response.Object);
             _response.SetupGet(c => c.Cookies).Returns(_cookies);
-
-            string elasticNodeUrl = ConfigurationManager.AppSettings["elasticNodeUrl"];
-            string defaultIndex = ConfigurationManager.AppSettings["defaultIndex"];
-
             _dataprovider.Setup(x => x.ImportProductDetalils()).Returns(LoadTestData());
+
             var builder = new ContainerBuilder();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterWebApiFilterProvider(_config);
 
+            builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>();
             builder.RegisterInstance(_dataprovider.Object).As<IProductDetailsDataProvider>();
             builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsService>()
-                .WithParameter(new TypedParameter(typeof (IProductDetailsDataProvider), _dataprovider.Object))
-                .WithParameter(new TypedParameter(typeof (Uri), new Uri(elasticNodeUrl)))
-                .WithParameter(new TypedParameter(typeof (string), defaultIndex));
+                .WithParameter(new TypedParameter(typeof (IProductDetailsDataProvider), _dataprovider.Object));
 
             builder.RegisterType<ProductDetailsController>().InstancePerRequest();
 
