@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ApotekaShop.Services.Models
 {
@@ -8,5 +9,11 @@ namespace ApotekaShop.Services.Models
         public string DefaultIndex { get; set; }
         public int MinQueryLength { get; set; }
         public int DefaultPageSize { get; set; }
+
+        public Dictionary<string, string> FilterOptions = new Dictionary<string, string>()
+        {
+            { "price", "normalizedPrice" },
+            { "size", "normalizedPackageSize"}
+        };
     }
 }
