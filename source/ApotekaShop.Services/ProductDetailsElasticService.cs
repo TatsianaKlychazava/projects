@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApotekaShop.Services.Interfaces;
@@ -50,19 +51,38 @@ namespace ApotekaShop.Services
         public async Task<IEnumerable<ProductDetailsDTO>> Search(string query, FilterOptionsModel filters)
         {
             IQueryContainer queryContainer = CreateQuery(query, filters);
-
-            var searchRequest = new SearchRequest()
+            List<ISort> sortFields = CreateSortFields(filters);
+            var searchRequest = new SearchRequest<ProductDetailsDTO>()
             {
-                From = filters.From,
-                Size = filters.Size,
-                Query = queryContainer as QueryContainer
+                From = filters.PageFrom * filters.PageSize,
+                Size = filters.PageSize,
+                Query = queryContainer as QueryContainer,
+                Sort = sortFields
             };
 
             ISearchResponse<ProductDetailsDTO> result = await _elasticClient.SearchAsync<ProductDetailsDTO>(searchRequest);
-
+            
             return result.Documents;
         }
 
+        private List<ISort> CreateSortFields(FilterOptionsModel filter)
+        {
+            if (string.IsNullOrEmpty(filter.OrderBy) ||
+                filter.Order == null ||
+                !_configurationSettings.FilterOptions.ContainsKey(filter.OrderBy.ToLower())) return null;
+
+            var sorts = new List<ISort>()
+            {
+                new SortField()
+                {
+                    Order = (SortOrder)(int)filter.Order,
+                    Field = _configurationSettings.FilterOptions[filter.OrderBy.ToLower()]  
+                }
+            };
+
+            return sorts;
+        }
+    
         /// <summary>
         /// Implementation for testing stage
         /// </summary>
@@ -114,9 +134,9 @@ namespace ApotekaShop.Services
                         );
                 }
 
-                if (filter.Size == 0)
+                if (filter.PageSize == 0)
                 {
-                    filter.Size = _configurationSettings.DefaultPageSize;
+                    filter.PageSize = _configurationSettings.DefaultPageSize;
                 }
             }
 
