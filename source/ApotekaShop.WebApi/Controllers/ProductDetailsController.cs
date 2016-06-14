@@ -82,10 +82,10 @@ namespace ApotekaShop.WebApi.Controllers
                 return BadRequest(string.Format("Query string contains less than {0} characters", _configSettings.MinQueryLength));
             }
 
-            if (string.IsNullOrEmpty(filters.OrderBy) || !_configSettings.FilterOptions.ContainsKey(filters.OrderBy.ToLower()))
-            {
-                return BadRequest("Incorrect orderBy value");
-            }
+            //if (string.IsNullOrEmpty(filters.OrderBy) || !_configSettings.FilterOptions.ContainsKey(filters.OrderBy.ToLower()))
+            //{
+            //    return BadRequest("Incorrect orderBy value");
+            //}
 
             List<ProductDetailsDTO> result = (await _productDetailsService.Search(query, filters)).ToList();
 

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
 using ApotekaShop.Services.Models;
 using ApotekaShop.UnitTest.Extensions;
 using ApotekaShop.UnitTest.Fixtures;
@@ -23,18 +25,18 @@ namespace ApotekaShop.UnitTest.Integration
             _apiTestServerFixture = apiTestServerFixture;
             _output = output;
 
-            _output.WriteLine("Prepare Index.");
-            var importRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "ImportIndex"));
+            //_output.WriteLine("Prepare Index.");
+            //var importRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "ImportIndex"));
 
-            _apiTestServerFixture.SendRequest(importRequest, message =>
-            {
-                if (!message.IsSuccessStatusCode)
-                {
-                    throw new Exception("Can't import data");
-                }
-                var result = message.Content.GetContent<ElasticBulkOperationResult>();
-                _output.WriteLine(result.ToJson());
-            });
+            //_apiTestServerFixture.SendRequest(importRequest, message =>
+            //{
+            //    if (!message.IsSuccessStatusCode)
+            //    {
+            //        throw new Exception("Can't import data");
+            //    }
+            //    var result = message.Content.GetContent<ElasticBulkOperationResult>();
+            //    _output.WriteLine(result.ToJson());
+            //});
         }
 
         [Fact]
@@ -44,9 +46,9 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
 
-                ProductDetailsDTO productDetails = _apiTestServerFixture.GetContent<ProductDetailsDTO>(message.Content);
+                ProductDetailsDTO productDetails = message.Content.GetContent<ProductDetailsDTO>();
 
                 Assert.Equal(IdForSearch, productDetails.PackageId);
             });
@@ -59,18 +61,18 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.NotFound);
+                Assert.Equal(HttpStatusCode.NotFound, message.StatusCode);
             });
         }
 
         [Fact]
         public void Get_ProductDetailsById_WithEmptyId_ReturnsBadReques()
         {
-            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, ""));
+            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, string.Empty));
 
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.MethodNotAllowed);
+                Assert.Equal(HttpStatusCode.MethodNotAllowed, message.StatusCode);
             });
         }
 
@@ -86,20 +88,21 @@ namespace ApotekaShop.UnitTest.Integration
                 }
             };
 
-            var postRequest = _apiTestServerFixture.CreatePostRequest(string.Format(BaseUrl, ""), details);
+            var postRequest = _apiTestServerFixture.CreatePostRequest(string.Format(BaseUrl, string.Empty), details);
 
             _apiTestServerFixture.SendRequest(postRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
             });
 
-            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, 123456));
+            var id = 123456;
+            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, id));
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
-                ProductDetailsDTO productDetails = _apiTestServerFixture.GetContent<ProductDetailsDTO>(message.Content);
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
+                ProductDetailsDTO productDetails = message.Content.GetContent<ProductDetailsDTO>();
 
-                Assert.Equal(123456, productDetails.PackageId);
+                Assert.Equal(id, productDetails.PackageId);
             });
         }
 
@@ -107,10 +110,10 @@ namespace ApotekaShop.UnitTest.Integration
         public void Post_ProductDetails_WithEmptyBody_ReturnsBadReques()
         {
 
-            var postRequest = _apiTestServerFixture.CreatePostRequest(string.Format(BaseUrl, ""), null);
+            var postRequest = _apiTestServerFixture.CreatePostRequest(string.Format(BaseUrl, string.Empty), null);
             _apiTestServerFixture.SendRequest(postRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.BadRequest);
+                Assert.Equal(HttpStatusCode.BadRequest, message.StatusCode);
             });
         }
 
@@ -126,20 +129,20 @@ namespace ApotekaShop.UnitTest.Integration
                 }
             };
 
-            var postRequest = _apiTestServerFixture.CreatePostRequest(string.Format(BaseUrl, ""), details);
+            var postRequest = _apiTestServerFixture.CreatePostRequest(string.Format(BaseUrl, string.Empty), details);
 
             _apiTestServerFixture.SendRequest(postRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
             });
 
             var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, IdForSearch));
 
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
 
-                ProductDetailsDTO productDetails = _apiTestServerFixture.GetContent<ProductDetailsDTO>(message.Content);
+                ProductDetailsDTO productDetails = message.Content.GetContent<ProductDetailsDTO>();
 
                 Assert.Equal(IdForSearch, productDetails.PackageId);
                 Assert.Equal(100, productDetails.ProductId);
@@ -149,17 +152,18 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Delete_ProductDetails_ReturnsDone()
         {
-            var deleteRequest = _apiTestServerFixture.CreateDeletetRequest(string.Format(BaseUrl, 104977));
+            var id = 104977;
+            var deleteRequest = _apiTestServerFixture.CreateDeletetRequest(string.Format(BaseUrl, id));
 
             _apiTestServerFixture.SendRequest(deleteRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
             });
 
             var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, 104977));
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.NotFound);
+                Assert.Equal(HttpStatusCode.NotFound, message.StatusCode);
             });
         }
 
@@ -170,11 +174,11 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
-                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
+                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
 
-                Assert.True(productDetailsList.Count() == 1);
-                Assert.True(productDetailsList.First().ProductNames.First().Name == "aspirin kardio");
+                Assert.Single(productDetailsList);
+                Assert.Equal("aspirin kardio", productDetailsList.First().ProductNames.First().Name);
             });
         }
 
@@ -185,11 +189,11 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
-                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
+                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
 
-                Assert.True(productDetailsList.Count() == 1);
-                Assert.True(productDetailsList.First().ProductNames.First().Name == "aspirin kardio");
+                Assert.Single(productDetailsList);
+                Assert.Equal("aspirin kardio", productDetailsList.First().ProductNames.First().Name);
             });
         }
 
@@ -200,13 +204,10 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
-                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
+                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
 
-                foreach (var productDetails in productDetailsList)
-                {
-                    Assert.True(productDetails.NormalizedPrice >= 4000);
-                }
+                Assert.All(productDetailsList, x => Assert.True(x.NormalizedPrice >= 4000));
             });
         }
 
@@ -217,13 +218,11 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
-                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
+                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
 
-                foreach (var productDetails in productDetailsList)
-                {
-                    Assert.True(productDetails.NormalizedPrice <= 5000);
-                }
+                Assert.All(productDetailsList, x => Assert.True(x.NormalizedPrice <= 5000));
+
             });
         }
 
@@ -234,13 +233,10 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
-                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
+                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
 
-                foreach (var productDetails in productDetailsList)
-                {
-                    Assert.True(productDetails.NormalizedPrice >= 4000 && productDetails.NormalizedPrice <= 5000);
-                }
+                Assert.All(productDetailsList, x => Assert.True(x.NormalizedPrice >= 4000 && x.NormalizedPrice <= 5000));
             });
         }
 
@@ -251,7 +247,7 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.NotFound);
+                Assert.Equal(HttpStatusCode.NotFound, message.StatusCode);
             });
         }
 
@@ -262,16 +258,15 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
 
-                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
 
-                foreach (var productDetails in productDetailsList)
+                Assert.All(productDetailsList, x =>
                 {
-                    Assert.True(productDetails.NormalizedPrice >= 100000 && productDetails.NormalizedPrice <= 40000000);
-                    Assert.True(productDetailsList.First().ProductNames.First().Name == "ultravist");
-                }
-
+                    Assert.True(x.NormalizedPrice >= 100000 && x.NormalizedPrice <= 40000000);
+                    Assert.Equal("ultravist", productDetailsList.First().ProductNames.First().Name);
+                });
             });
         }
 
@@ -282,7 +277,7 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.NotFound);
+                Assert.Equal(HttpStatusCode.NotFound, message.StatusCode);
             });
         }
 
@@ -293,7 +288,7 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.BadRequest);
+                Assert.Equal(HttpStatusCode.BadRequest, message.StatusCode);
             });
         }
 
@@ -304,14 +299,14 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
-                Assert.True(message.StatusCode == HttpStatusCode.BadRequest);
+                Assert.Equal(HttpStatusCode.BadRequest, message.StatusCode);
             });
         }
 
         public void Dispose()
         {
-            var removeReques = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "RemoveIndex"));
-            _apiTestServerFixture.SendRequest(removeReques, message => { });
+            //var removeReques = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "RemoveIndex"));
+            //_apiTestServerFixture.SendRequest(removeReques, message => { });
         }
     }
 }

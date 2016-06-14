@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 using Nest;
+using SortOrder = Nest.SortOrder;
 
 namespace ApotekaShop.Services
 {
@@ -75,7 +76,7 @@ namespace ApotekaShop.Services
             {
                 new SortField()
                 {
-                    Order = (SortOrder)(int)filter.Order,
+                    Order = (SortOrder)filter.Order,
                     Field = _configurationSettings.FilterOptions[filter.OrderBy.ToLower()]  
                 }
             };
