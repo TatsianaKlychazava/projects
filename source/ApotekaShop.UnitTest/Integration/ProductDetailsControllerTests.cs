@@ -188,7 +188,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithMinPriceFilter_ReturnsProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?minprice=40000000"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&minPrice=4000"));
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -197,7 +197,7 @@ namespace ApotekaShop.UnitTest.Integration
 
                 foreach (var productDetails in productDetailsList)
                 {
-                    Assert.True(productDetails.NormalizedPrice >= 40000000);
+                    Assert.True(productDetails.NormalizedPrice >= 4000);
                 }
             });
         }
@@ -205,7 +205,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithMaxPriceFilter_ReturnsProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?maxprice=100000"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&maxPrice=5000"));
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -214,7 +214,7 @@ namespace ApotekaShop.UnitTest.Integration
                 
                 foreach (var productDetails in productDetailsList)
                 {
-                    Assert.True(productDetails.NormalizedPrice <= 100000);
+                    Assert.True(productDetails.NormalizedPrice <= 5000);
                 }
             });
         }
@@ -222,7 +222,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithMinAndMaxPriceFilter_ReturnsProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?minprice=100000&maxprice=40000000"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&minprice=4000&maxprice=5000"));
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -231,7 +231,7 @@ namespace ApotekaShop.UnitTest.Integration
 
                 foreach (var productDetails in productDetailsList)
                 {
-                    Assert.True(productDetails.NormalizedPrice >= 100000 && productDetails.NormalizedPrice <= 40000000);
+                    Assert.True(productDetails.NormalizedPrice >= 4000 && productDetails.NormalizedPrice <= 5000);
                 }
             });
         }
@@ -239,7 +239,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithIncorrectMinAndMaxPriceFilter_ReturnsNotFound()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?minprice=40000000&maxprice=100000"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&minprice=5000&maxprice=4000"));
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -275,6 +275,28 @@ namespace ApotekaShop.UnitTest.Integration
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.True(message.StatusCode == HttpStatusCode.NotFound);
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithEmptyQueryString_ReturnsBadRequest()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query= "));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.BadRequest);
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithInvalidQueryString_ReturnsBadRequest()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=as"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.BadRequest);
             });
         }
 
