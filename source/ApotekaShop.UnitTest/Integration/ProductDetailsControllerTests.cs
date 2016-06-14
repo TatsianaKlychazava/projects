@@ -3,21 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using ApotekaShop.Services.Models;
+using ApotekaShop.UnitTest.Extensions;
 using ApotekaShop.UnitTest.Fixtures;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace ApotekaShop.UnitTest.Integration
 {
-    public class ProductDetailsControllerTests: IClassFixture<ApiTestServerFixture>, IDisposable
+    public class ProductDetailsControllerTests : IClassFixture<ApiTestServerFixture>, IDisposable
     {
         private readonly ApiTestServerFixture _apiTestServerFixture;
         private const int IdForSearch = 114315;
         private const string BaseUrl = "/api/ProductDetails/{0}";
+        private readonly ITestOutputHelper _output;
 
-        public ProductDetailsControllerTests(ApiTestServerFixture apiTestServerFixture)
+
+        public ProductDetailsControllerTests(ApiTestServerFixture apiTestServerFixture, ITestOutputHelper output)
         {
             _apiTestServerFixture = apiTestServerFixture;
+            _output = output;
 
+            _output.WriteLine("Prepare Index.");
             var importRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "ImportIndex"));
 
             _apiTestServerFixture.SendRequest(importRequest, message =>
@@ -26,7 +32,9 @@ namespace ApotekaShop.UnitTest.Integration
                 {
                     throw new Exception("Can't import data");
                 }
-            } );
+                var result = message.Content.GetContent<ElasticBulkOperationResult>();
+                _output.WriteLine(result.ToJson());
+            });
         }
 
         [Fact]
@@ -58,7 +66,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Get_ProductDetailsById_WithEmptyId_ReturnsBadReques()
         {
-            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl,""));
+            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, ""));
 
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
@@ -98,7 +106,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Post_ProductDetails_WithEmptyBody_ReturnsBadReques()
         {
-            
+
             var postRequest = _apiTestServerFixture.CreatePostRequest(string.Format(BaseUrl, ""), null);
             _apiTestServerFixture.SendRequest(postRequest, message =>
             {
@@ -164,7 +172,7 @@ namespace ApotekaShop.UnitTest.Integration
             {
                 Assert.True(message.StatusCode == HttpStatusCode.OK);
                 List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
-                
+
                 Assert.True(productDetailsList.Count() == 1);
                 Assert.True(productDetailsList.First().ProductNames.First().Name == "aspirin kardio");
             });
@@ -179,7 +187,7 @@ namespace ApotekaShop.UnitTest.Integration
             {
                 Assert.True(message.StatusCode == HttpStatusCode.OK);
                 List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
-                
+
                 Assert.True(productDetailsList.Count() == 1);
                 Assert.True(productDetailsList.First().ProductNames.First().Name == "aspirin kardio");
             });
@@ -211,7 +219,7 @@ namespace ApotekaShop.UnitTest.Integration
             {
                 Assert.True(message.StatusCode == HttpStatusCode.OK);
                 List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
-                
+
                 foreach (var productDetails in productDetailsList)
                 {
                     Assert.True(productDetails.NormalizedPrice <= 5000);
@@ -243,7 +251,7 @@ namespace ApotekaShop.UnitTest.Integration
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
-               Assert.True(message.StatusCode == HttpStatusCode.NotFound);        
+                Assert.True(message.StatusCode == HttpStatusCode.NotFound);
             });
         }
 
@@ -258,7 +266,7 @@ namespace ApotekaShop.UnitTest.Integration
 
                 List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
 
-                foreach(var productDetails in productDetailsList)
+                foreach (var productDetails in productDetailsList)
                 {
                     Assert.True(productDetails.NormalizedPrice >= 100000 && productDetails.NormalizedPrice <= 40000000);
                     Assert.True(productDetailsList.First().ProductNames.First().Name == "ultravist");

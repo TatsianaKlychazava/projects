@@ -46,8 +46,8 @@ namespace ApotekaShop.WebApi.Controllers
 
             try
             {
-                await _productDetailsService.AddOrUpdate(productDetails);
-                return Ok(DONE);
+                var result = await _productDetailsService.AddOrUpdate(productDetails);
+                return Ok(result);
             }
             catch (Exception e)
             {
@@ -99,8 +99,8 @@ namespace ApotekaShop.WebApi.Controllers
         {
             try
             {
-                await _productDetailsService.ImportProductDetalils();
-                return Ok(DONE);
+                var result = await _productDetailsService.ImportProductDetalils();
+                return Ok(result);
             }
             catch (Exception e)
             {
