@@ -14,10 +14,12 @@ namespace ApotekaShop.WebApi.Controllers
         private const string DONE = "Done";
 
         private readonly IProductDetailsService _productDetailsService;
+        private readonly ConfigurationSettingsModel _configSettings;
 
-        public ProductDetailsController(IProductDetailsService productDetailsService)
+        public ProductDetailsController(IProductDetailsService productDetailsService, IConfigurationSettingsProvider configSettingsProvider)
         {
             _productDetailsService = productDetailsService;
+            _configSettings = configSettingsProvider.GetConfiguration();
         }
 
         // GET: api/ProductDetails/5
@@ -75,6 +77,11 @@ namespace ApotekaShop.WebApi.Controllers
         [HttpGet]
         public async Task<IHttpActionResult> Search([FromUri]string query = "", [FromUri]FilterOptionsModel filters = null)
         {
+            if(string.IsNullOrEmpty(query) ||query.Length < _configSettings.MinQueryLength)
+            {
+                return BadRequest(string.Format("Query string contains less than {0} characters", _configSettings.MinQueryLength));
+            }
+
             List<ProductDetailsDTO> result = (await _productDetailsService.Search(query, filters)).ToList();
 
             if (result.Any())

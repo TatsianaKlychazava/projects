@@ -22,7 +22,7 @@ namespace ApotekaShop.WebApi
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterWebApiFilterProvider(config);
 
-            builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>();
+            builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>().InstancePerRequest();
             builder.RegisterType<ProductDetailsDataProvider>().As<IProductDetailsDataProvider>();
             builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsService>();
 
