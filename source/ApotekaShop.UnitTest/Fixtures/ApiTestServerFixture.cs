@@ -23,7 +23,7 @@ namespace ApotekaShop.UnitTest.Fixtures
 {
     public class ApiTestServerFixture : IDisposable
     {
-        private const string BaseAddress = @"http://localhost";
+        private const string BaseAddress = @"http://localhost/api/ProductDetails/";
         private const string JsonMediaTypeString = "application/json";
 
         private readonly HttpServer _server;
