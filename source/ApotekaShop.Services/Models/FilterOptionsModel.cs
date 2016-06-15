@@ -12,7 +12,7 @@
 
     public enum Order
     {
-        asc = 0,
-        desc = 1
+        Asc = 0,
+        Desc = 1
     }
 }

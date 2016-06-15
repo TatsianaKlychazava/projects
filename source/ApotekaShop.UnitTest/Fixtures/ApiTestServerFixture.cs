@@ -6,34 +6,27 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using ApotekaShop.Services;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
-using ApotekaShop.UnitTest.Extensions;
 using ApotekaShop.WebApi;
 using ApotekaShop.WebApi.Controllers;
 using Autofac;
 using Autofac.Integration.WebApi;
 using Moq;
 using Newtonsoft.Json;
-using Xunit;
-using Xunit.Abstractions;
 using Xunit.Sdk;
 
 namespace ApotekaShop.UnitTest.Fixtures
 {
     public class ApiTestServerFixture : IDisposable
     {
-        private const string _baseAddress = @"http://localhost";
+        private const string BaseAddress = @"http://localhost";
         private const string JsonMediaTypeString = "application/json";
 
         private readonly HttpServer _server;
-        private readonly HttpConfiguration _config;
         private readonly HttpCookieCollection _cookies = new HttpCookieCollection();
         private readonly Mock<HttpContextBase> _context = new Mock<HttpContextBase>();
         private readonly Mock<HttpResponseBase> _response = new Mock<HttpResponseBase>();
@@ -43,10 +36,9 @@ namespace ApotekaShop.UnitTest.Fixtures
 
         public ApiTestServerFixture()
         {
-            _config = new HttpConfiguration();
-            WebApiConfig.Register(_config);
-
-
+            var config = new HttpConfiguration();
+            WebApiConfig.Register(config);
+            
             _context.SetupGet(c => c.Response).Returns(_response.Object);
             _response.SetupGet(c => c.Cookies).Returns(_cookies);
             _dataprovider.Setup(x => x.ImportProductDetalils()).Returns(LoadTestData());
@@ -54,7 +46,7 @@ namespace ApotekaShop.UnitTest.Fixtures
             var builder = new ContainerBuilder();
 
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
-            builder.RegisterWebApiFilterProvider(_config);
+            builder.RegisterWebApiFilterProvider(config);
 
             builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>();
             builder.RegisterInstance(_dataprovider.Object).As<IProductDetailsDataProvider>();
@@ -66,13 +58,12 @@ namespace ApotekaShop.UnitTest.Fixtures
             _container = builder.Build();
 
             InitIndex();
+            
+            config.DependencyResolver = new AutofacWebApiDependencyResolver(_container);
 
+            config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
 
-            _config.DependencyResolver = new AutofacWebApiDependencyResolver(_container);
-
-            _config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
-
-            _server = new HttpServer(_config);
+            _server = new HttpServer(config);
             _client = new HttpClient(_server);
         }
 
@@ -107,7 +98,7 @@ namespace ApotekaShop.UnitTest.Fixtures
         public HttpRequestMessage CreateHttpRequest(string address, object data, HttpMethod method)
         {
             HttpRequestMessage request = new HttpRequestMessage();
-            request.RequestUri = new Uri(_baseAddress + address);
+            request.RequestUri = new Uri(BaseAddress + address);
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(JsonMediaTypeString));
             request.Method = method;
 

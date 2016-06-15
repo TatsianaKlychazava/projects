@@ -40,13 +40,13 @@ namespace ApotekaShop.WebApi.Controllers
         // POST: api/ProductDetails
         [Route("")]
         [HttpPost]
-        public async Task<IHttpActionResult> AddOrUpdate([FromBody]IEnumerable<ProductDetailsDTO> productDetails)
+        public async Task<IHttpActionResult> AddOrUpdate([FromBody]List<ProductDetailsDTO> productDetails)
         {
             if (productDetails == null || !productDetails.Any()) return BadRequest();
 
             try
             {
-                var result = await _productDetailsService.AddOrUpdate(productDetails);
+                ElasticBulkOperationResult result = await _productDetailsService.AddOrUpdate(productDetails);
                 return Ok(result);
             }
             catch (Exception e)
@@ -75,25 +75,21 @@ namespace ApotekaShop.WebApi.Controllers
         // GET: api/ProductDetails/Search
         [Route("Search")]
         [HttpGet]
-        public async Task<IHttpActionResult> Search([FromUri]string query = "", [FromUri]FilterOptionsModel filters = null)
+        public async Task<IHttpActionResult> Search([FromUri]string query, [FromUri]FilterOptionsModel filters)
         {
             if(string.IsNullOrEmpty(query) ||query.Length < _configSettings.MinQueryLength)
             {
-                return BadRequest(string.Format("Query string contains less than {0} characters", _configSettings.MinQueryLength));
+                return BadRequest($"Query string contains less than {_configSettings.MinQueryLength} characters");
             }
-
-            //if (string.IsNullOrEmpty(filters.OrderBy) || !_configSettings.FilterOptions.ContainsKey(filters.OrderBy.ToLower()))
-            //{
-            //    return BadRequest("Incorrect orderBy value");
-            //}
+                      
             if (!string.IsNullOrEmpty(filters.OrderBy) && !_configSettings.FilterOptions.ContainsKey(filters.OrderBy.ToLower()))
             {
                 return BadRequest("Incorrect orderBy value");
             }
 
-            List<ProductDetailsDTO> result = (await _productDetailsService.Search(query, filters)).ToList();
+            var result = (await _productDetailsService.Search(query, filters));
 
-            if (result.Any())
+            if (result.Results.Count() != 0)
             {
                 return Ok(result);
             }

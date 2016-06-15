@@ -162,7 +162,7 @@ namespace ApotekaShop.UnitTest.Integration
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
-                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 Assert.Single(productDetailsList);
                 Assert.Equal("aspirin kardio", productDetailsList.First().ProductNames.First().Name);
@@ -177,7 +177,7 @@ namespace ApotekaShop.UnitTest.Integration
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
-                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 Assert.Single(productDetailsList);
                 Assert.Equal("aspirin kardio", productDetailsList.First().ProductNames.First().Name);
@@ -192,7 +192,7 @@ namespace ApotekaShop.UnitTest.Integration
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
-                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 Assert.All(productDetailsList, x => Assert.True(x.NormalizedPrice >= 4000));
             });
@@ -206,10 +206,9 @@ namespace ApotekaShop.UnitTest.Integration
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
-                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 Assert.All(productDetailsList, x => Assert.True(x.NormalizedPrice <= 5000));
-
             });
         }
 
@@ -221,7 +220,7 @@ namespace ApotekaShop.UnitTest.Integration
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
-                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 Assert.All(productDetailsList, x => Assert.True(x.NormalizedPrice >= 4000 && x.NormalizedPrice <= 5000));
             });
@@ -247,7 +246,7 @@ namespace ApotekaShop.UnitTest.Integration
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
 
-                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 Assert.All(productDetailsList, x =>
                 {
@@ -293,13 +292,13 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithOrderByPriceAsc_ReturnsOrderedProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=price&order=asc"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=price&order=Asc"));
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
 
-                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 var expectedList = productDetailsList.OrderBy(x => x.NormalizedPrice);
 
@@ -310,13 +309,13 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithOrderByPriceDesc_ReturnsOrderedProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=price&order=desc"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=price&order=Desc"));
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
 
-                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 var expectedList = productDetailsList.OrderByDescending(x => x.NormalizedPrice);
                 
@@ -327,13 +326,13 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithOrderBySizeAsc_ReturnsOrderedProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=size&order=asc"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=size&order=Asc"));
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
 
-                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 var expectedList = productDetailsList.OrderBy(x => x.NormalizedPackageSize);
                 
@@ -344,13 +343,13 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithOrderBySizeDesc_ReturnsOrderedProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=size&order=desc"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=size&order=Desc"));
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
 
-                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 var expectedList = productDetailsList.OrderByDescending(x => x.NormalizedPackageSize);
                 
@@ -363,23 +362,23 @@ namespace ApotekaShop.UnitTest.Integration
         {
             var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin&pageSize=1&pageFrom=0"));
 
-            List<ProductDetailsDTO> firstPageItems = new List<ProductDetailsDTO>();
+            IEnumerable<ProductDetailsDTO> firstPageItems = new List<ProductDetailsDTO>();
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
 
-                firstPageItems = message.Content.GetContent<List<ProductDetailsDTO>>();
+                firstPageItems = message.Content.GetContent<SearchResultModel>().Results;
             });
 
             searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin&pageSize=1&pageFrom=1"));
 
-            List<ProductDetailsDTO> secondPageItems = new List<ProductDetailsDTO>(); ;
+            IEnumerable<ProductDetailsDTO> secondPageItems = new List<ProductDetailsDTO>(); ;
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
 
-                secondPageItems = message.Content.GetContent<List<ProductDetailsDTO>>();
+                secondPageItems = message.Content.GetContent<SearchResultModel>().Results;
             });
 
             Assert.NotEqual(firstPageItems, secondPageItems);
@@ -401,9 +400,9 @@ namespace ApotekaShop.UnitTest.Integration
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
 
-                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
-                Assert.Equal(productDetailsList.Count, 10);
+                Assert.Equal(productDetailsList.Count(), 10);
             });
 
             searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&pageSize=20"));
@@ -412,9 +411,9 @@ namespace ApotekaShop.UnitTest.Integration
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
 
-                List<ProductDetailsDTO> productDetailsList = message.Content.GetContent<List<ProductDetailsDTO>>();
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
-                Assert.Equal(productDetailsList.Count, 20);
+                Assert.Equal(productDetailsList.Count(), 20);
             });
         }
 

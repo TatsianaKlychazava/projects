@@ -26,11 +26,13 @@ namespace ApotekaShop.Services
 
         private void LoadConfiguration()
         {
-            _current = new ConfigurationSettingsModel();
-            _current.MinQueryLength = int.Parse(ConfigurationManager.AppSettings["minQueryLength"]);
-            _current.ElasticNodeUrl = new Uri(ConfigurationManager.AppSettings["elasticNodeUrl"]);
-            _current.DefaultIndex = ConfigurationManager.AppSettings["defaultIndex"];
-            _current.DefaultPageSize = int.Parse(ConfigurationManager.AppSettings["defaultPageSize"]);
+            _current = new ConfigurationSettingsModel
+            {
+                MinQueryLength = int.Parse(ConfigurationManager.AppSettings["minQueryLength"]),
+                ElasticNodeUrl = new Uri(ConfigurationManager.AppSettings["elasticNodeUrl"]),
+                DefaultIndex = ConfigurationManager.AppSettings["defaultIndex"],
+                DefaultPageSize = int.Parse(ConfigurationManager.AppSettings["defaultPageSize"])
+            };
         }
     }
 }

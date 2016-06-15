@@ -62,6 +62,7 @@
     <Compile Include="Models\FilterOptionsModel.cs" />
     <Compile Include="Models\ProductDetailsDTO.cs" />
     <Compile Include="Models\ElasticBulkOperationResult.cs" />
+    <Compile Include="Models\SearchResultModel.cs" />
     <Compile Include="ProductDetailsDataProvider.cs" />
     <Compile Include="ProductDetailsElasticService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

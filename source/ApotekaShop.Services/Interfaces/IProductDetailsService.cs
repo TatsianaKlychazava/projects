@@ -8,7 +8,7 @@ namespace ApotekaShop.Services.Interfaces
     {
         Task<ProductDetailsDTO> GetByPackageId(int id);
         Task<ElasticBulkOperationResult> AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails);
-        Task<IEnumerable<ProductDetailsDTO>> Search(string query, FilterOptionsModel filters);
+        Task<SearchResultModel> Search(string query, FilterOptionsModel filters);
         Task<ElasticBulkOperationResult> ImportProductDetalils();
         Task Delete(int id);
         Task DeleteIndex();

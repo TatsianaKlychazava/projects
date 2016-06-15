@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApotekaShop.Services.Interfaces;
@@ -16,7 +15,7 @@ namespace ApotekaShop.Services
     {
         private readonly ElasticClient _elasticClient;
         private readonly IProductDetailsDataProvider _productDetailsDataProvider;
-        private ConfigurationSettingsModel _configurationSettings;
+        private readonly ConfigurationSettingsModel _configurationSettings;
 
         public ProductDetailsElasticService(IProductDetailsDataProvider productDetailsDataProvider, IConfigurationSettingsProvider configurationSettingsProvider)
         {
@@ -44,16 +43,20 @@ namespace ApotekaShop.Services
         public async Task<ElasticBulkOperationResult> AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails)
         {
             var descriptor = new BulkDescriptor();
+
             descriptor.Refresh(true);
             descriptor.IndexMany(productDetails, (indexDescriptor, dto) => indexDescriptor.Id(dto.PackageId));
-            var resp = await _elasticClient.BulkAsync(descriptor);
+
+            IBulkResponse resp = await _elasticClient.BulkAsync(descriptor);
+
             return new ElasticBulkOperationResult { HasErrors = resp.Errors, ProcessedCount = resp.Items.Count(), TookMilliseconds = resp.Took };
         }
 
-        public async Task<IEnumerable<ProductDetailsDTO>> Search(string query, FilterOptionsModel filters)
+        public async Task<SearchResultModel> Search(string query, FilterOptionsModel filters)
         {
             IQueryContainer queryContainer = CreateQuery(query, filters);
             List<ISort> sortFields = CreateSortFields(filters);
+
             var searchRequest = new SearchRequest<ProductDetailsDTO>()
             {
                 From = filters.PageFrom * filters.PageSize,
@@ -63,8 +66,13 @@ namespace ApotekaShop.Services
             };
 
             ISearchResponse<ProductDetailsDTO> result = await _elasticClient.SearchAsync<ProductDetailsDTO>(searchRequest);
-            
-            return result.Documents;
+
+            return new SearchResultModel()
+            {
+                Results = result.Documents,
+                TotalResults = result.Total,
+                ExecutionTime = result.Took
+            };
         }
 
         private List<ISort> CreateSortFields(FilterOptionsModel filter)
@@ -73,9 +81,9 @@ namespace ApotekaShop.Services
                 filter.Order == null ||
                 !_configurationSettings.FilterOptions.ContainsKey(filter.OrderBy.ToLower())) return null;
 
-            var sorts = new List<ISort>()
+            var sorts = new List<ISort>
             {
-                new SortField()
+                new SortField
                 {
                     Order = (SortOrder)filter.Order,
                     Field = _configurationSettings.FilterOptions[filter.OrderBy.ToLower()]  
