@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using ApotekaShop.Services.Interfaces;
@@ -81,12 +82,15 @@ namespace ApotekaShop.Services
                 filter.Order == null ||
                 !_configurationSettings.FilterOptions.ContainsKey(filter.OrderBy.ToLower())) return null;
 
+            var field = _configurationSettings.FilterOptions[filter.OrderBy.ToLower()];
+            //Ensure field name is lower camel
+            field = Char.ToLowerInvariant(field[0]) + field.Substring(1);
             var sorts = new List<ISort>
             {
                 new SortField
                 {
                     Order = (SortOrder)filter.Order,
-                    Field = _configurationSettings.FilterOptions[filter.OrderBy.ToLower()]  
+                    Field = field
                 }
             };
 

@@ -12,8 +12,9 @@ namespace ApotekaShop.Services.Models
 
         public Dictionary<string, string> FilterOptions = new Dictionary<string, string>()
         {
-            { "price", "normalizedPrice" },
-            { "size", "normalizedPackageSize"}
+            { "price", nameof(ProductDetailsDTO.NormalizedPrice) },
+            { "size", nameof(ProductDetailsDTO.NormalizedPackageSize)}
         };
+
     }
 }
