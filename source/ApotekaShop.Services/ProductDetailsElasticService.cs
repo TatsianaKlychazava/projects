@@ -42,6 +42,7 @@ namespace ApotekaShop.Services
         public async Task AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails)
         {
             var descriptor = new BulkDescriptor();
+            descriptor.Refresh(true);
             descriptor.IndexMany(productDetails, (indexDescriptor, dto) => indexDescriptor.Id(dto.PackageId));
             await _elasticClient.BulkAsync(descriptor);
         }

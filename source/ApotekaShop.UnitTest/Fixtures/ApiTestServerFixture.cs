@@ -50,7 +50,7 @@ namespace ApotekaShop.UnitTest.Fixtures
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
             builder.RegisterWebApiFilterProvider(_config);
 
-            builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>();
+            builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>().InstancePerRequest();
             builder.RegisterInstance(_dataprovider.Object).As<IProductDetailsDataProvider>();
             builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsService>()
                 .WithParameter(new TypedParameter(typeof (IProductDetailsDataProvider), _dataprovider.Object));

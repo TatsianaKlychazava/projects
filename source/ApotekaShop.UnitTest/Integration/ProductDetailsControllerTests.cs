@@ -5,6 +5,7 @@ using System.Net;
 using ApotekaShop.Services.Models;
 using ApotekaShop.UnitTest.Fixtures;
 using Xunit;
+using System.Threading;
 
 namespace ApotekaShop.UnitTest.Integration
 {
@@ -268,7 +269,7 @@ namespace ApotekaShop.UnitTest.Integration
         }
 
         [Fact]
-        public void Search_ProductDetails_WithInvalidQueryAndMinAndMaxPriceFilter_ReturnsProductDetails()
+        public void Search_ProductDetails_WithInvalidQueryAndMinAndMaxPriceFilter_ReturnsNotFound()
         {
             var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin&minprice=100000&maxprice=40000000"));
 
@@ -299,6 +300,104 @@ namespace ApotekaShop.UnitTest.Integration
                 Assert.True(message.StatusCode == HttpStatusCode.BadRequest);
             });
         }
+
+        [Fact]
+        public void Search_ProductDetails_WithOrderByPriceAsc_ReturnsOrderedProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=price&order=asc"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+
+                var exceptedList = productDetailsList.OrderBy(x => x.NormalizedPrice);
+
+                Assert.True(exceptedList.SequenceEqual(productDetailsList));
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithOrderByPriceDesc_ReturnsOrderedProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=price&order=desc"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+
+                var exceptedList = productDetailsList.OrderByDescending(x => x.NormalizedPrice);
+
+                Assert.True(exceptedList.SequenceEqual(productDetailsList));
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithOrderBySizeAsc_ReturnsOrderedProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=size&order=asc"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+
+                var exceptedList = productDetailsList.OrderBy(x => x.NormalizedPackageSize);
+
+                Assert.True(exceptedList.SequenceEqual(productDetailsList));
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithOrderBySizeDesc_ReturnsOrderedProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=size&order=desc"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                List<ProductDetailsDTO> productDetailsList = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+
+                var exceptedList = productDetailsList.OrderByDescending(x => x.NormalizedPackageSize);
+
+                Assert.True(exceptedList.SequenceEqual(productDetailsList));
+            });
+        }
+       
+        [Fact]
+        public void Search_ProductDetails_WithPaging_ReturnsCorrectPage()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin&pageSize=1&pageFrom=0"));
+
+            List<ProductDetailsDTO> firstPageItems = new List<ProductDetailsDTO>();
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                firstPageItems = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+            });
+
+            searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin&pageSize=1&pageFrom=1"));
+
+            List<ProductDetailsDTO> secondPageItems = new List<ProductDetailsDTO>(); ;
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.OK);
+                secondPageItems = _apiTestServerFixture.GetContent<List<ProductDetailsDTO>>(message.Content);
+            });
+
+            Assert.False(firstPageItems.Equals(secondPageItems));
+
+            searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin&pageSize=1&pageFrom=2"));
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.True(message.StatusCode == HttpStatusCode.NotFound);
+            });
+        }
+
+
 
         public void Dispose()
         {
