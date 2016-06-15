@@ -22,6 +22,11 @@ namespace ApotekaShop.WebApi.Controllers
             _configSettings = configSettingsProvider.GetConfiguration();
         }
 
+        /// <summary>
+        /// Get product details by package id
+        /// </summary>
+        /// <param name="id">Package Id</param>
+        /// <returns></returns>
         // GET: api/ProductDetails/5
         [Route("{id:int}")]
         [HttpGet]
@@ -37,6 +42,11 @@ namespace ApotekaShop.WebApi.Controllers
             return Ok(productDetails);
         }
 
+        /// <summary>
+        /// Add or update product details collection
+        /// </summary>
+        /// <param name="productDetails">Product details collection</param>
+        /// <returns>Add status</returns>
         // POST: api/ProductDetails
         [Route("")]
         [HttpPost]
