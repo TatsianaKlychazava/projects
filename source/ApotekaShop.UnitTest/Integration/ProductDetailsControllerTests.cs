@@ -136,7 +136,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Delete_ProductDetails_ReturnsDone()
         {
-            var id = 104977;
+            var id = 120661;
             var deleteRequest = _apiTestServerFixture.CreateDeletetRequest(id.ToString());
 
             _apiTestServerFixture.SendRequest(deleteRequest, message =>

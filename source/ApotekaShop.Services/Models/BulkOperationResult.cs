@@ -1,6 +1,6 @@
 ﻿namespace ApotekaShop.Services.Models
 {
-    public class ElasticBulkOperationResult
+    public class BulkOperationResult
     {
         public int ProcessedCount { get; set; }
         public bool HasErrors { get; set; }

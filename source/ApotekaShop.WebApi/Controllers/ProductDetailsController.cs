@@ -56,7 +56,7 @@ namespace ApotekaShop.WebApi.Controllers
 
             try
             {
-                ElasticBulkOperationResult result = await _productDetailsService.AddOrUpdate(productDetails);
+                BulkOperationResult result = await _productDetailsService.AddOrUpdate(productDetails);
                 return Ok(result);
             }
             catch (Exception e)

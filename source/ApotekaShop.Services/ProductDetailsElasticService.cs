@@ -40,7 +40,7 @@ namespace ApotekaShop.Services
             return resGet.Source;
         }
 
-        public async Task<ElasticBulkOperationResult> AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails)
+        public async Task<BulkOperationResult> AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails)
         {
             var descriptor = new BulkDescriptor();
 
@@ -49,7 +49,7 @@ namespace ApotekaShop.Services
 
             IBulkResponse resp = await _elasticClient.BulkAsync(descriptor);
 
-            return new ElasticBulkOperationResult { HasErrors = resp.Errors, ProcessedCount = resp.Items.Count(), TookMilliseconds = resp.Took };
+            return new BulkOperationResult { HasErrors = resp.Errors, ProcessedCount = resp.Items.Count(), TookMilliseconds = resp.Took };
         }
 
         public async Task<SearchResultModel> Search(string query, FilterOptionsModel filters)
@@ -93,7 +93,7 @@ namespace ApotekaShop.Services
             return sorts;
         }
     
-        public async Task<ElasticBulkOperationResult> ImportProductDetalils()
+        public async Task<BulkOperationResult> ImportProductDetalils()
         {
             List<ProductDetailsDTO> details = _productDetailsDataProvider.ImportProductDetalils();
             return await AddOrUpdate(details);

@@ -18,7 +18,7 @@ namespace ApotekaShop.Services.Interfaces
         /// </summary>
         /// <param name="productDetails">Product details collection</param>
         /// <returns>Operation result</returns>
-        Task<ElasticBulkOperationResult> AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails);
+        Task<BulkOperationResult> AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails);
 
         /// <summary>
         /// Search product details by query string and filters
@@ -32,7 +32,7 @@ namespace ApotekaShop.Services.Interfaces
         /// Import product details from configured location
         /// </summary>
         /// <returns>Operation result</returns>
-        Task<ElasticBulkOperationResult> ImportProductDetalils();
+        Task<BulkOperationResult> ImportProductDetalils();
 
         /// <summary>
         /// Delete product details by package Id
