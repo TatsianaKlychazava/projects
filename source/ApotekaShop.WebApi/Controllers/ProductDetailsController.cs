@@ -107,35 +107,35 @@ namespace ApotekaShop.WebApi.Controllers
             return NotFound();
         } 
 
-        //For tests
-        [Route("ImportIndex")]
-        [HttpGet]
-        public async Task<IHttpActionResult> ImportIndex()
-        {
-            try
-            {
-                var result = await _productDetailsService.ImportProductDetalils();
-                return Ok(result);
-            }
-            catch (Exception e)
-            {
-                return InternalServerError(e);
-            }
-        }
+        ////Operations on Index
+        //[Route("ImportIndex")]
+        //[HttpGet]
+        //public async Task<IHttpActionResult> ImportIndex()
+        //{
+        //    try
+        //    {
+        //        var result = await _productDetailsService.ImportProductDetalils();
+        //        return Ok(result);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return InternalServerError(e);
+        //    }
+        //}
 
-        [Route("RemoveIndex")]
-        [HttpGet]
-        public async Task<IHttpActionResult> RemoveIndex()
-        {
-            try
-            {
-                await _productDetailsService.DeleteIndex();
-                return Ok(DONE);
-            }
-            catch (Exception e)
-            {
-                return InternalServerError(e);
-            }
-        }
+        //[Route("RemoveIndex")]
+        //[HttpGet]
+        //public async Task<IHttpActionResult> RemoveIndex()
+        //{
+        //    try
+        //    {
+        //        await _productDetailsService.DeleteIndex();
+        //        return Ok(DONE);
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return InternalServerError(e);
+        //    }
+        //}
     }
 }
