@@ -75,6 +75,10 @@ namespace ApotekaShop.UnitTest.Fixtures
                 throw new TestClassException("Cannot create initial index.");
         }
 
+        public HttpRequestMessage CreateGetRequest(object address)
+        {
+            return CreateHttpRequest(address.ToString(), null, HttpMethod.Get);
+        }
         public HttpRequestMessage CreateGetRequest(string address)
         {
             return CreateHttpRequest(address, null, HttpMethod.Get);

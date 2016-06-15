@@ -16,7 +16,6 @@ namespace ApotekaShop.UnitTest.Integration
     {
         private readonly ApiTestServerFixture _apiTestServerFixture;
         private const int IdForSearch = 114315;
-        private const string BaseUrl = "/api/ProductDetails/{0}";
         private readonly ITestOutputHelper _output;
 
 
@@ -26,10 +25,11 @@ namespace ApotekaShop.UnitTest.Integration
             _output = output;
         }
 
+        #region Core functionality
         [Fact]
         public void Get_ProductDetailsById_WithCorrectId_ReturnsProductDetailsWithSelectedId()
         {
-            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, IdForSearch));
+            var getRequest = _apiTestServerFixture.CreateGetRequest(IdForSearch);
 
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
@@ -44,7 +44,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Get_ProductDetailsById_WithIncorrectId_ReturnsNotFoundResult()
         {
-            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, 123));
+            var getRequest = _apiTestServerFixture.CreateGetRequest("0");
 
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
@@ -55,14 +55,13 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Get_ProductDetailsById_WithEmptyId_ReturnsBadReques()
         {
-            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, string.Empty));
+            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Empty);
 
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.MethodNotAllowed, message.StatusCode);
             });
         }
-
 
         [Fact]
         public void Post_ProductDetails_WithNewData_ProductDetailsAdded()
@@ -75,7 +74,7 @@ namespace ApotekaShop.UnitTest.Integration
                 }
             };
 
-            var postRequest = _apiTestServerFixture.CreatePostRequest(string.Format(BaseUrl, string.Empty), details);
+            var postRequest = _apiTestServerFixture.CreatePostRequest(string.Empty, details);
 
             _apiTestServerFixture.SendRequest(postRequest, message =>
             {
@@ -83,7 +82,7 @@ namespace ApotekaShop.UnitTest.Integration
             });
 
             var id = 123456;
-            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, id));
+            var getRequest = _apiTestServerFixture.CreateGetRequest($"{id}");
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
@@ -97,7 +96,7 @@ namespace ApotekaShop.UnitTest.Integration
         public void Post_ProductDetails_WithEmptyBody_ReturnsBadReques()
         {
 
-            var postRequest = _apiTestServerFixture.CreatePostRequest(string.Format(BaseUrl, string.Empty), null);
+            var postRequest = _apiTestServerFixture.CreatePostRequest(string.Empty, null);
             _apiTestServerFixture.SendRequest(postRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.BadRequest, message.StatusCode);
@@ -116,14 +115,14 @@ namespace ApotekaShop.UnitTest.Integration
                 }
             };
 
-            var postRequest = _apiTestServerFixture.CreatePostRequest(string.Format(BaseUrl, string.Empty), details);
+            var postRequest = _apiTestServerFixture.CreatePostRequest(string.Empty, details);
 
             _apiTestServerFixture.SendRequest(postRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
             });
 
-            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, IdForSearch));
+            var getRequest = _apiTestServerFixture.CreateGetRequest(IdForSearch);
 
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
@@ -140,24 +139,26 @@ namespace ApotekaShop.UnitTest.Integration
         public void Delete_ProductDetails_ReturnsDone()
         {
             var id = 104977;
-            var deleteRequest = _apiTestServerFixture.CreateDeletetRequest(string.Format(BaseUrl, id));
+            var deleteRequest = _apiTestServerFixture.CreateDeletetRequest(id.ToString());
 
             _apiTestServerFixture.SendRequest(deleteRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.OK, message.StatusCode);
             });
 
-            var getRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, 104977));
+            var getRequest = _apiTestServerFixture.CreateGetRequest(104977.ToString());
             _apiTestServerFixture.SendRequest(getRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.NotFound, message.StatusCode);
             });
-        }
+        } 
+        #endregion
 
+        #region Search simple
         [Fact]
         public void Search_ProductDetails_WithCorrectEncodedQueryParameter_ReturnsProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin%20kardio"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=aspirin%20kardio");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -172,7 +173,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithCorrectQueryParameter_ReturnsProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin kardio"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=aspirin kardio");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -182,12 +183,14 @@ namespace ApotekaShop.UnitTest.Integration
                 Assert.Single(productDetailsList);
                 Assert.Equal("aspirin kardio", productDetailsList.First().ProductNames.First().Name);
             });
-        }
+        } 
+        #endregion
 
+        #region Search with filtering
         [Fact]
         public void Search_ProductDetails_WithMinPriceFilter_ReturnsProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&minPrice=4000"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne&minPrice=4000");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -201,7 +204,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithMaxPriceFilter_ReturnsProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&maxPrice=5000"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne&maxPrice=5000");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -215,7 +218,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithMinAndMaxPriceFilter_ReturnsProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&minprice=4000&maxprice=5000"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne&minprice=4000&maxprice=5000");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -229,7 +232,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithIncorrectMinAndMaxPriceFilter_ReturnsNotFound()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&minprice=5000&maxprice=4000"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne&minprice=5000&maxprice=4000");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -240,7 +243,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithQueryAndMinAndMaxPriceFilter_ReturnsProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=ultravist&minprice=100000&maxprice=40000000"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=ultravist&minprice=100000&maxprice=40000000");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -259,7 +262,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithInvalidQueryAndMinAndMaxPriceFilter_ReturnsNotFound()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin&minprice=100000&maxprice=40000000"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=aspirin&minprice=100000&maxprice=40000000");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -270,7 +273,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithEmptyQueryString_ReturnsBadRequest()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query= "));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query= ");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -281,18 +284,20 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithInvalidQueryString_ReturnsBadRequest()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=as"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=as");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
                 Assert.Equal(HttpStatusCode.BadRequest, message.StatusCode);
             });
-        }
+        } 
+        #endregion
 
+        #region Search with ordering
         [Fact]
         public void Search_ProductDetails_WithOrderByPriceAsc_ReturnsOrderedProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=price&order=Asc"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne&orderBy=price&order=asc");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -309,7 +314,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithOrderByPriceDesc_ReturnsOrderedProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=price&order=Desc"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne&orderBy=price&order=desc");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -318,7 +323,7 @@ namespace ApotekaShop.UnitTest.Integration
                 IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 var expectedList = productDetailsList.OrderByDescending(x => x.NormalizedPrice);
-                
+
                 Assert.Equal(expectedList, productDetailsList);
             });
         }
@@ -326,7 +331,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithOrderBySizeAsc_ReturnsOrderedProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=size&order=Asc"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne&orderBy=size&order=asc");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -335,7 +340,7 @@ namespace ApotekaShop.UnitTest.Integration
                 IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 var expectedList = productDetailsList.OrderBy(x => x.NormalizedPackageSize);
-                
+
                 Assert.Equal(expectedList, productDetailsList);
             });
         }
@@ -343,7 +348,7 @@ namespace ApotekaShop.UnitTest.Integration
         [Fact]
         public void Search_ProductDetails_WithOrderBySizeDesc_ReturnsOrderedProductDetails()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&orderBy=size&order=Desc"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne&orderBy=size&order=desc");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -352,15 +357,17 @@ namespace ApotekaShop.UnitTest.Integration
                 IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
 
                 var expectedList = productDetailsList.OrderByDescending(x => x.NormalizedPackageSize);
-                
+
                 Assert.Equal(expectedList, productDetailsList);
             });
         }
-       
+        #endregion
+
+        #region Search with paging
         [Fact]
         public void Search_ProductDetails_WithPaging_ReturnsCorrectPage()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin&pageSize=1&pageFrom=0"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=aspirin&pageSize=1&pageFrom=0");
 
             IEnumerable<ProductDetailsDTO> firstPageItems = new List<ProductDetailsDTO>();
 
@@ -371,7 +378,7 @@ namespace ApotekaShop.UnitTest.Integration
                 firstPageItems = message.Content.GetContent<SearchResultModel>().Results;
             });
 
-            searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin&pageSize=1&pageFrom=1"));
+            searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=aspirin&pageSize=1&pageFrom=1");
 
             IEnumerable<ProductDetailsDTO> secondPageItems = new List<ProductDetailsDTO>(); ;
             _apiTestServerFixture.SendRequest(searchRequest, message =>
@@ -383,7 +390,7 @@ namespace ApotekaShop.UnitTest.Integration
 
             Assert.NotEqual(firstPageItems, secondPageItems);
 
-            searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=aspirin&pageSize=1&pageFrom=2"));
+            searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=aspirin&pageSize=1&pageFrom=2");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -392,9 +399,9 @@ namespace ApotekaShop.UnitTest.Integration
         }
 
         [Fact]
-        public void Search_ProductDetails_WithPaging_ReturnsItensCount()
+        public void Search_ProductDetails_WithPaging_ReturnsItemsCount()
         {
-            var searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&pageSize=10"));
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne&pageSize=10");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -405,7 +412,7 @@ namespace ApotekaShop.UnitTest.Integration
                 Assert.Equal(productDetailsList.Count(), 10);
             });
 
-            searchRequest = _apiTestServerFixture.CreateGetRequest(string.Format(BaseUrl, "Search/?query=migræne&pageSize=20"));
+            searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne&pageSize=20");
 
             _apiTestServerFixture.SendRequest(searchRequest, message =>
             {
@@ -415,7 +422,8 @@ namespace ApotekaShop.UnitTest.Integration
 
                 Assert.Equal(productDetailsList.Count(), 20);
             });
-        }
+        } 
+        #endregion
 
         public void Dispose()
         {
