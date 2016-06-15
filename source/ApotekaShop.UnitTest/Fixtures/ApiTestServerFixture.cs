@@ -29,7 +29,7 @@ namespace ApotekaShop.UnitTest.Fixtures
 {
     public class ApiTestServerFixture : IDisposable
     {
-        private const string _baseAddress = @"http://localhost";
+        private const string _baseAddress = @"http://localhost/api/ProductDetails/";
         private const string JsonMediaTypeString = "application/json";
 
         private readonly HttpServer _server;
@@ -84,6 +84,10 @@ namespace ApotekaShop.UnitTest.Fixtures
                 throw new TestClassException("Cannot create initial index.");
         }
 
+        public HttpRequestMessage CreateGetRequest(object address)
+        {
+            return CreateHttpRequest(address.ToString(), null, HttpMethod.Get);
+        }
         public HttpRequestMessage CreateGetRequest(string address)
         {
             return CreateHttpRequest(address, null, HttpMethod.Get);
