@@ -36,8 +36,8 @@ namespace ApotekaShop.Services
 
         public async Task<ProductDetailsDTO> GetByPackageId(int id)
         {
-            var resGet = await _elasticClient.GetAsync<ProductDetailsDTO>(id);
-            return resGet.Source;
+            IGetResponse<ProductDetailsDTO> response = await _elasticClient.GetAsync<ProductDetailsDTO>(id);
+            return response.Source;
         }
 
         public async Task<BulkOperationResult> AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails)
@@ -47,9 +47,9 @@ namespace ApotekaShop.Services
             descriptor.Refresh(true);
             descriptor.IndexMany(productDetails, (indexDescriptor, dto) => indexDescriptor.Id(dto.PackageId));
 
-            IBulkResponse resp = await _elasticClient.BulkAsync(descriptor);
+            IBulkResponse response = await _elasticClient.BulkAsync(descriptor);
 
-            return new BulkOperationResult { HasErrors = resp.Errors, ProcessedCount = resp.Items.Count(), TookMilliseconds = resp.Took };
+            return new BulkOperationResult { HasErrors = response.Errors, ProcessedCount = response.Items.Count(), TookMilliseconds = response.Took };
         }
 
         public async Task<SearchResultModel> Search(string query, FilterOptionsModel filters)
