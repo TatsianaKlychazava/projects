@@ -78,8 +78,14 @@ namespace ApotekaShop.WebApi.Controllers
         {
             try
             {
-                await _productDetailsService.Delete(id);
-                return Ok(DONE);
+                var result = await _productDetailsService.Delete(id);
+
+                if (result)
+                {
+                    return Ok(DONE);
+                }
+
+                return NotFound();
             }
             catch (Exception e)
             {

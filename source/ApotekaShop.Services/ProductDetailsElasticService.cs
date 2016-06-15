@@ -93,23 +93,24 @@ namespace ApotekaShop.Services
             return sorts;
         }
     
-        /// <summary>
-        /// Implementation for testing stage
-        /// </summary>
         public async Task<ElasticBulkOperationResult> ImportProductDetalils()
         {
             List<ProductDetailsDTO> details = _productDetailsDataProvider.ImportProductDetalils();
             return await AddOrUpdate(details);
         }
 
-        public async Task Delete(int id)
+        public async Task<bool> Delete(int id)
         {
-            await _elasticClient.DeleteAsync<ProductDetailsDTO>(id);
+            IDeleteResponse deleteResponse = await _elasticClient.DeleteAsync<ProductDetailsDTO>(id);
+
+            return deleteResponse.Found;
         }
 
-        public async Task DeleteIndex()
+        public async Task<bool> DeleteIndex()
         {
-            await _elasticClient.DeleteIndexAsync(_elasticClient.ConnectionSettings.DefaultIndex);
+            IDeleteIndexResponse deleteResponse =
+                await _elasticClient.DeleteIndexAsync(_elasticClient.ConnectionSettings.DefaultIndex);
+            return deleteResponse.IsValid;
         }
 
         private IQueryContainer CreateQuery(string query, FilterOptionsModel filter)
