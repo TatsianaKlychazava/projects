@@ -6,12 +6,15 @@ using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
 using ApotekaShop.Services;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
+using ApotekaShop.UnitTest.Extensions;
 using ApotekaShop.WebApi;
 using ApotekaShop.WebApi.Controllers;
 using Autofac;
@@ -19,21 +22,24 @@ using Autofac.Integration.WebApi;
 using Moq;
 using Newtonsoft.Json;
 using Xunit;
+using Xunit.Abstractions;
+using Xunit.Sdk;
 
 namespace ApotekaShop.UnitTest.Fixtures
 {
-    public class ApiTestServerFixture: IDisposable
+    public class ApiTestServerFixture : IDisposable
     {
         private const string _baseAddress = @"http://localhost";
         private const string JsonMediaTypeString = "application/json";
 
         private readonly HttpServer _server;
         private readonly HttpConfiguration _config;
-        private readonly HttpClient _client;
         private readonly HttpCookieCollection _cookies = new HttpCookieCollection();
         private readonly Mock<HttpContextBase> _context = new Mock<HttpContextBase>();
         private readonly Mock<HttpResponseBase> _response = new Mock<HttpResponseBase>();
         private readonly Mock<IProductDetailsDataProvider> _dataprovider = new Mock<IProductDetailsDataProvider>();
+        private readonly HttpClient _client;
+        private readonly IContainer _container;
 
         public ApiTestServerFixture()
         {
@@ -53,19 +59,29 @@ namespace ApotekaShop.UnitTest.Fixtures
             builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>().InstancePerRequest();
             builder.RegisterInstance(_dataprovider.Object).As<IProductDetailsDataProvider>();
             builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsService>()
-                .WithParameter(new TypedParameter(typeof (IProductDetailsDataProvider), _dataprovider.Object));
+                .WithParameter(new TypedParameter(typeof(IProductDetailsDataProvider), _dataprovider.Object));
 
             builder.RegisterType<ProductDetailsController>().InstancePerRequest();
 
-            var container = builder.Build();
+            _container = builder.Build();
 
-            _config.DependencyResolver = new AutofacWebApiDependencyResolver(container);
+            InitIndex();
+
+
+            _config.DependencyResolver = new AutofacWebApiDependencyResolver(_container);
 
             _config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
 
             _server = new HttpServer(_config);
-
             _client = new HttpClient(_server);
+        }
+
+        public void InitIndex()
+        {
+            var service = _container.Resolve<IProductDetailsService>();
+            var result = service.ImportProductDetalils().Result;
+            if (result.HasErrors)
+                throw new TestClassException("Cannot create initial index.");
         }
 
         public HttpRequestMessage CreateGetRequest(string address)
@@ -107,14 +123,8 @@ namespace ApotekaShop.UnitTest.Fixtures
         {
             using (HttpResponseMessage response = _client.SendAsync(request).Result)
             {
-                action(response);  
+                action(response);
             }
-        }
-
-        public T GetContent<T>(HttpContent content)
-        {
-            Task<string> responseBody = content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<T>(responseBody.Result);
         }
 
         private List<ProductDetailsDTO> LoadTestData()
@@ -126,17 +136,21 @@ namespace ApotekaShop.UnitTest.Fixtures
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             using (StreamReader reader = new StreamReader(stream))
             {
-                 json = reader.ReadToEnd();
+                json = reader.ReadToEnd();
             }
-            
+
             var details = JsonConvert.DeserializeObject<List<ProductDetailsDTO>>(json);
 
             return details;
         }
-        
+
         public void Dispose()
         {
+            var service = _container.Resolve<IProductDetailsService>();
+            service.DeleteIndex().Wait();
+
             _server.Dispose();
+            _client.Dispose();
         }
     }
 }

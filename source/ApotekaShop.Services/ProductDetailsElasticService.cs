@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 using Nest;
+using SortOrder = Nest.SortOrder;
 
 namespace ApotekaShop.Services
 {
@@ -39,12 +41,13 @@ namespace ApotekaShop.Services
             return resGet.Source;
         }
 
-        public async Task AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails)
+        public async Task<ElasticBulkOperationResult> AddOrUpdate(IEnumerable<ProductDetailsDTO> productDetails)
         {
             var descriptor = new BulkDescriptor();
             descriptor.Refresh(true);
             descriptor.IndexMany(productDetails, (indexDescriptor, dto) => indexDescriptor.Id(dto.PackageId));
-            await _elasticClient.BulkAsync(descriptor);
+            var resp = await _elasticClient.BulkAsync(descriptor);
+            return new ElasticBulkOperationResult { HasErrors = resp.Errors, ProcessedCount = resp.Items.Count(), TookMilliseconds = resp.Took };
         }
 
         public async Task<IEnumerable<ProductDetailsDTO>> Search(string query, FilterOptionsModel filters)
@@ -74,7 +77,7 @@ namespace ApotekaShop.Services
             {
                 new SortField()
                 {
-                    Order = (SortOrder)(int)filter.Order,
+                    Order = (SortOrder)filter.Order,
                     Field = _configurationSettings.FilterOptions[filter.OrderBy.ToLower()]  
                 }
             };
@@ -85,10 +88,10 @@ namespace ApotekaShop.Services
         /// <summary>
         /// Implementation for testing stage
         /// </summary>
-        public async Task ImportProductDetalils()
+        public async Task<ElasticBulkOperationResult> ImportProductDetalils()
         {
             List<ProductDetailsDTO> details = _productDetailsDataProvider.ImportProductDetalils();
-            await AddOrUpdate(details);
+            return await AddOrUpdate(details);
         }
 
         public async Task Delete(int id)
@@ -112,10 +115,10 @@ namespace ApotekaShop.Services
                     Query = $"{query}",
                     DefaultField = "_all",
                     DefaultOperator = Operator.And,
-                    
+
                 };
             }
-            
+
             //set filter
             if (filter != null)
             {
