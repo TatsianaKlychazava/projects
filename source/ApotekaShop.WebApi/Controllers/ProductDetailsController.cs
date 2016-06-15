@@ -26,8 +26,8 @@ namespace ApotekaShop.WebApi.Controllers
         /// Get product details by package id
         /// </summary>
         /// <param name="id">Package Id</param>
-        /// <returns></returns>
-        // GET: api/ProductDetails/5
+        /// <returns>Product details</returns>
+        /// GET: api/ProductDetails/5
         [Route("{id:int}")]
         [HttpGet]
         public async Task<IHttpActionResult> GetByPackageId(int id)
@@ -46,8 +46,8 @@ namespace ApotekaShop.WebApi.Controllers
         /// Add or update product details collection
         /// </summary>
         /// <param name="productDetails">Product details collection</param>
-        /// <returns>Add status</returns>
-        // POST: api/ProductDetails
+        /// <returns>Ok if data added or updated</returns>
+        /// POST: api/ProductDetails
         [Route("")]
         [HttpPost]
         public async Task<IHttpActionResult> AddOrUpdate([FromBody]List<ProductDetailsDTO> productDetails)
@@ -66,6 +66,11 @@ namespace ApotekaShop.WebApi.Controllers
             
         }
 
+        /// <summary>
+        /// Delete product details by package id
+        /// </summary>
+        /// <param name="id">Package Id</param>
+        /// <returns>Ok if data removed</returns>
         // DELETE: api/ProductDetails/5
         [Route("{id:int}")]
         [HttpDelete]
@@ -82,7 +87,13 @@ namespace ApotekaShop.WebApi.Controllers
             }
         }
 
-        // GET: api/ProductDetails/Search
+        /// <summary>
+        /// Search and sort product details by query and filters
+        /// </summary>
+        /// <param name="query">Query string for search</param>
+        /// <param name="filters">Options for filtering, sorting, paging</param>
+        /// <returns>Search result model</returns>
+        /// GET: api/ProductDetails/Search?query={query for search}&minPrice={filter for min price}&maxPrice={filter for max price}&pageFrom={page number}&pageSize={page size}&orderBy={order name}&order={sorting direction}
         [Route("Search")]
         [HttpGet]
         public async Task<IHttpActionResult> Search([FromUri]string query, [FromUri]FilterOptionsModel filters)
