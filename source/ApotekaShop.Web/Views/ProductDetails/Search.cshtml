@@ -34,11 +34,16 @@
 <div class="row products">
     @foreach (var product in Model.Products)
     {
-        <div class="col-md-12 col-sm-2 product">
-            <img src="http://placehold.it/200x200"/>
-            <p>@product.ProductNames.FirstOrDefault().Name</p>
-            <p>@product.NormalizedPrice</p>
-            <p>@product.NormalizedPackageSize</p>
+        <div class="col-md-3">
+            <div class="thumbnail">
+                <img src="http://placehold.it/200x200" alt="">
+                <div class="caption">
+                    <a href="@Url.Action("Details", new {id = product.PackageId})"><h3>@product.ProductNames.FirstOrDefault().Name</h3></a>
+                    <p>Price: @product.NormalizedPrice</p>
+                    <p>Size @product.NormalizedPackageSize</p>
+                    <p><a href="#" class="btn btn-primary" role="button">Add to basket</a> </p>
+                </div>
+            </div>
         </div>
     }
 </div>
