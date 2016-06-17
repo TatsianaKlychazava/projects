@@ -123,7 +123,7 @@ namespace ApotekaShop.Services
                 {
                     Query = $"{query}",
                     DefaultField = "_all",
-                    DefaultOperator = Operator.And,
+                    DefaultOperator = Operator.And
 
                 };
             }

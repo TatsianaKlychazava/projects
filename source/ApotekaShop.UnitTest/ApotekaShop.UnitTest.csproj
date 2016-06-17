@@ -138,9 +138,9 @@
       <Project>{8b66f057-849a-467f-92c8-f63188c54764}</Project>
       <Name>ApotekaShop.Services</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ApotekaShop.WebApi\ApotekaShop.WebApi.csproj">
-      <Project>{ca42c16a-1b2d-495a-bf42-18f68ef98c1a}</Project>
-      <Name>ApotekaShop.WebApi</Name>
+    <ProjectReference Include="..\ApotekaShop.Web\ApotekaShop.Web.csproj">
+      <Project>{6d0c11cf-6a76-432b-a8ac-859e976ce8c2}</Project>
+      <Name>ApotekaShop.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

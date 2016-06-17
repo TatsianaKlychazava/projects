@@ -11,8 +11,8 @@ using System.Web.Http;
 using ApotekaShop.Services;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
-using ApotekaShop.WebApi;
-using ApotekaShop.WebApi.Controllers;
+using ApotekaShop.Web;
+using ApotekaShop.Web.Controllers;
 using Autofac;
 using Autofac.Integration.WebApi;
 using Moq;
@@ -53,7 +53,7 @@ namespace ApotekaShop.UnitTest.Fixtures
             builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsService>()
                 .WithParameter(new TypedParameter(typeof(IProductDetailsDataProvider), _dataprovider.Object));
 
-            builder.RegisterType<ProductDetailsController>().InstancePerRequest();
+            builder.RegisterType<ProductDetailsApiController>().InstancePerRequest();
 
             _container = builder.Build();
 

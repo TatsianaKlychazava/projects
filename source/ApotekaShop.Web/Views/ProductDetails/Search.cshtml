@@ -1,0 +1,56 @@
+﻿@model ApotekaShop.Web.Models.ProductDetailsViewModel
+@{
+    ViewBag.Title = "Search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Search", "ProductDetails", FormMethod.Get))
+{
+    <div class="row">
+        <div class="col-md-6">
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    @Html.TextBox("query", Model.Filters.Query, new { @class = "form-control input-lg" })
+                    <span class="input-group-btn">
+                    <button class="btn btn-info btn-lg" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<ul class="pagination">
+    @for (var i = 1; i < 10; i++)
+    {
+        <li>
+            @PageLink(i)
+        </li>
+    }
+</ul>
+
+<div class="row products">
+    @foreach (var product in Model.Products)
+    {
+        <div class="col-md-12 col-sm-2 product">
+            <img src="http://placehold.it/200x200"/>
+            <p>@product.ProductNames.FirstOrDefault().Name</p>
+            <p>@product.NormalizedPrice</p>
+            <p>@product.NormalizedPackageSize</p>
+        </div>
+    }
+</div>
+
+@helper PageLink(int page)
+{
+    var filter = Model.Filters;
+
+    filter.PageNumber = page;
+
+    var routeParms = new RouteValueDictionary(filter.GetType().GetProperties().ToDictionary(p => p.Name, p => p.GetValue(Model.Filters, null)));
+
+    @Html.ActionLink((page).ToString(), "Search", routeParms)
+}
+
