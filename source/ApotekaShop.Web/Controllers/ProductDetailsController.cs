@@ -25,10 +25,17 @@ namespace ApotekaShop.Web.Controllers
         // GET: SearchPage
         public async Task<ActionResult> Search(FilterOptionsViewModel filters)
         {
+            int page = filters.PageNumber;
+
+            if (page != 0)
+            {
+                page--;
+            }
+
             SearchResultModel result = await _productDetailsService.Search(filters.Query, 
                 new FilterOptionsModel()
                 {
-                    PageFrom = filters.PageNumber - 1,
+                    PageFrom = page,
                     PageSize = PageSize,
                     MaxPrice = filters.MaxPrice,
                     MinPrice = filters.MinPrice

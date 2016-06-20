@@ -1,8 +1,44 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@model ApotekaShop.Services.Models.ProductDetailsDTO
 
-<h2>Details</h2>
+@using (Html.BeginForm("Search", "ProductDetails", FormMethod.Get))
+{
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    @Html.TextBox("query", string.Empty, new {@class = "form-control input-lg"})
+                    <span class="input-group-btn">
+                    <button class="btn btn-info btn-lg" type="submit">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </span>
+                </div>
+            </div>
+        </div>
+    </div>
+}
 
+<div class="row">
+    <div class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5">
+        <img class="img-responsive img-center" src="http://placehold.it/400x400" title="this image needs to be centered">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 col-md-offset-5 col-sm-6 col-sm-offset-5">
+        <a href="@Url.Action("Details", new {id = Model.PackageId})">
+            <h3>@Model.ProductNames.FirstOrDefault().Name</h3>
+        </a>
+        <p>Price: @Model.NormalizedPrice</p>
+        <p>Size @Model.NormalizedPackageSize</p>
+        <p>
+            <a href="#" class="btn btn-primary" role="button">Add to basket</a>
+        </p>
+        <p>Details</p>
+        <p>@Model.DisplayText</p>
+    </div>
+</div>
