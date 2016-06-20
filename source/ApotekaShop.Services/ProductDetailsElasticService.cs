@@ -125,7 +125,7 @@ namespace ApotekaShop.Services
             {
                 queryContainer &= new QueryStringQuery()
                 {
-                    Query = $"{query}",
+                    Query = $"{query}*",
                     DefaultField = "_all",
                     DefaultOperator = Operator.And
 

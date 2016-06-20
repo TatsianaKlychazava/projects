@@ -28,8 +28,10 @@ namespace ApotekaShop.Web.Controllers
             SearchResultModel result = await _productDetailsService.Search(filters.Query, 
                 new FilterOptionsModel()
                 {
-                    PageFrom = filters.PageNumber,
-                    PageSize = PageSize
+                    PageFrom = filters.PageNumber - 1,
+                    PageSize = PageSize,
+                    MaxPrice = filters.MaxPrice,
+                    MinPrice = filters.MinPrice
 
                 });
 

@@ -29,11 +29,14 @@
 }
 
 <ul class="pagination">
-    @for (var i = 1; i < 10; i++)
+    @for (var i = 0; i < Model.PageCount; i++)
     {
-        <li>
-            @PageLink(i)
-        </li>
+        if (i < 10)
+        {
+            <li>
+                @PageLink(i + 1)
+            </li>
+        }
     }
 </ul>
 
