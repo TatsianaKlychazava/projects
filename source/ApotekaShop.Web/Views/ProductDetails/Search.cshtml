@@ -1,4 +1,5 @@
-﻿@model ApotekaShop.Web.Models.ProductDetailsViewModel
+﻿@using ApotekaShop.Web.Helpers
+@model ApotekaShop.Web.Models.ProductDetailsViewModel
 @{
     ViewBag.Title = "Search";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -45,14 +46,11 @@
             <div class="thumbnail">
                 <img src="http://placehold.it/200x200" alt="">
                 <div class="caption">
-                    <a href="@Url.Action("Details", new {id = product.PackageId})">
-                        <h3>@product.ProductNames.FirstOrDefault().Name</h3>
-                    </a>
-                    <p>Price: @product.NormalizedPrice</p>
-                    <p>Size @product.NormalizedPackageSize</p>
-                    <p>
-                        <a href="#" class="btn btn-primary" role="button">Add to basket</a>
-                    </p>
+                    <a href="@Url.Action("Details", new {id = product.PackageId})"><h3>@product.ProductNames.FirstOrDefault().Name</h3></a>
+                    <p>Price:@Html.Currency(product.NormalizedPrice)</p>
+                    <p>Size @product.NormalizedPackageSize.ToString("N2")</p>
+
+                    <p><a href="#" class="btn btn-primary" role="button">Add to basket</a> </p>
                 </div>
             </div>
         </div>

@@ -2,6 +2,7 @@
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using ApotekaShop.Web.Helpers
 @model ApotekaShop.Services.Models.ProductDetailsDTO
 
 @using (Html.BeginForm("Search", "ProductDetails", FormMethod.Get))
@@ -33,8 +34,8 @@
         <a href="@Url.Action("Details", new {id = Model.PackageId})">
             <h3>@Model.ProductNames.FirstOrDefault().Name</h3>
         </a>
-        <p>Price: @Model.NormalizedPrice</p>
-        <p>Size @Model.NormalizedPackageSize</p>
+        <p>Price:@Html.Currency(Model.NormalizedPrice)</p>
+        <p>Size @Model.NormalizedPackageSize.ToString("N2")</p>
         <p>
             <a href="#" class="btn btn-primary" role="button">Add to basket</a>
         </p>
