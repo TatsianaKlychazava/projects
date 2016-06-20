@@ -154,12 +154,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CultureController.cs" />
     <Compile Include="Controllers\ProductDetailsApiController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\CurrencyHelper.cs" />
+    <Compile Include="Models\CultureViewModel.cs" />
     <Compile Include="Models\FilterOptionsViewModel.cs" />
     <Compile Include="Models\ProductDetailsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -173,6 +175,7 @@
     <Content Include="Views\ProductDetails\Search.cshtml" />
     <Content Include="Views\ProductDetails\Details.cshtml" />
     <Content Include="Views\Shared\_Search.cshtml" />
+    <None Include="Views\Culture\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

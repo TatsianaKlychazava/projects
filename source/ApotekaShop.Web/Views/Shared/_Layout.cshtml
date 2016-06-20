@@ -24,8 +24,12 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Product Details", "Search", "ProductDetails")</li>
                 </ul>
+                @{
+                    Html.RenderPartial("_Search");
+                    Html.RenderAction("Index", "Culture");
+                }
             </div>
-         </div>
+       </div>
     </div>
     <div class="container body-content">
         @RenderBody()
