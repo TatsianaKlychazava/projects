@@ -13,10 +13,10 @@ namespace ApotekaShop.WebApi.Controllers
     {
         private const string DONE = "Done";
 
-        private readonly IProductDetailsService _productDetailsService;
+        private readonly IProductDetailsElasticService _productDetailsService;
         private readonly ConfigurationSettingsModel _configSettings;
 
-        public ProductDetailsController(IProductDetailsService productDetailsService, IConfigurationSettingsProvider configSettingsProvider)
+        public ProductDetailsController(IProductDetailsElasticService productDetailsService, IConfigurationSettingsProvider configSettingsProvider)
         {
             _productDetailsService = productDetailsService;
             _configSettings = configSettingsProvider.GetConfiguration();

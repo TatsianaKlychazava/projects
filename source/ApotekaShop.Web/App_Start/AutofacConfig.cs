@@ -21,7 +21,7 @@ namespace ApotekaShop.Web
 
             builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>().InstancePerRequest();
             builder.RegisterType<ProductDetailsDataProvider>().As<IProductDetailsDataProvider>();
-            builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsService>();
+            builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsElasticService>();
 
 
             var container = builder.Build();
@@ -42,7 +42,7 @@ namespace ApotekaShop.Web
 
             builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>().InstancePerRequest();
             builder.RegisterType<ProductDetailsDataProvider>().As<IProductDetailsDataProvider>();
-            builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsService>();
+            builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsElasticService>();
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));

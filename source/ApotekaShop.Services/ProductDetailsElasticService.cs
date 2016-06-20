@@ -12,7 +12,7 @@ namespace ApotekaShop.Services
     /// <summary>
     /// Use elasticsearch-2.3.3
     /// </summary>
-    public class ProductDetailsElasticService : IProductDetailsService
+    public class ProductDetailsElasticService : IProductDetailsElasticService
     {
         private readonly ElasticClient _elasticClient;
         private readonly IProductDetailsDataProvider _productDetailsDataProvider;

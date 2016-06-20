@@ -50,7 +50,7 @@ namespace ApotekaShop.UnitTest.Fixtures
 
             builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>();
             builder.RegisterInstance(_dataprovider.Object).As<IProductDetailsDataProvider>();
-            builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsService>()
+            builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsElasticService>()
                 .WithParameter(new TypedParameter(typeof(IProductDetailsDataProvider), _dataprovider.Object));
 
             builder.RegisterType<ProductDetailsApiController>().InstancePerRequest();
@@ -69,7 +69,7 @@ namespace ApotekaShop.UnitTest.Fixtures
 
         public void InitIndex()
         {
-            var service = _container.Resolve<IProductDetailsService>();
+            var service = _container.Resolve<IProductDetailsElasticService>();
             var result = service.ImportProductDetalils().Result;
             if (result.HasErrors)
                 throw new TestClassException("Cannot create initial index.");
@@ -141,7 +141,7 @@ namespace ApotekaShop.UnitTest.Fixtures
 
         public void Dispose()
         {
-            var service = _container.Resolve<IProductDetailsService>();
+            var service = _container.Resolve<IProductDetailsElasticService>();
             service.DeleteIndex().Wait();
 
             _server.Dispose();

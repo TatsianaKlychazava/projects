@@ -1,13 +1,9 @@
-﻿using System;
-using System.Configuration;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Web.Http;
 using ApotekaShop.Services;
 using ApotekaShop.Services.Interfaces;
 using Autofac;
-using Autofac.Core;
 using Autofac.Integration.WebApi;
-using System.Net;
 
 namespace ApotekaShop.WebApi
 {
@@ -24,7 +20,7 @@ namespace ApotekaShop.WebApi
 
             builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>().InstancePerRequest();
             builder.RegisterType<ProductDetailsDataProvider>().As<IProductDetailsDataProvider>();
-            builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsService>();
+            builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsElasticService>();
 
 
             var container = builder.Build();

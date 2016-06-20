@@ -13,13 +13,12 @@ namespace ApotekaShop.Web.Controllers
 {
     public class ProductDetailsController : Controller
     {
-        private readonly IProductDetailsService _productDetailsService;
-        private readonly ConfigurationSettingsModel _config;
+        private readonly IProductDetailsElasticService _productDetailsService;
         private const int PageSize = 10;
-        public ProductDetailsController(IProductDetailsService productDetailsService, IConfigurationSettingsProvider congiSettingsProvider)
+
+        public ProductDetailsController(IProductDetailsElasticService productDetailsService)
         {
             _productDetailsService = productDetailsService;
-            _config = congiSettingsProvider.GetConfiguration();
         }
 
         // GET: SearchPage
@@ -32,7 +31,7 @@ namespace ApotekaShop.Web.Controllers
                 page--;
             }
 
-            SearchResultModel result = await _productDetailsService.Search(filters.Query, 
+            SearchResultModel result = await _productDetailsService.Search(filters.Query,
                 new FilterOptionsModel()
                 {
                     PageFrom = page,
@@ -46,13 +45,13 @@ namespace ApotekaShop.Web.Controllers
             {
                 Products = result.Results,
                 Total = result.TotalResults,
-                PageCount = Convert.ToInt32(Math.Ceiling((double)(result.TotalResults / PageSize))),
+                PageCount = Convert.ToInt32(Math.Ceiling((double) (result.TotalResults/PageSize))),
                 Filters = new FilterOptionsViewModel
                 {
                     Query = filters.Query,
                     Order = filters.Order,
                     OrderBy = filters.OrderBy,
-                    PageNumber = filters.PageNumber               
+                    PageNumber = filters.PageNumber
                 }
             };
 
