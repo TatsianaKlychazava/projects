@@ -13,10 +13,10 @@ namespace ApotekaShop.Web.Controllers
 {
     public class ProductDetailsController : Controller
     {
-        private readonly IProductDetailsElasticService _productDetailsService;
+        private readonly IProductDetailsService _productDetailsService;
         private const int PageSize = 10;
 
-        public ProductDetailsController(IProductDetailsElasticService productDetailsService)
+        public ProductDetailsController(IProductDetailsService productDetailsService)
         {
             _productDetailsService = productDetailsService;
         }

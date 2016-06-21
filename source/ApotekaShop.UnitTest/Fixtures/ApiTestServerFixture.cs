@@ -52,6 +52,7 @@ namespace ApotekaShop.UnitTest.Fixtures
             builder.RegisterInstance(_dataprovider.Object).As<IProductDetailsDataProvider>();
             builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsElasticService>()
                 .WithParameter(new TypedParameter(typeof(IProductDetailsDataProvider), _dataprovider.Object));
+            builder.RegisterType<ProductDetailsService>().As<IProductDetailsService>();
 
             builder.RegisterType<ProductDetailsApiController>().InstancePerRequest();
 

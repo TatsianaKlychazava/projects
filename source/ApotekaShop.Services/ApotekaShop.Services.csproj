@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConfigurationSettingsProvider.cs" />
+    <Compile Include="CultureService.cs" />
     <Compile Include="Interfaces\IConfigurationSettingsProvider.cs" />
     <Compile Include="Interfaces\IProductDetailsDataProvider.cs" />
     <Compile Include="Interfaces\IProductDetailsElasticService.cs" />

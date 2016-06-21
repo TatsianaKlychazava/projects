@@ -14,7 +14,6 @@ namespace ApotekaShop.Web.Controllers
 
         public RedirectResult SetCulture(string culture)
         { 
-
             CultureInfo.CurrentCulture = new CultureInfo(culture);
             return Redirect(Request.UrlReferrer.AbsoluteUri);
         }

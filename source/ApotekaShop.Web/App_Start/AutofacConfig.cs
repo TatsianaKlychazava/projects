@@ -22,7 +22,7 @@ namespace ApotekaShop.Web
             builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>().InstancePerRequest();
             builder.RegisterType<ProductDetailsDataProvider>().As<IProductDetailsDataProvider>();
             builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsElasticService>();
-
+            builder.RegisterType<ProductDetailsService>().As<IProductDetailsService>();
 
             var container = builder.Build();
             
