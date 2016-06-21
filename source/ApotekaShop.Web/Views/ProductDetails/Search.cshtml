@@ -1,8 +1,11 @@
-﻿@using ApotekaShop.Web.Helpers
+﻿@using ApotekaShop.Services.Models
+@using ApotekaShop.Web.Helpers
 @model ApotekaShop.Web.Models.ProductDetailsViewModel
 @{
     ViewBag.Title = "Search";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    string[] orderBy = new string[] { "", "price", "size" };
+    string[] order = new string[] { "", "ASC", "DESC" };
 }
 
 @using (Html.BeginForm("Search", "ProductDetails", FormMethod.Get))
@@ -14,7 +17,7 @@
                 <div class="col-md-12">
                     <div id="custom-search-input">
                         <div class="input-group">
-                            @Html.TextBox("query", Model.Filters.Query, new { @class = "form-control input-lg" })
+                            @Html.TextBox("query", Model.Filters.Query, new {@class = "form-control input-lg"})
                             <span class="input-group-btn">
                                 <button class="btn btn-info btn-lg" type="submit">
                                     <i class="glyphicon glyphicon-search"></i>
@@ -26,16 +29,32 @@
             </div>
             <div class="row filters">
                 <div class="col-sm-2">
-                    <label class="control-label">Min price:</label> @Html.TextBox("minPrice", Model.Filters.MinPrice, new { @class = "form-control input-sm" })
+                    <label class="control-label">Min price:</label> @Html.TextBox("minPrice", Model.Filters.MinPrice, new {@class = "form-control input-sm"})
                 </div>
                 <div class="col-sm-2">
-                    <label class="control-label">Max price:</label> @Html.TextBox("maxPrice", Model.Filters.MaxPrice, new { @class = "form-control input-sm" })
+                    <label class="control-label">Max price:</label> @Html.TextBox("maxPrice", Model.Filters.MaxPrice, new {@class = "form-control input-sm"})
+                </div>
+                <div class="col-sm-2">
+                    <label class="control-label">Order By:</label> @Html.DropDownList("orderBy", new SelectList(orderBy, Model.Filters.OrderBy), new
+                                                              {
+                                                                  onchange = "this.form.submit();",
+                                                                  @class = "form-control input-sm"
+                                                              })
+                </div>
+                <div class="col-sm-2">
+                    <label class="control-label">Order:</label> @Html.DropDownList("order", new SelectList(order, Model.Filters.Order), new
+                                                           {
+                                                               onchange = "this.form.submit();",
+                                                               @class = "form-control input-sm"
+                                                           })
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-2"><p>Found: @Model.Total results</p></div>
+        <div class="col-sm-2">
+            <p>Found: @Model.Total results</p>
+        </div>
     </div>
 }
 

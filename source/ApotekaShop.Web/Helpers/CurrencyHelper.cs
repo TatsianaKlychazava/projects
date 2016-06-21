@@ -8,8 +8,8 @@ namespace ApotekaShop.Web.Helpers
         public static string Currency(this HtmlHelper helper, int? price)
         {
             if (!price.HasValue) return string.Empty;
-
-            return String.Format("DKK {0}", price.Value.ToString("N2"));
+            decimal currentPrice = price.Value/100;
+            return String.Format("DKK {0}", currentPrice.ToString("N2"));
         }
     }
 }

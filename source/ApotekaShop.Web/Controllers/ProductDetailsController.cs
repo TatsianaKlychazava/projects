@@ -36,9 +36,10 @@ namespace ApotekaShop.Web.Controllers
                 {
                     PageFrom = page,
                     PageSize = PageSize,
-                    MaxPrice = filters.MaxPrice,
-                    MinPrice = filters.MinPrice
-
+                    MaxPrice = filters.MaxPrice * 100,
+                    MinPrice = filters.MinPrice * 100,
+                    Order =  filters.Order,
+                    OrderBy = filters.OrderBy
                 });
 
             var model = new ProductDetailsViewModel
@@ -51,7 +52,9 @@ namespace ApotekaShop.Web.Controllers
                     Query = filters.Query,
                     Order = filters.Order,
                     OrderBy = filters.OrderBy,
-                    PageNumber = filters.PageNumber
+                    PageNumber = filters.PageNumber,
+                    MaxPrice = filters.MaxPrice,
+                    MinPrice = filters.MinPrice
                 }
             };
 
