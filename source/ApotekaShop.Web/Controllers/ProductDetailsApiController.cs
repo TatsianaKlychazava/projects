@@ -122,6 +122,22 @@ namespace ApotekaShop.Web.Controllers
             }
 
             return NotFound();
-        }    
+        }
+
+        //Operations on Index
+        [Route("ImportIndex")]
+        [HttpGet]
+        public async Task<IHttpActionResult> ImportIndex()
+        {
+            try
+            {
+                var result = await _productDetailsService.ImportProductDetalils();
+                return Ok(result);
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+        }
     }
 }
