@@ -5,8 +5,8 @@ namespace ApotekaShop.Services.Models
     public enum Country
     {
         [Description("Denmark")]
-        DA = 1030,
+        DK = 1030,
         [Description("Sweden")]
-        SV = 1
+        SE = 1
     }
 }

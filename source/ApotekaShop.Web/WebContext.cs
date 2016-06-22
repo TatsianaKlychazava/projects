@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Threading;
 using System.Web;
+using ApotekaShop.Services.Helpers;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 
@@ -24,14 +25,14 @@ namespace ApotekaShop.Web
             _context.Response.Cookies.Set(httpCookie);
 
             //set culture for selected country
-            var currentCulture = new CultureInfo(country.ToString());
+            var currentCulture = country.ToCulture();
             Thread.CurrentThread.CurrentCulture = currentCulture;
             Thread.CurrentThread.CurrentUICulture = currentCulture;
         }
 
         public Country GetCountry()
         {
-            var country = Country.DA;
+            var country = Country.DK;
 
             if (!string.IsNullOrEmpty(_context.Request.Cookies[CountryCookieName]?.Value))
             {
