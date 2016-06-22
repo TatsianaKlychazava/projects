@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using ApotekaShop.Web.App_LocalResources;
 
 namespace ApotekaShop.Web.Helpers
 {
@@ -9,7 +10,7 @@ namespace ApotekaShop.Web.Helpers
         {
             if (!price.HasValue) return string.Empty;
             decimal currentPrice = price.Value/100;
-            return String.Format("DKK {0}", currentPrice.ToString("N2"));
+            return String.Format("{0} {1}", ShopResources.CurrencyName, currentPrice.ToString("N2"));
         }
     }
 }

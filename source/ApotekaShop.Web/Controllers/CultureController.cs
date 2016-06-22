@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Web.Mvc;
+using ApotekaShop.Services;
 using ApotekaShop.Web.Models;
 
 namespace ApotekaShop.Web.Controllers
@@ -9,12 +10,11 @@ namespace ApotekaShop.Web.Controllers
         // GET: Culture
         public ActionResult Index()
         {
-            return PartialView(new CultureViewModel() {SelectedCulture = CultureInfo.CurrentCulture});
+            return PartialView();
         }
 
         public RedirectResult SetCulture(string culture)
         { 
-            CultureInfo.CurrentCulture = new CultureInfo(culture);
             return Redirect(Request.UrlReferrer.AbsoluteUri);
         }
     }

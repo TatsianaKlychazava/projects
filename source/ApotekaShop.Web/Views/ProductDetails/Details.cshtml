@@ -6,22 +6,37 @@
 @model ApotekaShop.Services.Models.ProductDetailsDTO
 
 <div class="row">
-    <div class="col-md-2 col-md-offset-5 col-sm-2 col-sm-offset-5">
-        <img class="img-responsive img-center" src="http://placehold.it/400x400" title="this image needs to be centered">
-    </div>
-</div>
+    <div class="col-md-3">
+        <img class="img-responsive img-center" src="http://placehold.it/200x200" height="200" width="200" title="this image needs to be centered">
 
-<div class="row">
-    <div class="col-md-6 col-md-offset-5 col-sm-6 col-sm-offset-5">
-        <a href="@Url.Action("Details", new {id = Model.PackageId})">
-            <h3>@Model.ProductNames.FirstOrDefault().Name</h3>
-        </a>
-        <p>Price:@Html.Currency(Model.NormalizedPrice)</p>
-        <p>Size @Model.NormalizedPackageSize.ToString("N2")</p>
-        <p>
-            <a href="#" class="btn btn-primary" role="button">Add to basket</a>
-        </p>
-        <p>Details</p>
+        <h3>@Model.ProductNames.FirstOrDefault().Name</h3>
+        <p><label>Price:</label> @Html.Currency(Model.NormalizedPrice)</p>
+        <p><label>Size:</label> @Model.NormalizedPackageSize.ToString("N2")</p>
+
+        <label>Details:</label>
+        <p>@Model.ProductDescription</p>
+
+        <label>Display text:</label>
         <p>@Model.DisplayText</p>
+        
+        @if (Model.Indications != null)
+        {
+            <label>Indications:</label>
+            <p>@String.Join(", ", Model.Indications.Select(indication => indication.Name))</p>
+        }
+        @if (Model.Substances != null)
+        {
+            <label>Substances:</label>
+            <p>@String.Join(", ", Model.Substances.Select(substance => substance.Name))</p>
+        }
+
+        @if (Model.Treaments != null)
+        {
+            <label>Treaments:</label>
+            <p>@String.Join(", ", Model.Treaments.Select(treament => treament.Name))</p>
+        }
+
+        <p><a href="#" class="btn btn-primary" role="button">Add to basket</a>
+        </p>
     </div>
 </div>

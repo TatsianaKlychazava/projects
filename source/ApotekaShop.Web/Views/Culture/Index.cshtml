@@ -1,12 +1,11 @@
-﻿@model ApotekaShop.Web.Models.CultureViewModel
-<div class="col-sm-3 col-md-3 pull-right">
+﻿<div class="col-sm-3 col-md-3 pull-right">
     @using (Html.BeginForm("SetCulture", "Culture", FormMethod.Get, new {@class = "navbar-form", role = "culture"}))
-    {
+    {/*
         <div class="input-group">
             @Html.DropDownList("culture",
-                new SelectList(Model.Cultures, "Name", "NativeName", Model.SelectedCulture.Name),
+                new SelectList(Model.SupportedCultures, "Name", "DisplayName", Model.SelectedCulture.Name),
                 new {onchange = "this.form.submit();", @class = "form-control input-sm"})
-        </div>
+        </div>*/
     }
 
 </div>
