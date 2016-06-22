@@ -185,7 +185,7 @@
     <Content Include="Views\ProductDetails\Search.cshtml" />
     <Content Include="Views\ProductDetails\Details.cshtml" />
     <Content Include="Views\Shared\_Search.cshtml" />
-    <None Include="Views\Country\Dropdown.cshtml" />
+    <Content Include="Views\Country\Dropdown.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
