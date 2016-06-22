@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using ApotekaShop.Services;
@@ -20,12 +21,12 @@ namespace ApotekaShop.Web
             builder.RegisterWebApiFilterProvider(config);
 
             builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>().InstancePerRequest();
+            builder.RegisterType<WebContext>().As<IWebContext>().WithParameter(new TypedParameter(typeof(HttpContextBase),  new HttpContextWrapper(HttpContext.Current))).InstancePerRequest().SingleInstance();
             builder.RegisterType<ProductDetailsDataProvider>().As<IProductDetailsDataProvider>();
             builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsElasticService>();
             builder.RegisterType<ProductDetailsService>().As<IProductDetailsService>();
-
             var container = builder.Build();
-            
+
             var webApiResolver = new AutofacWebApiDependencyResolver(container);
             config.DependencyResolver = webApiResolver;
 

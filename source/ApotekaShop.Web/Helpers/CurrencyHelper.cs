@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
-using ApotekaShop.Web.App_LocalResources;
+using Resources;
 
 namespace ApotekaShop.Web.Helpers
 {
@@ -10,6 +10,8 @@ namespace ApotekaShop.Web.Helpers
         {
             if (!price.HasValue) return string.Empty;
             decimal currentPrice = price.Value/100;
+
+            var a = ShopResources.Culture;
             return String.Format("{0} {1}", ShopResources.CurrencyName, currentPrice.ToString("N2"));
         }
     }

@@ -1,0 +1,13 @@
+﻿@using ApotekaShop.Services.Models
+@model Country
+<div class="col-sm-3 col-md-3 pull-right">
+    @using (Html.BeginForm("SetCountry", "Country", FormMethod.Get, new {@class = "navbar-form", role = "culture"}))
+    {
+        <div class="input-group">
+            @Html.DropDownList("country",
+                EnumHelper.GetSelectList(typeof(Country), Model),
+                new {onchange = "this.form.submit();", @class = "form-control input-sm"})
+        </div>
+    }
+
+</div>

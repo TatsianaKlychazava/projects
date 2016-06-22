@@ -142,11 +142,6 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <EmbeddedResource Include="App_LocalResources\ShopResources.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ShopResources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -155,21 +150,21 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_LocalResources\ShopResources.da.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ShopResources.da.resx</DependentUpon>
-    </Compile>
-    <Compile Include="App_LocalResources\ShopResources.Designer.cs">
+    <Compile Include="App_GlobalResources\ShopResources.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ShopResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\ShopResources.sv.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ShopResources.sv.resx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\CultureController.cs" />
+    <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\ProductDetailsApiController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -179,6 +174,7 @@
     <Compile Include="Models\FilterOptionsViewModel.cs" />
     <Compile Include="Models\ProductDetailsViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
@@ -189,7 +185,7 @@
     <Content Include="Views\ProductDetails\Search.cshtml" />
     <Content Include="Views\ProductDetails\Details.cshtml" />
     <Content Include="Views\Shared\_Search.cshtml" />
-    <None Include="Views\Culture\Index.cshtml" />
+    <None Include="Views\Country\Dropdown.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -199,6 +195,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="App_LocalResources\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApotekaShop.Services\ApotekaShop.Services.csproj">
@@ -207,9 +204,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\ShopResources.da.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>ShopResources.da.Designer.cs</LastGenOutput>
+    <Content Include="App_GlobalResources\ShopResources.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ShopResources.designer.cs</LastGenOutput>
+    </Content>
+    <Content Include="App_GlobalResources\ShopResources.sv.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>ShopResources.sv.designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <PropertyGroup>

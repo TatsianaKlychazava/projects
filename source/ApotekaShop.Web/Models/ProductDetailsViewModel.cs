@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ApotekaShop.Services.Models;
 
 namespace ApotekaShop.Web.Models

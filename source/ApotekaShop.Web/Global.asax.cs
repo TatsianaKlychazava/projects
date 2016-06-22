@@ -1,17 +1,16 @@
 ﻿using System;
-using System.Globalization;
-using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Http;
 using System.Web.Optimization;
-using ApotekaShop.Services;
+using ApotekaShop.Services.Interfaces;
 
 namespace ApotekaShop.Web
 {
     public class Global : HttpApplication
     {
+       
         void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
@@ -20,6 +19,14 @@ namespace ApotekaShop.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AutofacConfig.Register(GlobalConfiguration.Configuration);
+         }
+
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+           
+            var webContext = DependencyResolver.Current.GetService<IWebContext>();
+            var country = webContext.GetCountry();
+            webContext.SetCountry(country);
         }
     }
 }
