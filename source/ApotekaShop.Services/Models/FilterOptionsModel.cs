@@ -8,6 +8,7 @@
         public int PageSize { get; set; }
         public string OrderBy { get; set; }
         public Order? Order { get; set; }
+        public int LCID { get; set; }
     }
 
     public enum Order

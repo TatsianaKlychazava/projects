@@ -359,6 +359,45 @@ namespace ApotekaShop.UnitTest.Integration
                 Assert.Equal(expectedList, productDetailsList);
             });
         }
+
+        [Fact]
+        public void Search_ProductDetails_WithCorrectLCID_ReturnsProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne&lcid=1030");
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
+
+                Assert.NotEmpty(productDetailsList);
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithEmptyLCID_ReturnsProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne");
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.Equal(HttpStatusCode.OK, message.StatusCode);
+                IEnumerable<ProductDetailsDTO> productDetailsList = message.Content.GetContent<SearchResultModel>().Results;
+
+                Assert.NotEmpty(productDetailsList);
+            });
+        }
+
+        [Fact]
+        public void Search_ProductDetails_WithIncorrectLCID_ReturnsProductDetails()
+        {
+            var searchRequest = _apiTestServerFixture.CreateGetRequest("Search/?query=migræne&lcid=2");
+
+            _apiTestServerFixture.SendRequest(searchRequest, message =>
+            {
+                Assert.Equal(HttpStatusCode.NotFound, message.StatusCode); 
+            });
+        }
         #endregion
 
         #region Search with paging

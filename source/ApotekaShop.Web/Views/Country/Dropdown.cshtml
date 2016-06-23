@@ -1,7 +1,7 @@
 ﻿@using ApotekaShop.Services.Models
 @model Country
-<div class="col-sm-3 col-md-3 pull-right">
-    @using (Html.BeginForm("SetCountry", "Country", FormMethod.Get, new {@class = "navbar-form", role = "culture"}))
+<div class="col-sm-2 col-md-2 pull-right">
+    @using (Html.BeginForm("SetCountry", "Country", FormMethod.Get, new {@class = "navbar-form pull-right", role = "culture"}))
     {
         <div class="input-group">
             @Html.DropDownList("country",

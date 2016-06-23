@@ -153,6 +153,12 @@ namespace ApotekaShop.Services
                 {
                     filter.PageSize = _configurationSettings.DefaultPageSize;
                 }
+
+                if (filter.LCID > 0)
+                {
+                    queryContainer &=
+                        new QueryContainerDescriptor<ProductDetailsDTO>().Term(t=>t.Field(f=>f.LCID).Value(filter.LCID));
+                }
             }
 
             return queryContainer;
