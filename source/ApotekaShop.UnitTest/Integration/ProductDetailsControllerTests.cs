@@ -1,22 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
-using System.Reflection;
-using System.Threading.Tasks;
-using System.Web.Mvc;
-using ApotekaShop.Services;
-using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 using ApotekaShop.UnitTest.Fixtures;
-using ApotekaShop.Web.Controllers;
 using ApotekaShop.Web.Models;
-using Autofac;
-using Autofac.Integration.WebApi;
-using Moq;
-using Newtonsoft.Json;
 using Xunit;
-using Xunit.Sdk;
 
 namespace ApotekaShop.UnitTest.Integration
 {

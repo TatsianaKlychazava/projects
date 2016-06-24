@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Web.Mvc;
 using Resources;
 
@@ -6,13 +7,11 @@ namespace ApotekaShop.Web.Helpers
 {
     public static class CurrencyHelper
     {
-        public static string Currency(this HtmlHelper helper, int? price)
+        public static string Currency(this HtmlHelper helper, int? price, bool onlyPrice = false)
         {
             if (!price.HasValue) return string.Empty;
             decimal currentPrice = price.Value/100;
-
-            var a = ShopResources.Culture;
-            return String.Format("{0} {1}", ShopResources.CurrencyName, currentPrice.ToString("N2"));
+            return onlyPrice ? currentPrice.ToString("F2", CultureInfo.InvariantCulture) : String.Format("{0} {1}", ShopResources.CurrencyName, currentPrice.ToString("F2",CultureInfo.InvariantCulture));
         }
     }
 }

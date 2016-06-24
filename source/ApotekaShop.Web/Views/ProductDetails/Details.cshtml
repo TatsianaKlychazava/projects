@@ -1,24 +1,28 @@
 ﻿@{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @Model.ProductNames.FirstOrDefault().Name;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using ApotekaShop.Web.Helpers
+@using Resources
 @model ApotekaShop.Services.Models.ProductDetailsDTO
 
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-3" vocab="http://schema.org/" typeof="Product">
         <img class="img-responsive img-center" src="http://placehold.it/200x200" height="200" width="200" title="this image needs to be centered">
 
-        <h3>@Model.ProductNames.FirstOrDefault().Name</h3>
-        <p><label>Price:</label> @Html.Currency(Model.NormalizedPrice)</p>
-        <p><label>Size:</label> @Model.NormalizedPackageSize.ToString("N2")</p>
-
+        <h1 property="name">@Model.ProductNames.FirstOrDefault().Name</h1>
+        <div property="offers" typeof="Offer">
+            <meta property="priceCurrency" content="@ShopResources.CurrencyName" />
+            <p><label>Price:</label>@ShopResources.CurrencyName <span property="price">@Html.Currency(Model.NormalizedPrice, true)</span></p>
+            <p><label>Size:</label> @Model.NormalizedPackageSize.ToString("N2")</p>
+            <link property="availability" href="http://schema.org/InStock" />
+        </div>
         <label>Details:</label>
         <p>@Model.ProductDescription</p>
 
         <label>Display text:</label>
         <p>@Model.DisplayText</p>
-        
+
         @if (Model.Indications != null)
         {
             <label>Indications:</label>
@@ -35,7 +39,6 @@
             <label>Treaments:</label>
             <p>@String.Join(", ", Model.Treaments.Select(treament => treament.Name))</p>
         }
-
         <p><a href="#" class="btn btn-primary" role="button">Add to basket</a>
         </p>
     </div>

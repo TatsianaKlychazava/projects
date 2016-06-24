@@ -1,9 +1,10 @@
-﻿$(document).ready(function() {
+﻿$(document).ready(function () {
+    var url = document.location.origin + "/ProductDetails/Autocomplete";
     $('input[name=query]').each(function() {
         $(this).autocomplete({
             source: function(request, response) {
                 $.ajax({
-                    url: "ProductDetails/Autocomplete",
+                    url: url,
                     type: "Get",
                     dataType: "json",
                     data: { query: request.term },
