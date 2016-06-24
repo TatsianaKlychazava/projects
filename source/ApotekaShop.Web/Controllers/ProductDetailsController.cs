@@ -11,11 +11,13 @@ namespace ApotekaShop.Web.Controllers
     public class ProductDetailsController : Controller
     {
         private readonly IProductDetailsService _productDetailsService;
+        private readonly IWebContext _webContext;
         private const int PageSize = 10;
 
-        public ProductDetailsController(IProductDetailsService productDetailsService)
+        public ProductDetailsController(IProductDetailsService productDetailsService, IWebContext webContext)
         {
             _productDetailsService = productDetailsService;
+            _webContext = webContext;
         }
 
         // GET: SearchPage
@@ -36,7 +38,8 @@ namespace ApotekaShop.Web.Controllers
                     MaxPrice = filters.MaxPrice * 100,
                     MinPrice = filters.MinPrice * 100,
                     Order =  filters.Order,
-                    OrderBy = filters.OrderBy
+                    OrderBy = filters.OrderBy,
+                    LCID = (int)_webContext.GetCountry()
                 });
 
             var model = new ProductDetailsViewModel
