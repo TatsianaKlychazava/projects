@@ -12,12 +12,10 @@ namespace ApotekaShop.Services
     public class ProductDetailsService : IProductDetailsService
     {
         private readonly IProductDetailsElasticService _productDetailsElasticService;
-        private readonly IWebContext _context;
 
-        public ProductDetailsService(IProductDetailsElasticService productDetailsElasticService, IWebContext context)
+        public ProductDetailsService(IProductDetailsElasticService productDetailsElasticService)
         {
             _productDetailsElasticService = productDetailsElasticService;
-            _context = context;
         }
 
         public async Task<ProductDetailsDTO> GetByPackageId(int id)
@@ -32,8 +30,6 @@ namespace ApotekaShop.Services
 
         public async Task<SearchResultModel> Search(string query, FilterOptionsModel filters)
         {
-            var country = _context.GetCountry();
-            filters.LCID = (int)country;
             return await _productDetailsElasticService.Search(query, filters);
         }
 
@@ -50,6 +46,11 @@ namespace ApotekaShop.Services
         public async Task<bool> DeleteIndex()
         {
             return await _productDetailsElasticService.DeleteIndex();
+        }
+
+        public async Task<IEnumerable<string>> GetSuggestions(string query)
+        {
+            return await _productDetailsElasticService.GetSuggestions(query);
         }
    }
 }

@@ -69,3 +69,7 @@ textarea {
 .row {
     margin-top: 3px;    
 }
+
+.ui-autocomplete {
+    z-index: 2000 !important;
+}

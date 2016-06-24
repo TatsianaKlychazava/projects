@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using ApotekaShop.Services.Interfaces;
@@ -54,6 +55,12 @@ namespace ApotekaShop.Web.Controllers
                 }
             };
             return View(model);
+        }
+
+        public async Task<JsonResult> Autocomplete(string query)
+        {
+            var results = await _productDetailsService.GetSuggestions(query);
+            return Json(results.Select(r => new SuggestionViewModel(r, query)), JsonRequestBehavior.AllowGet);
         }
 
         // GET: SearchPage/Details/5

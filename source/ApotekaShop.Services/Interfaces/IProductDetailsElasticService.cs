@@ -46,5 +46,12 @@ namespace ApotekaShop.Services.Interfaces
         /// </summary>
         /// <returns>True if deleted</returns>
         Task<bool> DeleteIndex();
+
+        /// <summary>
+        /// Get suggestion by query string
+        /// </summary>
+        /// <param name="query">Query string</param>
+        /// <returns>Suggestions</returns>
+        Task<IEnumerable<string>> GetSuggestions(string query);
     }
 }

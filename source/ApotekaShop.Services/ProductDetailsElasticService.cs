@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
+using Elasticsearch.Net;
 using Nest;
 using SortOrder = Nest.SortOrder;
 
@@ -74,6 +76,18 @@ namespace ApotekaShop.Services
                 TotalResults = result.Total,
                 ExecutionTime = result.Took
             };
+        }
+
+        public async Task<IEnumerable<string>> GetSuggestions(string query)
+        {
+            var result = await _elasticClient.SearchAsync<ProductDetailsDTO>(s => s.Query(q => q
+                .QueryString(c => c.DefaultField(p => p.ProductNames.FirstOrDefault().Name)
+                .DefaultOperator(Operator.Or).Query($"{query}*")
+                )).Sort(so=>so.Ascending(a=>a.ProductNames.FirstOrDefault().Name)).Size(1000));
+           
+            IEnumerable<String> resultStrings = result.Documents.Select(s => s.ProductNames.FirstOrDefault().Name).Distinct().OrderBy(s=>s).Take(10);   
+            
+            return resultStrings;
         }
 
         private List<ISort> CreateSortFields(FilterOptionsModel filter)

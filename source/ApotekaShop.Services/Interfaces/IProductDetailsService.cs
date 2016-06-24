@@ -12,5 +12,6 @@ namespace ApotekaShop.Services.Interfaces
         Task<BulkOperationResult> ImportProductDetalils();
         Task<bool> Delete(int id);
         Task<bool> DeleteIndex();
+        Task<IEnumerable<string>> GetSuggestions(string query);
     }
 }
