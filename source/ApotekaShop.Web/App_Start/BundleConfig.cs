@@ -24,8 +24,8 @@ namespace ApotekaShop.Web
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/respond.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/search").Include(
-                "~/Scripts/search.js"));
+            bundles.Add(new ScriptBundle("~/bundles/autocomplete").Include(
+                "~/Scripts/autocomplete.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",

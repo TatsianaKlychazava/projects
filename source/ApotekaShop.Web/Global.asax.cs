@@ -23,7 +23,6 @@ namespace ApotekaShop.Web
 
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
-           
             var webContext = DependencyResolver.Current.GetService<IWebContext>();
             var country = webContext.GetCountry();
             webContext.SetCountry(country);

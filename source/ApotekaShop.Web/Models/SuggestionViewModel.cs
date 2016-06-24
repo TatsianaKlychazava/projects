@@ -6,6 +6,8 @@ namespace ApotekaShop.Web.Models
     {
         public SuggestionViewModel(string suggestion, string query)
         {
+            query = query.Replace("*", "");
+
             Value = suggestion;
             var indexOf = suggestion.IndexOf(query, StringComparison.Ordinal);
 
