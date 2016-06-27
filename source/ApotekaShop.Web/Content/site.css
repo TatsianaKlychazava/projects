@@ -69,6 +69,11 @@ margin: 30px 10px;
     right: 3px;
 }
 
+.text-hidden-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 body {
     padding-top: 90px;
