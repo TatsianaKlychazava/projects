@@ -203,6 +203,7 @@
     <Compile Include="Controllers\CountryController.cs" />
     <Compile Include="Controllers\ProductDetailsApiController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -232,6 +233,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_LocalResources\" />
+    <Folder Include="Views\Site\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApotekaShop.Services\ApotekaShop.Services.csproj">
