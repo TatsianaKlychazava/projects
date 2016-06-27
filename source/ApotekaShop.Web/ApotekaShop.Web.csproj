@@ -183,6 +183,7 @@
     <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\shoppingcard.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -201,6 +202,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CountryController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductDetailsApiController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -223,6 +225,8 @@
     <Content Include="Views\Shared\_Search.cshtml" />
     <Content Include="Views\Country\Dropdown.cshtml" />
     <Content Include="Scripts\jquery-2.2.4.min.map" />
+    <None Include="Views\Order\Index.cshtml" />
+    <None Include="Views\Order\Orders.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
