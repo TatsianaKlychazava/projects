@@ -1,44 +1,77 @@
-﻿.navbar-brand{
-    background: url(http://placehold.it/50x50) no-repeat;
-    background-size: 40px 40px;
-    height:40px;
-    margin:5px;
-    width:40px;
+﻿.navbar-nav{
+    margin:7.5px 0px;
+}
+
+.navbar-brand {
+  padding: 0px; /* firefox bug fix */
+}
+.navbar-brand>img {
+  height: auto;
+  padding: 15px; /* firefox bug fix */
+  width: auto;
+}
+
+.navbar-collapse{
+padding: 13px 0;
+background: #ffffff;
+}
+.navbar-header>button{
+margin: 30px 10px;
+}
+
+.navbar-toggle .icon-bar{
+    background-color: black;
 }
 
 #custom-search-input{
-    padding: 3px;
-    border: solid 1px #E4E4E4;
-    border-radius: 6px;
-    background-color: #fff;
+    padding: 0px;
+    background-color: transparent;
 }
 
 #custom-search-input input{
     border: 0;
     box-shadow: none;
+    border-radius:0;
+    border-bottom: solid 2px #bbbebc;
+    background-color: transparent;
+}
+
+#custom-search-input .input-group-btn {
+    border: 2px solid rgba(255,255,255,0);
+    padding:2px 0px 2px 20px;
 }
 
 #custom-search-input button{
-    margin: 2px 0 0 0;
+    margin: 0;
     background: none;
     box-shadow: none;
     border: 0;
-    color: #666666;
-    padding: 0 8px 0 10px;
-    border-left: solid 1px #ccc;
+    color: white;
+    background-color:#007abc;
 }
 
 #custom-search-input button:hover{
     border: 0;
     box-shadow: none;
-    border-left: solid 1px #ccc;
+    background-color:#286090;
+}
+
+#custom-search-input .btn{
+    border-radius:3px;
+    padding:8px 20px 10px;
+    font-size:16px;
+    font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #custom-search-input .glyphicon-search{
-    font-size: 23px;
+    font-size: 20px;
+    top:4px;
+    right: 3px;
 }
+
+
 body {
-    padding-top: 60px;
+    padding-top: 90px;
     padding-bottom: 20px;
 }
 
@@ -71,18 +104,15 @@ body {
     float: left;
     display: none;
     min-width: 160px;
-    _width: 160px;
+    width: 160px;
     padding: 4px 0;
     margin: 2px 0 0 0;
     list-style: none;
     background-color: #ffffff;
-    border-color: #ccc;
-    border-color: rgba(0, 0, 0, 0.2);
-    border-style: solid;
-    border-width: 1px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    border: solid 1px #E4E4E4;
+    -webkit-border-radius: 0 0 6px 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
     -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
@@ -92,16 +122,16 @@ body {
     *border-right-width: 2px;
     *border-bottom-width: 2px;
 }
-    .ui-autocomplete .ui-menu-item > a.ui-corner-all {
-        display: block;
-        padding: 3px 15px;
-        clear: both;
-        font-weight: normal;
-        line-height: 18px;
-        color: #555555;
-        white-space: nowrap;
-    }
-    .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
+.ui-autocomplete .ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #E4E4E4;
+    white-space: nowrap;
+}
+.ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover, .ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active {
         color: #ffffff;
         text-decoration: none;
         background-color: #0088cc;
@@ -110,3 +140,14 @@ body {
         -moz-border-radius: 0px;
         background-image: none;
     }
+
+.panel{
+    border:0px;
+    border-color:white;
+    background-color:#fafdfb;
+    box-shadow: none;
+    }
+
+.panel-primary > .panel-heading {
+    display:none;
+}
