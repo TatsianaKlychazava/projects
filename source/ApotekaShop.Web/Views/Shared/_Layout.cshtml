@@ -29,6 +29,7 @@
             </ul>
             @{
                 Html.RenderPartial("_Search");
+                Html.RenderAction("Orders", "Order");
                 Html.RenderAction("Dropdown", "Country");
             }
         </div>
@@ -43,5 +44,6 @@
 </div>
 @RenderSection("scripts", required: false)
 @Scripts.Render("~/bundles/autocomplete")
+@Scripts.Render("~/bundles/shoppingcard")
 </body>
 </html>
