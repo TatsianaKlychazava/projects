@@ -37,5 +37,16 @@ namespace ApotekaShop.Web.Controllers
         {
             return Json(await _orderService.AddOrderItem(id), JsonRequestBehavior.AllowGet);
         }
+
+        public void DeleteItem(int id)
+        {
+            _orderService.DeleteOrderItem(id);
+        }
+
+        public void UpdateItemCount(int id, int count)
+        {
+            _orderService.UpdateOrderItemCount(id, count);
+        }
+
     }
 }

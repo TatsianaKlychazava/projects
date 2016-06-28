@@ -9,5 +9,7 @@ namespace ApotekaShop.Services.Interfaces
         List<OrderItemModel> GetOrderItems();
         Task<object> AddOrderItem(int id);
         List<OrderItemModel> UpdateOrderItems(List<OrderItemModel> orderModel);
+        void DeleteOrderItem(int id);
+        void UpdateOrderItemCount(int id, int count);
     }
 }

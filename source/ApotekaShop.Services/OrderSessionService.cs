@@ -60,6 +60,28 @@ namespace ApotekaShop.Services
             return new {status = "Done", count = orderItems.Count};
         }
 
+        public void DeleteOrderItem(int id)
+        {
+            var orderItems = GetOrderItems();
+
+            orderItems.Remove(orderItems.FirstOrDefault(item => item.Id == id));
+
+            HttpContext.Current.Session[OrderItemsKey] = orderItems;
+        }
+
+        public void UpdateOrderItemCount(int id, int count)
+        {
+            var orderItems = GetOrderItems().ToList();
+            var item = orderItems.FirstOrDefault(o => o.Id == id);
+
+            if (item != null)
+            {
+                item.Count = count;
+            }
+            
+            HttpContext.Current.Session[OrderItemsKey] = orderItems;
+        }
+
         public List<OrderItemModel> UpdateOrderItems(List<OrderItemModel> orderItems)
         {
             var unmodifiedOrderItems = GetOrderItems().ToList();
@@ -69,10 +91,6 @@ namespace ApotekaShop.Services
 
                 if (item != null)
                 {
-                    if (orderItem.Count == 0)
-                    {
-                        unmodifiedOrderItems.Remove(item);
-                    }
                     item.Count = orderItem.Count;
                 }
             }

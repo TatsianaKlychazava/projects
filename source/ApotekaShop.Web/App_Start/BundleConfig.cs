@@ -27,8 +27,8 @@ namespace ApotekaShop.Web
             bundles.Add(new ScriptBundle("~/bundles/autocomplete").Include(
                 "~/Scripts/autocomplete.js"));
             
-            bundles.Add(new ScriptBundle("~/bundles/shoppingcard").Include(
-                "~/Scripts/shoppingcard.js"));
+            bundles.Add(new ScriptBundle("~/bundles/order").Include(
+                "~/Scripts/OrderModule.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
