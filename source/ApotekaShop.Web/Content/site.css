@@ -1,4 +1,9 @@
-﻿.navbar-nav{
+﻿.navbar{
+    background:#ffffff;
+    border-bottom:1px solid #E4E4E4;
+}
+
+.navbar-nav{
     margin:7.5px 0px;
 }
 
@@ -151,8 +156,10 @@ body {
     border-color:white;
     background-color:#fafdfb;
     box-shadow: none;
+    margin:0px;
     }
 
 .panel-primary > .panel-heading {
     display:none;
+    
 }
