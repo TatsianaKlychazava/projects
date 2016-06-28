@@ -29,20 +29,20 @@
                 </div>
             </div>
             <div class="row filters">
-                <div class="col-sm-2">
+                <div class="col-sm-2 col-xs-6">
                     <label class="control-label">Min price:</label> @Html.TextBox("minPrice", Model.Filters.MinPrice, new { @class = "form-control input-sm" })
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2 col-xs-6">
                     <label class="control-label">Max price:</label> @Html.TextBox("maxPrice", Model.Filters.MaxPrice, new { @class = "form-control input-sm" })
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2 col-xs-12">
                     <label class="control-label">Order By:</label> @Html.DropDownList("orderBy", new SelectList(orderBy, Model.Filters.OrderBy), new
                                                               {
                                                                   onchange = "this.form.submit();",
                                                                   @class = "form-control input-sm"
                                                               })
                 </div>
-                <div class="col-sm-2">
+                <div class="col-sm-2 col-xs-12">
                     <label class="control-label">Order:</label> @Html.DropDownList("order", new SelectList(order, Model.Filters.Order), new
                                                            {
                                                                onchange = "this.form.submit();",
@@ -53,8 +53,8 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-sm-2">
-            <p>Found: @Model.Total results</p>
+        <div class="col-sm-12" style="background:#cce9d7">
+            <p style="padding:6px 14px;font-size:12px;">Found: <b>@Model.Total</b> results</p>
         </div>
     </div>
 }
