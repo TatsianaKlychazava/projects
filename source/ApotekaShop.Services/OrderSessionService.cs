@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using System.Web;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
-using Nest;
 
 namespace ApotekaShop.Services
 {
@@ -19,7 +18,7 @@ namespace ApotekaShop.Services
             _productDetailsService = productDetailsService;
         }
 
-        public IEnumerable<OrderItemModel> GetOrderItems()
+        public List<OrderItemModel> GetOrderItems()
         {
             if (HttpContext.Current.Session[OrderItemsKey] == null)
             {
@@ -58,6 +57,27 @@ namespace ApotekaShop.Services
             HttpContext.Current.Session[OrderItemsKey] = orderItems;
             
             return new {status = "Done", count = orderItems.Count};
+        }
+
+        public List<OrderItemModel> UpdateOrderItems(List<OrderItemModel> orderItems)
+        {
+            var unmodifiedOrderItems = GetOrderItems().ToList();
+            foreach (var orderItem in orderItems)
+            {
+                var item = unmodifiedOrderItems.FirstOrDefault(o => o.Id == orderItem.Id);
+
+                if (item != null)
+                {
+                    if (orderItem.Count == 0)
+                    {
+                        unmodifiedOrderItems.Remove(item);
+                    }
+                    item.Count = orderItem.Count;
+                }
+            }
+
+            HttpContext.Current.Session[OrderItemsKey] = unmodifiedOrderItems;
+            return unmodifiedOrderItems;
         }
     }
 }

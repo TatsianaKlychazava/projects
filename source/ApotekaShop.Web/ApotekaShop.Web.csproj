@@ -210,6 +210,7 @@
     </Compile>
     <Compile Include="Helpers\CurrencyHelper.cs" />
     <Compile Include="Models\FilterOptionsViewModel.cs" />
+    <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Models\ProductDetailsViewModel.cs" />
     <Compile Include="Models\SuggestionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -225,7 +226,7 @@
     <Content Include="Views\Shared\_Search.cshtml" />
     <Content Include="Views\Country\Dropdown.cshtml" />
     <Content Include="Scripts\jquery-2.2.4.min.map" />
-    <None Include="Views\Order\Index.cshtml" />
+    <None Include="Views\Order\Details.cshtml" />
     <None Include="Views\Order\Orders.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

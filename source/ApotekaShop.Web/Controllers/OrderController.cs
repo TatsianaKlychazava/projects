@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using ApotekaShop.Services.Interfaces;
+using ApotekaShop.Web.Models;
 
 namespace ApotekaShop.Web.Controllers
 {
@@ -13,9 +14,17 @@ namespace ApotekaShop.Web.Controllers
             _orderService = orderService;
         }
 
-        public ActionResult Index()
+        public ActionResult Details()
         {
-            return View(_orderService.GetOrderItems());
+            return View(new OrderViewModel {OrderItems = _orderService.GetOrderItems()});
+        }
+
+        [HttpPost]
+        public ActionResult Details(OrderViewModel orderModel)
+        {
+            var model = new OrderViewModel {OrderItems = _orderService.UpdateOrderItems(orderModel.OrderItems)};
+
+            return View(model);
         }
 
         // GET: Order
