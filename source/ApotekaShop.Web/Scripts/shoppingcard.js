@@ -15,7 +15,7 @@
 
     function successFunc(data) {
         if (data.status === "Done") {
-            $("#orderItemsCount").text(data.count);
+            $("#orderItemsCount").text(data.count + " items");
         } else {
             alert(data.message);
         };
