@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
+using ApotekaShop.Services.Helpers;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 
@@ -49,7 +50,7 @@ namespace ApotekaShop.Services
                 {
                     Count = 1,
                     Id = id,
-                    Name = product.ProductNames.FirstOrDefault().Name,
+                    Name = product.ProductNames.GetFirstProductName(),
                     PricePerUnit = (int)product.NormalizedPrice
                 });
             }

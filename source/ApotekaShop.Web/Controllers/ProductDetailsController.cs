@@ -11,12 +11,15 @@ namespace ApotekaShop.Web.Controllers
     public class ProductDetailsController : Controller
     {
         private readonly IProductDetailsService _productDetailsService;
+        private readonly ConfigurationSettingsModel _configurationSettings;
         private readonly IWebContext _webContext;
-        private const int PageSize = 10;
 
-        public ProductDetailsController(IProductDetailsService productDetailsService, IWebContext webContext)
+        private int PageSize => _configurationSettings.DefaultPageSize;
+
+        public ProductDetailsController(IProductDetailsService productDetailsService, IConfigurationSettingsProvider configurationSettingsProvider, IWebContext webContext)
         {
             _productDetailsService = productDetailsService;
+            _configurationSettings = configurationSettingsProvider.GetConfiguration();
             _webContext = webContext;
         }
 
@@ -30,23 +33,23 @@ namespace ApotekaShop.Web.Controllers
                 page--;
             }
 
-            SearchResultModel result = await _productDetailsService.Search(filters.Query,
-                new FilterOptionsModel()
-                {
-                    PageFrom = page,
-                    PageSize = PageSize,
-                    MaxPrice = filters.MaxPrice * 100,
-                    MinPrice = filters.MinPrice * 100,
-                    Order =  filters.Order,
-                    OrderBy = filters.OrderBy,
-                    LCID = (int)_webContext.GetCountry()
-                });
+            var filterModel = new FilterOptionsModel()
+            {
+                PageFrom = page,
+                PageSize = PageSize,
+                MaxPrice = filters.MaxPrice * 100,
+                MinPrice = filters.MinPrice * 100,
+                Order = filters.Order,
+                OrderBy = filters.OrderBy,
+                LCID = (int)_webContext.GetCountry()
+            };
+            SearchResultModel result = await _productDetailsService.Search(filters.Query, filterModel);
 
             var model = new ProductDetailsViewModel
             {
                 Products = result.Results,
                 Total = result.TotalResults,
-                PageCount = Convert.ToInt32(Math.Ceiling((double) (result.TotalResults/PageSize))),
+                PageCount = Convert.ToInt32(Math.Ceiling((double)(result.TotalResults / PageSize))),
                 Filters = new FilterOptionsViewModel
                 {
                     Query = filters.Query,

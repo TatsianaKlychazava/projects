@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
+using ApotekaShop.Services.Helpers;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 using Elasticsearch.Net;
@@ -85,7 +86,7 @@ namespace ApotekaShop.Services
                 .DefaultOperator(Operator.Or).Query($"{query}*")
                 )).Sort(so=>so.Ascending(a=>a.ProductNames.FirstOrDefault().Name)).Size(1000));
            
-            IEnumerable<String> resultStrings = result.Documents.Select(s => s.ProductNames.FirstOrDefault().Name).Distinct().OrderBy(s=>s).Take(10);   
+            IEnumerable<String> resultStrings = result.Documents.Select(s => s.ProductNames.GetFirstProductName()).Distinct().OrderBy(s=>s).Take(10);   
             
             return resultStrings;
         }

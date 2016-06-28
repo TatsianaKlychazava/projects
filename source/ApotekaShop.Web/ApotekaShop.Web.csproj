@@ -165,6 +165,7 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Content\themes\site-images\logo.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="App_Data\ProductDetails.json" />
@@ -205,6 +206,7 @@
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductDetailsApiController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -226,8 +228,8 @@
     <Content Include="Views\Shared\_Search.cshtml" />
     <Content Include="Views\Country\Dropdown.cshtml" />
     <Content Include="Scripts\jquery-2.2.4.min.map" />
-    <None Include="Views\Order\Details.cshtml" />
-    <None Include="Views\Order\Orders.cshtml" />
+    <Content Include="Views\Order\Details.cshtml" />
+    <Content Include="Views\Order\Orders.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -237,6 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_LocalResources\" />
+    <Folder Include="Views\Site\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ApotekaShop.Services\ApotekaShop.Services.csproj">
