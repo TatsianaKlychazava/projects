@@ -1,4 +1,2 @@
 ﻿@model System.Collections.Generic.IEnumerable<ApotekaShop.Services.Models.OrderItemModel>
-<div class="col-sm-3 col-md-3 col-xs-6 pull-right" style="padding-top: 10px">
-    <a id="orderItemsCount" href="@Url.Action("Details", "Order")">@Model.Count() items</a>
-</div>
+<a id="orderItemsCount" href="@Url.Action("Details", "Order" )"><b>@Model.Count()</b></a>

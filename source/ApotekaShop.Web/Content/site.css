@@ -1,4 +1,22 @@
-﻿.navbar{
+﻿.valign {
+  display: flex;
+  flex-direction: row;
+}
+
+.valign > [class^="col-"],
+.valign > [class*=" col-"] {
+  display: flex;
+  align-items: center;
+  /*justify-content: center;*/ /* Optional, to align inner items 
+                              horizontally inside the column */
+}
+
+.divider {
+ height:1px;
+ background-color:#E4E4E4;
+}
+
+.navbar{
     background:#ffffff;
     border-bottom:1px solid #E4E4E4;
 }
@@ -9,6 +27,7 @@
 
 .navbar-brand {
   padding: 0px; /* firefox bug fix */
+  height:auto;
 }
 .navbar-brand>img {
   height: auto;
