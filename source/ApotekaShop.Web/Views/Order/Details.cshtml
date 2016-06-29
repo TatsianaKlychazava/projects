@@ -1,4 +1,5 @@
-﻿@using ApotekaShop.Web.Helpers
+﻿@using Newtonsoft.Json
+@using Resources
 @model ApotekaShop.Web.Models.OrderViewModel
 
 @{
@@ -6,56 +7,48 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Orders</h1>
-    @using (Html.BeginForm("Details", "Order", FormMethod.Post))
-    {
-        if (Model.OrderItems.Any())
-        {
-            for (var i = 0; i < Model.OrderItems.Count(); i++)
-            {
-                <div class="row">
-                    @Html.HiddenFor(model => model.OrderItems[i].Id)
-                    @Html.HiddenFor(model => model.OrderItems[i].Name)
-                    @Html.HiddenFor(model => model.OrderItems[i].PricePerUnit)
-                    
-                    <div class="col-md-6">
-                        <div class="caption"> 
-                            <a href="@Url.Action("Details", "ProductDetails", new {id = Model.OrderItems[i].Id})">
-                                <h3>@Model.OrderItems[i].Name</h3>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class="pull-right" style="vertical-align:middle">@Html.Currency(Model.OrderItems[i].PricePerUnit) *</div>
-                    </div>
-                    <div class="col-md-2">
-                        <div class=" input-group">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">-</button>
-                            </span>
-                            @Html.TextBoxFor(model => model.OrderItems[i].Count, new {@class = "form-control", type = "number", onchange = "this.form.submit();"})
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">+</button>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        @Html.Currency(Model.OrderItems[i].PricePerUnit * Model.OrderItems[i].Count)
-                    </div>
+<div>
+    <h1>Orders</h1>
+
+    <div class="row" ng-controller="orderController" ng-init="init(@JsonConvert.SerializeObject(Model),'@ShopResources.CurrencyName', '@Url.Action("Details", "ProductDetails")')">
+        <div class="row" ng-repeat="order in orderItems">
+            <div class="col-md-6">
+                <div class="caption">
+                    <a href="{{productDetailsUrl + '/' + order.Id}}">
+                        <h3>{{order.Name}}</h3>
+                    </a>
                 </div>
-            }
-        }
-    }
-<div class="row" style="background: #cce9d7; padding: 10px 0;">
-    <div class="col-md-10"><b class="pull-right">Total:</b>
-    </div>
-    <div class="col-md-2 pull-right"><b>DKK 255</b>
+            </div>
+            <div class="col-md-2">
+                <div class="pull-right" style="vertical-align: middle">{{currencyName}} {{(order.PricePerUnit / 100).toFixed(2)}} *</div>
+            </div>
+            <div class="col-md-2">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" ng-click="changeCount(order, order.Count - 1)" type="button">-</button>
+                    </span>
+                    <input type="text" name="input" class="form-control" ng-model="order.Count" ng-change="changeCount(order, order.Count)"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" ng-click="changeCount(order,order.Count + 1)" type="button">+</button>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-2">
+                {{currencyName}} {{(order.PricePerUnit / 100  * order.Count).toFixed(2)}}
+            </div>
+        </div>
+        <div class="row" style="background: #cce9d7; padding: 10px 0;">
+            <div class="col-md-10">
+                <b class="pull-right">Total:</b>
+            </div>
+            <div class="col-md-2 pull-right">
+                <b><span id="totalPrice">{{currencyName}} {{(total / 100).toFixed(2)}}</span></b>
+            </div>
+        </div>
     </div>
 </div>
 
 @section Scripts
 {
-<script>
-        OrderModule.initializeAddToOrderButtons();
-</script>
+    @Scripts.Render("~/bundles/order")
 }

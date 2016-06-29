@@ -40,6 +40,6 @@
             <label>Treaments:</label>
             <p>@String.Join(", ", Model.Treaments.Select(treament => treament.Name))</p>
         }
-        <p><a href="#" data-id="@Model.PackageId" class="btn btn-primary addToOrder" role="button">Add to card</a> </p>
+        <p><a href="#" class="btn btn-primary" ng-click="addOrder(@Model.PackageId, $event)">Add to card</a> </p>
     </div>
 </div>

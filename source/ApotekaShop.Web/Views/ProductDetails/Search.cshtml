@@ -1,5 +1,4 @@
 ﻿@using ApotekaShop.Services.Helpers
-@using ApotekaShop.Services.Models
 @using ApotekaShop.Web.Helpers
 @model ApotekaShop.Web.Models.ProductDetailsViewModel
 @{
@@ -70,7 +69,7 @@
                     <p>Price:@Html.Currency(product.NormalizedPrice)</p>
                     <p>Size @product.NormalizedPackageSize.ToString("N2")</p>
 
-                    <p><a href="#" data-id="@product.PackageId" class="btn btn-primary addToOrder" role="button">Add to card</a> </p>
+                    <p><a href="#" ng-click="addOrder(@product.PackageId, $event)" class="btn btn-primary">Add to card</a> </p>
                 </div>
             </div>
         </div>
@@ -98,12 +97,5 @@ filter.PageNumber = page;
 var routeParms = new RouteValueDictionary(filter.GetType().GetProperties().ToDictionary(p => p.Name, p => p.GetValue(Model.Filters, null)));
 
     @Html.ActionLink((page).ToString(), "Search", routeParms)
-}
-
-@section Scripts
-{
-    <script>
-        OrderModule.initializeAddToOrderButtons();
-    </script>
 }
 

@@ -1,51 +1,29 @@
-﻿var OrderModule = (function () {
-    this.initializeAddToOrderButtons = function initializeAddToCartButtons() {
-        var addToOrderUrl = document.location.origin + "/Order/AddItem";
+﻿(function() {
+    var apotekaApp = angular.module('apotekaApp');
 
-        function addToCart(id) {
-            $.ajax({
-                type: "GET",
-                url: addToOrderUrl,
-                data: { 'id': id },
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: successFunc
-            });
+    apotekaApp.controller('orderController', function ($scope, $http) {
+        $scope.init = function(model, currencyName, productDetailsUrl) {
+            $scope.orderItems = model.OrderItems;
+            $scope.currencyName = currencyName;
+            $scope.productDetailsUrl = productDetailsUrl;
+            $scope.getTotal();
         }
 
-        function successFunc(data) {
-            if (data.status === "Done") {
-                $("#orderItemsCount").text(data.count + " items");
-            } else {
-                alert(data.message);
-            };
+        $scope.changeCount = function (order, value) {
+            if (value >= 0) {
+                order.Count = value;
+                $http.post('/order/UpdateItemCount', { 'id': order.Id, 'count': value });
+                $scope.getTotal();
+            }
         }
 
-        $(".addToOrder").click(function (event) {
-            event.preventDefault();
-            var $self = $(this);
-            var id = $self.data("id");
-            addToCart(id);
-        });
-    };
-
-    this.initializeOrderDetailsPage = function initializeOrderDetailsPage() {
-       /* function removeFromCard(id) {
-            $.ajax({
-                type: "GET",
-                url: addToCardUrl,
-                data: { 'id': id },
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: successFunc
-            });
-        }*/
-    };
-
-
-    // public API
-    return {
-        initializeAddToOrderButtons: initializeAddToOrderButtons,
-        initializeOrderDetailsPage: initializeOrderDetailsPage
-    };
+        $scope.getTotal = function () {
+            var total = 0;
+            for (var i = 0; i < $scope.orderItems.length; i++) {
+                var item = $scope.orderItems[i];
+                total += (item.PricePerUnit * item.Count);
+            }
+            $scope.total = total;
+        }
+    });
 })();
