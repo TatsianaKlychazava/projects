@@ -33,11 +33,11 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Products", "Search", "ProductDetails")</li>
                     <li role="separator" class="divider"></li>
                 </ul>
-                <ul class="nav navbar-nav pull-right">
+                <ul class="nav navbar-nav navbar-right">
                     <li>@{Html.RenderPartial("_Search");}</li>
                     <li role="separator" class="divider"></li>
                     <li>@{Html.RenderAction("Orders", "Order");}</li>
