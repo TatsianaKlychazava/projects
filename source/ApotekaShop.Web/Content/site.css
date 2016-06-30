@@ -208,3 +208,11 @@ body {
 .panel > .table > tbody > tr > * {
     vertical-align: middle;
 }
+
+/*removing inner arrows from input:number*/
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
