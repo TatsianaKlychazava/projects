@@ -13,10 +13,26 @@ namespace ApotekaShop.Web.Services
         private readonly IProductDetailsService _productDetailsService;
 
         private const string OrderItemsKey = "orderItems";
+        private const string OrderKey = "order";
+
 
         public OrderSessionService(IProductDetailsService productDetailsService)
         {
             _productDetailsService = productDetailsService;
+        }
+
+        public OrderModel GetOrder()
+        {
+            if (HttpContext.Current.Session[OrderKey] == null)
+            {
+                return null;
+            }
+            return HttpContext.Current.Session[OrderKey] as OrderModel;
+        }
+        
+        public void SaveOrder(OrderModel order)
+        {
+            HttpContext.Current.Session[OrderKey] = order;
         }
 
         public List<OrderItemModel> GetOrderItems()
