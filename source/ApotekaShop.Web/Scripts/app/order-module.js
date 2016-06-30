@@ -16,6 +16,16 @@
                 $scope.getTotal();
             }
         }
+        
+        $scope.remove = function(index) {
+            var order = $scope.orderItems[index];
+
+            $scope.orderItems.splice(index, 1);
+
+            $http.post('/order/DeleteItem', { 'id': order.Id });
+            $scope.$parent.itemsCount = $scope.orderItems.length;
+            $scope.getTotal();
+        }
 
         $scope.getTotal = function () {
             var total = 0;

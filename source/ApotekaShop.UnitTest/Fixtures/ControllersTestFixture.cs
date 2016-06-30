@@ -2,7 +2,6 @@
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 using Autofac;
-using Moq;
 
 namespace ApotekaShop.UnitTest.Fixtures
 {

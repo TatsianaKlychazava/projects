@@ -4,6 +4,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using ApotekaShop.Services;
 using ApotekaShop.Services.Interfaces;
+using ApotekaShop.Web.Services;
 using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
@@ -48,7 +49,7 @@ namespace ApotekaShop.Web
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-            GlobalConfiguration.Configuration.DependencyResolver = new Autofac.Integration.WebApi.AutofacWebApiDependencyResolver(container);
+            GlobalConfiguration.Configuration.DependencyResolver = new AutofacWebApiDependencyResolver(container);
         }
     }
 }

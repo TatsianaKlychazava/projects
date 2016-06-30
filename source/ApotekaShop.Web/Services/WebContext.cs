@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Web;
@@ -7,7 +6,7 @@ using ApotekaShop.Services.Helpers;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 
-namespace ApotekaShop.Web
+namespace ApotekaShop.Web.Services
 {
     public class WebContext: IWebContext
     {

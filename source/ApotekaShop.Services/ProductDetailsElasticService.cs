@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using ApotekaShop.Services.Helpers;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
-using Elasticsearch.Net;
 using Nest;
 using SortOrder = Nest.SortOrder;
 
@@ -114,7 +112,7 @@ namespace ApotekaShop.Services
     
         public async Task<BulkOperationResult> ImportProductDetalils()
         {
-            List<ProductDetailsDTO> details = _productDetailsDataProvider.ImportProductDetalils();
+            List<ProductDetailsDTO> details = _productDetailsDataProvider.ImportProductDetails();
             return await AddOrUpdate(details);
         }
 

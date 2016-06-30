@@ -15,8 +15,6 @@ namespace ApotekaShop.Web
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                 "~/Scripts/jquery-ui-{version}.js"));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/modernizr-*"));
 
@@ -28,13 +26,13 @@ namespace ApotekaShop.Web
                 "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/autocomplete").Include(
-                "~/Scripts/autocomplete.js"));
+                "~/Scripts/app/autocomplete.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/common").Include(
-                "~/Scripts/CommonModule.js"));
+                "~/Scripts/app/common-module.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/order").Include(
-                "~/Scripts/OrderModule.js"));
+                "~/Scripts/app/order-module.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",

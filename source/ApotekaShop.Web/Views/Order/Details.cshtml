@@ -12,7 +12,7 @@
 
     <div class="row" ng-controller="orderController" ng-init="init(@JsonConvert.SerializeObject(Model),'@ShopResources.CurrencyName', '@Url.Action("Details", "ProductDetails")')">
         <div class="row" ng-repeat="order in orderItems">
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="caption">
                     <a href="{{productDetailsUrl + '/' + order.Id}}">
                         <h3>{{order.Name}}</h3>
@@ -27,14 +27,17 @@
                     <span class="input-group-btn">
                         <button class="btn btn-default" ng-click="changeCount(order, order.Count - 1)" type="button">-</button>
                     </span>
-                    <input type="text" name="input" class="form-control" ng-model="order.Count" ng-change="changeCount(order, order.Count)"/>
+                    <input type="text" name="input" min="0" class="form-control" ng-model="order.Count" ng-change="changeCount(order, order.Count)"/>
                     <span class="input-group-btn">
                         <button class="btn btn-default" ng-click="changeCount(order,order.Count + 1)" type="button">+</button>
                     </span>
                 </div>
             </div>
             <div class="col-md-2">
-                {{currencyName}} {{(order.PricePerUnit / 100  * order.Count).toFixed(2)}}
+                {{currencyName}} {{(order.PricePerUnit / 100 * order.Count).toFixed(2)}}
+            </div>
+            <div class="col-md-1">
+                <button class="btn btn-danger" ng-click="remove($index)" type="button">Remove</button>
             </div>
         </div>
         <div class="row" style="background: #cce9d7; padding: 10px 0;">
