@@ -236,6 +236,7 @@
     <Content Include="Scripts\jquery-2.2.4.min.map" />
     <Content Include="Views\Order\Details.cshtml" />
     <Content Include="Views\Order\Orders.cshtml" />
+    <Content Include="Views\Order\Checkout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
