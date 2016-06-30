@@ -180,17 +180,16 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\app.js" />
-    <Content Include="Scripts\autocomplete.js" />
+    <Content Include="Scripts\app\autocomplete.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.2.4-vsdoc.js" />
-    <Content Include="app\common-module.js" />
+    <Content Include="Scripts\app\common-module.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
-    <Content Include="app\order-module.js" />
+    <Content Include="Scripts\app\order-module.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

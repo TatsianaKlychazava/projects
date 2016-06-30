@@ -26,13 +26,13 @@ namespace ApotekaShop.Web
                 "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/autocomplete").Include(
-                "~/Scripts/autocomplete.js"));
+                "~/Scripts/app/autocomplete.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/common").Include(
-                "~/app/common-module.js"));
+                "~/Scripts/app/common-module.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/order").Include(
-                "~/app/order-module.js"));
+                "~/Scripts/app/order-module.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
