@@ -16,6 +16,24 @@
  background-color:#E4E4E4;
 }
 
+.thumbnail{
+padding:10px;
+border-radius:0;
+}
+
+.caption > .btn-primary {
+    width:100%;
+    display:block;
+}
+
+.thumbnail > hr{
+    margin-bottom:0px;
+}
+
+.thumbnail > h3 {
+    margin-top:5px;
+}
+
 .navbar{
     background:#ffffff;
     border-bottom:1px solid #E4E4E4;
@@ -45,6 +63,10 @@ margin: 30px 10px;
 
 .navbar-toggle .icon-bar{
     background-color: black;
+}
+
+.panel-footer{
+    background-color:#cce9d7;
 }
 
 #custom-search-input{
