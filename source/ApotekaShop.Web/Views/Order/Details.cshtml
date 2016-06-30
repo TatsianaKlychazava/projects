@@ -61,52 +61,6 @@
         </table>
     </div>
 
-
-    @*<ul class="list-group" ng-controller="orderController" ng-init="init(@JsonConvert.SerializeObject(Model),'@ShopResources.CurrencyName', '@Url.Action(" Details", "ProductDetails" )')">
-        <li class="list-group-item" ng-repeat="order in orderItems">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="caption">
-                        <a href="{{productDetailsUrl + '/' + order.Id}}">
-                            <h3>{{order.Name}}</h3>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="pull-right" style="vertical-align: middle">{{currencyName}} {{(order.PricePerUnit / 100).toFixed(2)}} *</div>
-                </div>
-                <div class="col-md-2">
-                    <div class="input-group">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" ng-click="changeCount(order, order.Count - 1)" type="button">-</button>
-                        </span>
-                        <input type="text" name="input" min="0" class="form-control" ng-model="order.Count" ng-change="changeCount(order, order.Count)" />
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" ng-click="changeCount(order,order.Count + 1)" type="button">+</button>
-                        </span>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    {{currencyName}} {{(order.PricePerUnit / 100 * order.Count).toFixed(2)}}
-                </div>
-                <div class="col-md-1">
-                    <button class="btn btn-danger" ng-click="remove($index)" type="button">Remove</button>
-                </div>
-            </div>
-        </li>
-
-        <li class="list-group-item" style="background: #cce9d7">
-            <div class="row">
-                <div class="col-md-10">
-                    <b class="pull-right">Total:</b>
-                </div>
-                <div class="col-md-2 pull-right">
-                    <b><span id="totalPrice">{{currencyName}} {{(total / 100).toFixed(2)}}</span></b>
-                </div>
-            </div>
-        </li>
-    </ul>*@
-
     <p>
         @Html.ActionLink("Checkout", "Checkout", null, new {@class= "btn btn-primary" })
     </p>
