@@ -50,11 +50,11 @@
 
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; Apoteka.com</p>
-        </footer>
     </div>
+    <hr />
+    <footer class="container">
+        <p>&copy; Apoteka.com, 2016</p>
+    </footer>
     @Scripts.Render("~/bundles/autocomplete")
     @RenderSection("scripts", required: false)
 
