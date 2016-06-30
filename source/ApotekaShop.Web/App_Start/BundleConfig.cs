@@ -29,10 +29,10 @@ namespace ApotekaShop.Web
                 "~/Scripts/autocomplete.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/common").Include(
-                "~/Scripts/CommonModule.js"));
+                "~/app/common-module.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/order").Include(
-                "~/Scripts/OrderModule.js"));
+                "~/app/order-module.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",

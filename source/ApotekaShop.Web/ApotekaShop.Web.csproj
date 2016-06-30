@@ -185,12 +185,12 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.2.4-vsdoc.js" />
-    <Content Include="Scripts\CommonModule.js" />
+    <Content Include="app\common-module.js" />
     <Content Include="Scripts\jquery-2.2.4.js" />
     <Content Include="Scripts\jquery-2.2.4.min.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
-    <Content Include="Scripts\OrderModule.js" />
+    <Content Include="app\order-module.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -222,7 +222,8 @@
     <Compile Include="Models\ProductDetailsViewModel.cs" />
     <Compile Include="Models\SuggestionViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebContext.cs" />
+    <Compile Include="Services\OrderSessionService.cs" />
+    <Compile Include="Services\WebContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />

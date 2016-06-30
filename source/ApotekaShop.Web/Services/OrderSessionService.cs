@@ -6,7 +6,7 @@ using ApotekaShop.Services.Helpers;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
 
-namespace ApotekaShop.Services
+namespace ApotekaShop.Web.Services
 {
     public class OrderSessionService : IOrderService
     {

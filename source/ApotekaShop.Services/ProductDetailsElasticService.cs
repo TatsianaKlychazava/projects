@@ -112,7 +112,7 @@ namespace ApotekaShop.Services
     
         public async Task<BulkOperationResult> ImportProductDetalils()
         {
-            List<ProductDetailsDTO> details = _productDetailsDataProvider.ImportProductDetalils();
+            List<ProductDetailsDTO> details = _productDetailsDataProvider.ImportProductDetails();
             return await AddOrUpdate(details);
         }
 

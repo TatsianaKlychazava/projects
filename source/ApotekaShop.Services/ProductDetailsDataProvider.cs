@@ -10,7 +10,7 @@ namespace ApotekaShop.Services
 {
     public class ProductDetailsDataProvider: IProductDetailsDataProvider
     {
-        public List<ProductDetailsDTO> ImportProductDetalils()
+        public List<ProductDetailsDTO> ImportProductDetails()
         {
             var path = HostingEnvironment.MapPath(@"~/App_Data/productdetails.json");
             if (!File.Exists(path))

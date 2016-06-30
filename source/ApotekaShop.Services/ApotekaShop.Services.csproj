@@ -70,7 +70,6 @@
     <Compile Include="Models\ProductDetailsDTO.cs" />
     <Compile Include="Models\BulkOperationResult.cs" />
     <Compile Include="Models\SearchResultModel.cs" />
-    <Compile Include="OrderSessionService.cs" />
     <Compile Include="ProductDetailsDataProvider.cs" />
     <Compile Include="ProductDetailsElasticService.cs" />
     <Compile Include="ProductDetailsService.cs" />

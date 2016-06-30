@@ -24,7 +24,7 @@ namespace ApotekaShop.UnitTest.Fixtures
         {
             Builder = new ContainerBuilder();
 
-            _dataprovider.Setup(x => x.ImportProductDetalils()).Returns(LoadTestData());
+            _dataprovider.Setup(x => x.ImportProductDetails()).Returns(LoadTestData());
             Builder.RegisterInstance(WebContext.Object).As<IWebContext>();
             Builder.RegisterType<ProductDetailsController>();
             Builder.RegisterType<ConfigurationSettingsProvider>().As<IConfigurationSettingsProvider>();
