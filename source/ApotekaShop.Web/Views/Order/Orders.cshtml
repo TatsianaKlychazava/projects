@@ -1,2 +1,2 @@
 ﻿@model System.Collections.Generic.IEnumerable<ApotekaShop.Services.Models.OrderItemModel>
-<a id="orderItemsCount" href="@Url.Action("Details", "Order" )"><b>@Model.Count()</b></a>
+    <a id="orderItemsCount" ng-init="init('@Model.Count()')" href="@Url.Action("Details", "Order")">{{itemsCount}} items</a>

@@ -6,43 +6,46 @@
 
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/themes/base/css")
+
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/common")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryui")
     @Scripts.Render("~/bundles/bootstrap")
     <title>@ViewBag.Title </title>
 </head>
-<body>
+<body ng-app="apotekaApp" ng-controller="commonController">
 @*<div class="navbar navbar-fixed-top">
-    <div class="container">
+        <div class="container">
 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="@Url.Action("Search", "ProductDetails")" class="navbar-brand">
-                
-            </a>
-        </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@Url.Action(" Search", "ProductDetails" )" class="navbar-brand">
+                <img src="~/Content/themes/site-images/logo.png"/>
+                </a>
+            </div>
 
-        <div class="navbar-collapse collapse">
-            <div class="col-md-3 col-sm-12">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Products", "Search", "ProductDetails")</li>
-                </ul>
-            </div>
-            <div class="col-md-6 col-sm-6 pull-right">
-                @{
-                Html.RenderAction("Dropdown", "Country");
-                Html.RenderAction("Orders", "Order");
-                Html.RenderPartial("_Search");
-                }
+            <div class="navbar-collapse collapse">
+                <div class="col-md-3 col-sm-12">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Products", "Search", "ProductDetails")</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 pull-right">
+                    @{
+                    Html.RenderAction("Dropdown", "Country");
+                    Html.RenderAction("Orders", "Order");
+                    Html.RenderPartial("_Search");
+                    }
+                </div>
             </div>
         </div>
-    </div>
-</div>*@
+    </div>*@
 
     <nav class="navbar navbar-fixed-top">
         <div class="container">
@@ -54,7 +57,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="@Url.Action("Search", "ProductDetails")"><img src="~/Content/themes/site-images/logo.png" /></a>
+                <a class="navbar-brand" href="@Url.Action(" Search", "ProductDetails" )"><img src="~/Content/themes/site-images/logo.png" /></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -73,15 +76,15 @@
         </div><!-- /.container-fluid -->
     </nav>
 
-<div class="container body-content">
-    @RenderBody()
-    <hr/>
-    <footer>
-        <p>&copy; Apoteka.com</p>
-    </footer>
-</div>
-@RenderSection("scripts", required: false)
-@Scripts.Render("~/bundles/autocomplete")
-@Scripts.Render("~/bundles/shoppingcard")
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; Apoteka.com</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/autocomplete")
+    @RenderSection("scripts", required: false)
+
 </body>
 </html>

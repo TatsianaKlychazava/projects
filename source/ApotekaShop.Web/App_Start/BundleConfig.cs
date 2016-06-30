@@ -20,15 +20,21 @@ namespace ApotekaShop.Web
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                 "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+               "~/Scripts/angular.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/respond.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/autocomplete").Include(
                 "~/Scripts/autocomplete.js"));
-            
-            bundles.Add(new ScriptBundle("~/bundles/shoppingcard").Include(
-                "~/Scripts/shoppingcard.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/common").Include(
+                "~/Scripts/CommonModule.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/order").Include(
+                "~/Scripts/OrderModule.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
