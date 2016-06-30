@@ -10,7 +10,7 @@
 
 @using (Html.BeginForm("Search", "ProductDetails", FormMethod.Get))
 {
-    <div class="panel panel-primary">
+    <div class="panel panel-primary panel-search">
         <div class="panel-heading">Search</div>
         <div class="panel-body">
             <div class="row">
@@ -50,10 +50,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12" style="background:#cce9d7">
-            <p style="padding:6px 14px;font-size:12px;">Found: <b>@Model.Total</b> results</p>
+        <div class="panel-footer">
+           Found: <b>@Model.Total</b> results
         </div>
     </div>
 }
@@ -64,6 +62,7 @@
         <div class="col-md-3">
             <div class="thumbnail">
                 <img src="http://placehold.it/200x200" alt="">
+                <hr/>
                 <div class="caption">
                     <a href="@Url.Action("Details", new {id = product.PackageId})" title="@product.ProductNames.GetAllProductNames()"><h3 class="text-hidden-overflow">@product.ProductNames.GetFirstProductName()</h3></a>
                     <p>Price:@Html.Currency(product.NormalizedPrice)</p>

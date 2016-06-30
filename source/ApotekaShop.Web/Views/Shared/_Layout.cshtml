@@ -16,56 +16,28 @@
     <title>@ViewBag.Title </title>
 </head>
 <body ng-app="apotekaApp" ng-controller="commonController">
-@*<div class="navbar navbar-fixed-top">
-        <div class="container">
-
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="@Url.Action(" Search", "ProductDetails" )" class="navbar-brand">
-                <img src="~/Content/themes/site-images/logo.png"/>
-                </a>
-            </div>
-
-            <div class="navbar-collapse collapse">
-                <div class="col-md-3 col-sm-12">
-                    <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Products", "Search", "ProductDetails")</li>
-                    </ul>
-                </div>
-                <div class="col-md-6 col-sm-6 pull-right">
-                    @{
-                    Html.RenderAction("Dropdown", "Country");
-                    Html.RenderAction("Orders", "Order");
-                    Html.RenderPartial("_Search");
-                    }
-                </div>
-            </div>
-        </div>
-    </div>*@
 
     <nav class="navbar navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="@Url.Action(" Search", "ProductDetails" )"><img src="~/Content/themes/site-images/logo.png" /></a>
+                <a class="navbar-brand" href="@Url.Action("Search", "ProductDetails" )">
+                    <img src="~/Content/site-images/logo.png" />
+                </a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Products", "Search", "ProductDetails")</li>
                     <li role="separator" class="divider"></li>
                 </ul>
-                <ul class="nav navbar-nav pull-right">
+                <ul class="nav navbar-nav navbar-right">
                     <li>@{Html.RenderPartial("_Search");}</li>
                     <li role="separator" class="divider"></li>
                     <li>@{Html.RenderAction("Orders", "Order");}</li>
