@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Web.Mvc;
 using ApotekaShop.Services.Interfaces;
+using ApotekaShop.Services.Models;
 using ApotekaShop.Web.Models;
 
 namespace ApotekaShop.Web.Controllers
@@ -31,6 +32,17 @@ namespace ApotekaShop.Web.Controllers
         public ActionResult Orders()
         {
             return PartialView(_orderService.GetOrderItems());
+        }
+
+
+        public ActionResult Checkout()
+        {
+            var model = new OrderModel
+            {
+                Items = _orderService.GetOrderItems()
+            };
+
+            return View(model);
         }
 
         public async Task<JsonResult> AddItem(int id)
