@@ -184,6 +184,7 @@
     <Content Include="Content\bootstrap-nav-wizard.less" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\app\autocomplete.js" />
+    <Content Include="Scripts\app\сheckout-module.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.2.4-vsdoc.js" />

@@ -34,6 +34,9 @@ namespace ApotekaShop.Web
             bundles.Add(new ScriptBundle("~/bundles/order").Include(
                 "~/Scripts/app/order-module.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/checkout").Include(
+                 "~/Scripts/app/сheckout-module.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/bootstrap-nav-wizard.css",

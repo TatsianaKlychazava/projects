@@ -1,8 +1,25 @@
-﻿@model ApotekaShop.Services.Models.OrderModel
+﻿@using Newtonsoft.Json
+@model ApotekaShop.Services.Models.OrderModel
 
 @{
     ViewBag.Title = "Checkout";
     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div ng-controller="checkoutController" ng-init="init(@JsonConvert.SerializeObject(Model))">
+    <div ng-switch="checkoutModel.CurrentStep">
+        <div ng-switch-when="">
+            one
+        </div>
+        <div ng-switch-when="two">
+        </div>
+        <div ng-switch-when="three">
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    @Scripts.Render("~/bundles/checkout")
 }
 
 
