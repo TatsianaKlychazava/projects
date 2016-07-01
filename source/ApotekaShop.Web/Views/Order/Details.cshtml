@@ -39,7 +39,7 @@
                     <td>
                         {{currencyName}} {{(order.PricePerUnit / 100).toFixed(2)}}
                     </td>
-                    <td style="max-width:150px;">
+                    <td style="max-width:120px;">
                         <div class="input-group">
                             <span class="input-group-btn">
                                 <button class="btn btn-default" ng-click="changeCount(order, order.Count - 1)" type="button">-</button>
@@ -57,9 +57,26 @@
                         <button class="btn btn-danger" ng-click="remove($index)" type="button">Remove</button>
                     </td>
                 </tr>
+                <tr> <!--  style="background: #cce9d7;" -->
+                    <th></th>
+                    <td></td>
+                    <td></td>
+                    <td><b class="pull-right">Total:</b></td>
+                    <td><span id="totalPrice">{{currencyName}} {{(total / 100).toFixed(2)}}</span></td>
+                    <td></td>
+                </tr>
             </tbody>
         </table>
     </div>
+
+    @*<div class="row" style="background: #cce9d7; padding: 10px 0;">
+        <div class="col-md-10">
+            <b class="pull-right">Total:</b>
+        </div>
+        <div class="col-md-2 pull-right">
+            <b><span id="totalPrice">{{currencyName}} {{(total / 100).toFixed(2)}}</span></b>
+        </div>
+    </div>*@
 
     <p>
         @Html.ActionLink("Checkout", "Checkout", null, new {@class= "btn btn-primary" })
