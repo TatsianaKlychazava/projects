@@ -5,5 +5,12 @@
         $scope.init = function (checkoutModel) {
             $scope.checkoutModel = checkoutModel;
         }
+
+        $scope.next = function() {
+            $scope.checkoutModel.CurrentStep++;
+        }
+        $scope.back = function () {
+            $scope.checkoutModel.CurrentStep--;
+        }
     });
 })();

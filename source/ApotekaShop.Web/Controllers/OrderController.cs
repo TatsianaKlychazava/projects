@@ -40,7 +40,7 @@ namespace ApotekaShop.Web.Controllers
             var model = new OrderModel
             {
                 Items = _orderService.GetOrderItems(),
-                CurrentStep = string.Empty
+                CurrentStep = 0
             };
 
             return View(model);
