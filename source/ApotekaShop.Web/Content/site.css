@@ -222,3 +222,7 @@ input[type=number]::-webkit-outer-spin-button {
    color:red;
    margin-right:-0.75em;
 }
+
+.nav-wizard {
+margin-top:20px;
+}

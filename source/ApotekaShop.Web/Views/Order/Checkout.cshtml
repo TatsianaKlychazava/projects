@@ -7,8 +7,15 @@
 }
 <div ng-controller="checkoutController" ng-init="init(@JsonConvert.SerializeObject(Model))">
 <div ng-switch="checkoutModel.CurrentStep">
+
+    <ul class="nav nav-wizard">
+        <li class="active"><a href="#">Order details</a></li>
+        <li><a href="#">Delivery details</a></li>
+        <li><a href="#">Messages</a></li>
+    </ul>
+
     <div ng-switch-when="0">
-        <h1>Order details: step 0</h1>
+        <h1>Order details</h1>
         <hr/>
         <form class="form-horizontal">
             <div class="form-group">
@@ -73,7 +80,7 @@
         <hr/>
     </div>
     <div ng-switch-when="1">
-        <h1>Payment & Delivery Address: step 1</h1>
+        <h1>Delivery details</h1>
         <hr />
         <form class="form-horizontal">
             <div class="form-group required">
@@ -81,7 +88,7 @@
                 <div class="col-sm-8">
                     <div class="radio">
                         <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" >
                             Private person
                         </label>
                     </div>
@@ -93,7 +100,7 @@
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3" checked>
                             Public institution
                         </label>
                     </div>
@@ -114,6 +121,21 @@
                     <input type="text" class="form-control" required id="surname" placeholder="Surname">
                 </div>
             </div>
+
+            <div class="form-group required">
+                <label for="company_name" class="col-sm-4 control-label">Company name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control" required id="surname" placeholder="company_name">
+                </div>
+            </div>
+            <div class="form-group required">
+                <label for="EAN" class="col-sm-4 control-label">EAN Code</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" required id="surname" placeholder="EAN">
+                </div>
+                <div class="col-sm-5"><p class="form-control-static">Applies only to public companies</p></div>
+            </div>
+
             <div class="form-group required">
                 <label for="address" class="col-sm-4 control-label">Address</label>
                 <div class="col-sm-8">
@@ -145,7 +167,7 @@
                 <label for="email" class="col-sm-4 control-label">Email</label>
                 <div class="col-sm-8">
                     <input type="email" class="form-control" required id="Email" placeholder="Email"><br />
-                    <p><input type="checkbox" id="subscribe_check"> Sign up and get a special offers on our products. You can always unsubscribe.</p>
+                    <p class="form-control-static"><input type="checkbox" id="subscribe_check"> Sign up and get a special offers on our products. You can always unsubscribe.</p>
                 </div>
             </div>
 
@@ -161,21 +183,21 @@
             <div class="form-group">
                 <label for="email" class="col-sm-4 control-label">Got some comments?</label>
                 <div class="col-sm-8">
-                    <p class="form-control-static"><input type="checkbox" id="subscribe_check"> Yes</pclass="form-control-static">
+                    <p class="form-control-static"><input type="checkbox" id="subscribe_check" checked> Yes</pclass="form-control-static">
                 </div>
             </div>
 
-            <div class="form-group hidden">
+            <div class="form-group ">
                 <label for="order_comment" class="col-sm-4 control-label">Comment to order</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="order_comment" placeholder="Ex. for service questions">
+                    <textarea class="form-control" rows="3" id="order_comment" placeholder="Ex. for service questions"></textarea>
                 </div>
             </div>
 
-            <div class="form-group hidden">
+            <div class="form-group ">
                 <label for="delivery_comment" class="col-sm-4 control-label">Comment on delivery</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="delivery_comment" placeholder="Ex. how and when we must deliver package.">
+                    <textarea class="form-control" rows="3" id="delivery_comment" placeholder="Ex. how and when we must deliver package."></textarea>
                 </div>
             </div>
 
