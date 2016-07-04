@@ -1,4 +1,5 @@
 ﻿@using Newtonsoft.Json
+@using Resources
 @model ApotekaShop.Services.Models.OrderModel
 
 @{
@@ -9,16 +10,16 @@
 <div ng-switch="checkoutModel.CurrentStep">
 
     <ul class="nav nav-wizard">
-        <li class="active"><a href="#">Order details</a></li>
-        <li><a href="#">Delivery details</a></li>
-        <li><a href="#">Messages</a></li>
+        <li ng-class="{ active: isActive(0) }" ng-click="navigate(0, $event)"><a href="">Order details</a></li>
+        <li ng-class="{ active: isActive(1), disabled: isDisabled(1) }" ng-click="navigate(1, $event)"><a href="">Delivery details</a></li>
+        <li ng-class="{ active: isActive(2), disabled: isDisabled(2) }" ng-click="navigate(2, $event)"><a href="">Messages</a></li>
     </ul>
 
     <div ng-switch-when="0">
         <h1>Order details</h1>
         <hr/>
-        <form class="form-horizontal">
-            <div class="form-group">
+        <form class="form-horizontal" name="orderDetails" novalidate>
+            <div class="form-group hidden">
                 <label class="col-sm-4 control-label">Gift Wrapping</label> <!-- popup required -->
                 <div class="col-sm-8">
                     <button type="button" class="btn btn-link">Get the order wrapped up - it's free!</button>
@@ -27,7 +28,7 @@
             <div class="form-group">
                 <label for="voucher_code" class="col-sm-4 control-label">Enter voucher code</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" id="voucher_code" placeholder="code">
+                    <input type="text" class="form-control" ng-model="checkoutModel.VoucherCode" id="voucher_code" placeholder="code">
                 </div>
 
             </div>
@@ -64,7 +65,7 @@
                 <label for="inputEmail3" class="col-sm-4 control-label">Total</label>
                 <div class="col-sm-8">
                     <p class="form-control-static">
-                        DKK 0.00
+                        @ShopResources.CurrencyName {{(totalPrice() / 100).toFixed(2)}}
                     </p>
                 </div>
             </div>
@@ -112,26 +113,26 @@
             <div class="form-group required">
                 <label for="firstname" class="col-sm-4 control-label">First Name</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" required id="firstname" placeholder="First Name">
+                    <input type="text" class="form-control" required id="firstname" ng-model="checkoutModel.FirstName" placeholder="First Name">
                 </div>
             </div>
             <div class="form-group required">
                 <label for="surname" class="col-sm-4 control-label">Surname</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" required id="surname" placeholder="Surname">
+                    <input type="text" class="form-control" required id="surname" ng-model="checkoutModel.Surname" placeholder="Surname">
                 </div>
             </div>
 
             <div class="form-group required">
                 <label for="company_name" class="col-sm-4 control-label">Company name</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" required id="surname" placeholder="company_name">
+                    <input type="text" class="form-control" required id="company_name" placeholder="company_name">
                 </div>
             </div>
             <div class="form-group required">
                 <label for="EAN" class="col-sm-4 control-label">EAN Code</label>
                 <div class="col-sm-3">
-                    <input type="text" class="form-control" required id="surname" placeholder="EAN">
+                    <input type="text" class="form-control" required id="EAN" placeholder="EAN">
                 </div>
                 <div class="col-sm-5"><p class="form-control-static">Applies only to public companies</p></div>
             </div>
@@ -139,7 +140,7 @@
             <div class="form-group required">
                 <label for="address" class="col-sm-4 control-label">Address</label>
                 <div class="col-sm-8">
-                    <input type="text" class="form-control" required id="address" placeholder="Address">
+                    <input type="text" class="form-control" required id="address" ng-model="checkoutModel.Address" placeholder="Address">
                 </div>
             </div>
 
@@ -166,8 +167,8 @@
             <div class="form-group required">
                 <label for="email" class="col-sm-4 control-label">Email</label>
                 <div class="col-sm-8">
-                    <input type="email" class="form-control" required id="Email" placeholder="Email"><br />
-                    <p class="form-control-static"><input type="checkbox" id="subscribe_check"> Sign up and get a special offers on our products. You can always unsubscribe.</p>
+                    <input type="email" class="form-control" required id="email" placeholder="Email"><br />
+                    <p class="form-control-static"><input type="checkbox" id="email"> Sign up and get a special offers on our products. You can always unsubscribe.</p>
                 </div>
             </div>
 
@@ -181,7 +182,7 @@
             <hr class="col-sm-offset-4" />
 
             <div class="form-group">
-                <label for="email" class="col-sm-4 control-label">Got some comments?</label>
+                <label for="subscribe_check" class="col-sm-4 control-label">Got some comments?</label>
                 <div class="col-sm-8">
                     <p class="form-control-static"><input type="checkbox" id="subscribe_check" checked> Yes</pclass="form-control-static">
                 </div>

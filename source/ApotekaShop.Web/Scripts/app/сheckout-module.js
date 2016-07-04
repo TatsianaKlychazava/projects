@@ -6,11 +6,35 @@
             $scope.checkoutModel = checkoutModel;
         }
 
-        $scope.next = function() {
+        $scope.navigate = function (stepNumber) {
+            if (!$scope.isDisabled(stepNumber)) {
+                $scope.checkoutModel.CurrentStep = stepNumber;
+            }
+        }
+
+        $scope.next = function () {
             $scope.checkoutModel.CurrentStep++;
         }
+
         $scope.back = function () {
             $scope.checkoutModel.CurrentStep--;
+        }
+
+        $scope.isActive = function(stepNumber) {
+            return $scope.checkoutModel.CurrentStep === stepNumber;
+        }
+
+        $scope.isDisabled = function (stepNumber) {
+            return stepNumber > $scope.checkoutModel.CurrentStep;
+        }
+
+        $scope.totalPrice = function() {
+            var total = 0;
+            for (var i = 0; i < $scope.checkoutModel.Items.length; i++) {
+                var item = $scope.checkoutModel.Items[i];
+                total += (item.PricePerUnit * item.Count);
+            }
+           return total;
         }
     });
 })();
