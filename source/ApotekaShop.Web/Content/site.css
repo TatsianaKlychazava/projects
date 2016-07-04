@@ -216,3 +216,9 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+.form-group.required .control-label:after { 
+   content:" *";
+   color:red;
+   margin-right:-0.75em;
+}
