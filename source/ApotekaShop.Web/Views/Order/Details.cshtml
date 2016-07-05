@@ -12,10 +12,12 @@
 
     <div class="panel panel-default">
         <!-- Default panel contents -->
-        @*<div class="panel-heading">Panel heading</div>
+        @*
+        <div class="panel-heading">Panel heading</div>
         <div class="panel-body">
             <p>whatever descriptions and offers</p>
-        </div>*@
+        </div>
+        *@
         <!-- Table -->
         <table class="table" ng-controller="orderController" ng-init="init(@JsonConvert.SerializeObject(Model),'@ShopResources.CurrencyName', '@Url.Action("Details", "ProductDetails" )')">
             <thead>
