@@ -26,6 +26,24 @@ border-radius:0;
     display:block;
 }
 
+/*.caption > a > h3{
+text-transform:capitalize;
+}*/
+
+.has-error input {
+background-color:#ffcecd;
+}
+
+div.input-group > small{
+color:#a94442;
+font-size:12px;
+display:none;
+}
+
+.has-error .input-group > small{
+display:initial;
+}
+
 .thumbnail > hr{
     margin-bottom:0px;
 }
