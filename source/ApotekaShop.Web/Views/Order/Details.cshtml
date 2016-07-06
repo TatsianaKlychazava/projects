@@ -8,7 +8,7 @@
 }
 
 <div ng-controller="orderController">
-    <h1>Orders</h1>
+    <h1>Cart</h1>
 
     <div class="panel panel-default">
         <!-- Default panel contents -->
@@ -31,6 +31,13 @@
                 </tr>
             </thead>
             <tbody>
+                <tr ng-class="{ hidden: hasOrderItems() }">
+                    <td colspan="6" style="text-align: center; padding:50px; background-color:#ddd;">
+                        <h3>Your cart is empty</h3>
+                        <p>You need to add at least one item to proceed.</p>
+                    </td>
+                </tr>
+
                 <tr ng-repeat="order in orderItems">
                     <th scope="row">{{$index}}</th>
                     <td>
