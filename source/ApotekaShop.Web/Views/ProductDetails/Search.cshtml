@@ -66,8 +66,8 @@
                 <hr/>
                 <div class="caption">
                     <a href="@Url.Action("Details", new {id = product.PackageId})" title="@product.ProductNames.GetAllProductNames()"><h3 class="text-hidden-overflow">@product.ProductNames.GetFirstProductName()</h3></a>
-                    <p>Price:@Html.Currency(product.NormalizedPrice)</p>
-                    <p>Size @product.NormalizedPackageSize.ToString("N2")</p>
+                    <p>Price: @Html.Currency(product.NormalizedPrice)</p>
+                    <p>Size: @product.NormalizedPackageSize.ToString("N2")</p>
 
                     <p><a href="#" ng-click="addOrder(@product.PackageId, $event)" class="btn btn-primary">Add to card</a> </p>
                 </div>
