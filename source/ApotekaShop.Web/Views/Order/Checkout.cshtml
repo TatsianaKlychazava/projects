@@ -33,7 +33,7 @@
                         <tr ng-repeat="order in checkoutModel.Items">
                             <th scope="row">{{$index}}</th>
                             <td>
-                                <b>{{order.Name}}</b>
+                                <b>{{order.Name | capitalize}}</b>
                             </td>
                             <td>
                                 {{currencyName}} {{(order.PricePerUnit / 100).toFixed(2)}}
