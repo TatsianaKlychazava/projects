@@ -14,6 +14,7 @@
 
         $scope.next = function () {
             $scope.checkoutModel.CurrentStep++;
+            $scope.save();
         }
 
         $scope.back = function () {
@@ -33,8 +34,13 @@
             for (var i = 0; i < $scope.checkoutModel.Items.length; i++) {
                 var item = $scope.checkoutModel.Items[i];
                 total += (item.PricePerUnit * item.Count);
-            }
+           }
            return total;
+        }
+
+        $scope.save = function () {
+            $http.post('/order/updateorder',  $scope.checkoutModel);
+            return total;
         }
     });
 })();

@@ -25,7 +25,11 @@ namespace ApotekaShop.Web.Services
         {
             if (HttpContext.Current.Session[OrderKey] == null)
             {
-                return null;
+                return new OrderModel()
+                {
+                    Items = GetOrderItems(),
+                    CurrentStep = 0
+                };
             }
             return HttpContext.Current.Session[OrderKey] as OrderModel;
         }

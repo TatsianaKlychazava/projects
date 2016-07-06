@@ -37,13 +37,14 @@ namespace ApotekaShop.Web.Controllers
 
         public ActionResult Checkout()
         {
-            var model = new OrderModel
-            {
-                Items = _orderService.GetOrderItems(),
-                CurrentStep = 0
-            };
+            var model = _orderService.GetOrder();
 
             return View(model);
+        }
+
+        public void UpdateOrder(OrderModel order)
+        {
+            _orderService.SaveOrder(order);
         }
 
         public async Task<JsonResult> AddItem(int id)

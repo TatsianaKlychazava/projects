@@ -5,18 +5,33 @@
         $scope.init = function(model, currencyName, productDetailsUrl) {
             $scope.orderItems = model.OrderItems;
             $scope.currencyName = currencyName;
-            $scope.productDetailsUrl = productDetailsUrl;
+            $scope.productDetailsUrl = productDetailsUrl;                          
+
             $scope.getTotal();
         }
 
         $scope.changeCount = function (order, value) {
-            if (value >= 0) {
+            if (value >= 0 && value != null) {
                 order.Count = value;
                 $http.post('/order/UpdateItemCount', { 'id': order.Id, 'count': value });
                 $scope.getTotal();
             }
         }
         
+        $scope.changed = function ($event) {
+            if ($event.charCode > 47 && $event.charCode < 58) return;
+
+            $event.preventDefault();
+        }
+
+        $scope.hasOrderItems = function () {
+            if ($scope.orderItems.length > 0) {
+               return  true;
+            } else {
+               return  false;
+            }
+        }
+
         $scope.remove = function(index) {
             var order = $scope.orderItems[index];
 

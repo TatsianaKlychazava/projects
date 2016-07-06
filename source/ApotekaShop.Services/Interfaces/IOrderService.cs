@@ -41,5 +41,17 @@ namespace ApotekaShop.Services.Interfaces
         /// <param name="id">Order item Id</param>
         /// <param name="count">New count value</param>
         void UpdateOrderItemCount(int id, int count);
+
+        /// <summary>
+        /// Get order
+        /// </summary>
+        /// <returns>Order model</returns>
+        OrderModel GetOrder();
+
+        /// <summary>
+        /// Save order
+        /// </summary>
+        /// <param name="order">Order model</param>
+        void SaveOrder(OrderModel order);
     }
 }

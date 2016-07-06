@@ -7,7 +7,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
+<div ng-controller="orderController">
     <h1>Orders</h1>
 
     <div class="panel panel-default">
@@ -19,7 +19,7 @@
         </div>
         *@
         <!-- Table -->
-        <table class="table" ng-controller="orderController" ng-init="init(@JsonConvert.SerializeObject(Model),'@ShopResources.CurrencyName', '@Url.Action("Details", "ProductDetails" )')">
+        <table class="table" ng-init="init(@JsonConvert.SerializeObject(Model),'@ShopResources.CurrencyName', '@Url.Action("Details", "ProductDetails" )')">
             <thead>
                 <tr>
                     <th>#</th>
@@ -46,7 +46,7 @@
                             <span class="input-group-btn">
                                 <button class="btn btn-default" ng-click="changeCount(order, order.Count - 1)" type="button">-</button>
                             </span>
-                            <input type="text" name="input" min="0" class="form-control" ng-model="order.Count" ng-change="changeCount(order, order.Count)" />
+                            <input type="number" name="input" min="1" class="form-control" ng-model="order.Count" ng-keypress="changed($event)" ng-change="changeCount(order, order.Count)" />
                             <span class="input-group-btn">
                                 <button class="btn btn-default" ng-click="changeCount(order,order.Count + 1)" type="button">+</button>
                             </span>
@@ -81,8 +81,8 @@
     </div>*@
 
     <p>
-        @Html.ActionLink("Checkout", "Checkout", null, new {@class= "btn btn-primary" })
-    </p>
+        <a href="@Url.Action("Checkout", "Order")" class = "btn btn-primary" ng-class="{ disabled: !hasOrderItems() }">Checkout</a>
+     </p>
 
 </div>
 
