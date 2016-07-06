@@ -119,7 +119,7 @@
         <div ng-switch-when="1">
             <h1>Shipping</h1>
             <hr />
-            <form class="form-horizontal">
+            <form name="shippingForm" class="form-horizontal" novalidate>
                 @*<div class="form-group required">
                     <label class="col-sm-3 control-label">I Order as</label>
                     <div class="col-sm-9">
@@ -146,16 +146,16 @@
 
                 <hr class="col-sm-offset-3" />*@
 
-                <div class="form-group required">
+                <div class="form-group required" ng-class="{ 'has-error': shippingForm.firstname.$invalid && shippingForm.firstname.$dirty}">
                     <label for="firstname" class="col-sm-3 control-label">First Name</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" required id="firstname" ng-model="checkoutModel.FirstName" placeholder="First Name">
+                        <input type="text" class="form-control" required name="firstname" ng-model="checkoutModel.FirstName" placeholder="First Name" required/>
                     </div>
                 </div>
-                <div class="form-group required">
+                <div class="form-group required" ng-class="{ 'has-error': shippingForm.surname.$invalid && shippingForm.surname.$dirty}">
                     <label for="surname" class="col-sm-3 control-label">Surname</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" required id="surname" ng-model="checkoutModel.Surname" placeholder="Surname">
+                        <input type="text" class="form-control" required name="surname" ng-model="checkoutModel.Surname" placeholder="Surname" required/>
                     </div>
                 </div>
 
@@ -175,20 +175,20 @@
                 </div>
                 *@
 
-                <div class="form-group required">
+                <div class="form-group required"  ng-class="{ 'has-error': shippingForm.address.$invalid && shippingForm.address.$dirty }">
                     <label for="address" class="col-sm-3 control-label">Address</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" required id="address" ng-model="checkoutModel.Address" placeholder="Address">
+                        <input type="text" class="form-control" required name="address" ng-model="checkoutModel.Address" placeholder="Address" required/>
                     </div>
                 </div>
 
                 <div class="form-group required">
                     <label for="postcode" class="col-sm-3 control-label">Post Code &amp; City</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" required id="postcode" ng-model="checkoutModel.PostCode" placeholder="Post Code">
+                    <div class="col-sm-4" ng-class="{ 'has-error': shippingForm.postcode.$invalid && shippingForm.postcode.$dirty }">
+                        <input type="text" class="form-control" required name="postcode" ng-model="checkoutModel.PostCode" placeholder="Post Code" required>
                     </div>
-                    <div class="col-sm-5">
-                        <input type="text" class="form-control" required id="city" ng-model="checkoutModel.City" placeholder="City">
+                    <div class="col-sm-5" ng-class="{ 'has-error': shippingForm.city.$invalid && shippingForm.city.$dirty }">
+                        <input type="text" class="form-control" required name="city" ng-model="checkoutModel.City" placeholder="City" required>
                     </div>
                 </div>
                 <div class="form-group required">
@@ -202,18 +202,18 @@
 
                 <hr class="col-sm-offset-3" />
 
-                <div class="form-group required">
+                <div class="form-group required" ng-class="{ 'has-error': shippingForm.email.$invalid && shippingForm.email.$dirty }">
                     <label for="email" class="col-sm-3 control-label">Email</label>
                     <div class="col-sm-9">
-                        <input type="email" class="form-control" required id="email" ng-model="checkoutModel.Email" placeholder="Email"><br />
+                        <input type="email" class="form-control" required name="email" ng-model="checkoutModel.Email" placeholder="Email" required><br />
                         <p class="form-control-static"><input type="checkbox" ng-model="checkoutModel.IsSubscribe"> Sign up and get a special offers on our products. You can always unsubscribe.</p>
                     </div>
                 </div>
 
-                <div class="form-group required">
+                <div class="form-group required" ng-class="{ 'has-error': shippingForm.mobile.$invalid && shippingForm.mobile.$dirty }">
                     <label for="mobile" class="col-sm-3 control-label">Mobile</label>
                     <div class="col-sm-9">
-                        <input type="tel" class="form-control" required id="mobile" ng-model="checkoutModel.MobileNumber" placeholder="Mobile number">
+                        <input type="number" class="form-control" required name="mobile" ng-model="checkoutModel.MobileNumber" placeholder="Mobile number" required>
                     </div>
                 </div>
 
@@ -248,7 +248,7 @@
             </div>
 
             <div class="col-sm-5">
-                <button type="submit" ng-click="next()" class="btn btn-primary pull-right">Payment &rarr;</button>
+                <button type="submit" ng-click="next()"  ng-disabled="shippingForm.$invalid" class="btn btn-primary pull-right">Payment &rarr;</button>
             </div>
         </div>
         </form>

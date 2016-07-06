@@ -20,7 +20,6 @@
         
         $scope.changed = function ($event) {
             if ($event.charCode > 47 && $event.charCode < 58) return;
-
             $event.preventDefault();
         }
 

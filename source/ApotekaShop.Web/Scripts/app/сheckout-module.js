@@ -13,8 +13,11 @@
         }
 
         $scope.next = function () {
-            $scope.checkoutModel.CurrentStep++;
-            $scope.save();
+            //if ($scope.shippingForm.$isvalid) {
+                $scope.checkoutModel.CurrentStep++;
+
+                $scope.save();
+            //}
         }
 
         $scope.back = function () {
@@ -40,7 +43,6 @@
 
         $scope.save = function () {
             $http.post('/order/updateorder',  $scope.checkoutModel);
-            return total;
         }
     });
 })();
