@@ -11,7 +11,7 @@
     <div class="col-md-3" vocab="http://schema.org/" typeof="Product">
         <img class="img-responsive img-center" src="http://placehold.it/200x200" height="200" width="200" title="this image needs to be centered">
 
-        <h1 property="name">@Model.ProductNames.GetFirstProductName()</h1>
+        <h1 property="name"> {{ '@Model.ProductNames.GetFirstProductName()' | capitalize }}</h1>
         <div property="offers" typeof="Offer">
             <meta property="priceCurrency" content="@ShopResources.CurrencyName" />
             <p><label>Price:</label>@ShopResources.CurrencyName <span property="price">@Html.Currency(Model.NormalizedPrice, true)</span></p>

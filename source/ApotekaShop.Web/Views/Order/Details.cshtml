@@ -42,7 +42,7 @@
                     <th scope="row">{{$index}}</th>
                     <td>
                         <a href="{{productDetailsUrl + '/' + order.Id}}">
-                            <b>{{order.Name}}</b>
+                            <b>{{order.Name | capitalize}}</b>
                         </a>
                     </td>
                     <td>
