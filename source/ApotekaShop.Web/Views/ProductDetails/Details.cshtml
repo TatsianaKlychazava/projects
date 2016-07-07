@@ -2,6 +2,7 @@
     ViewBag.Title = @Model.ProductNames.GetFirstProductName();
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@using System.Globalization
 @using ApotekaShop.Services.Helpers
 @using ApotekaShop.Web.Helpers
 @using Resources
@@ -15,7 +16,7 @@
         <div property="offers" typeof="Offer">
             <meta property="priceCurrency" content="@ShopResources.CurrencyName" />
             <p><label>Price:</label>@ShopResources.CurrencyName <span property="price">@Html.Currency(Model.NormalizedPrice, true)</span></p>
-            <p><label>Size:</label> @Model.NormalizedPackageSize.ToString("N2")</p>
+            <p><label>Size:</label> @Model.NormalizedPackageSize.ToString("F2", CultureInfo.InvariantCulture)</p>
             <link property="availability" href="http://schema.org/InStock" />
         </div>
         <label>Details:</label>

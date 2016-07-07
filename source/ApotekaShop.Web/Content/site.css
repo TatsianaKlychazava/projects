@@ -34,10 +34,9 @@ text-transform:capitalize;
 background-color:#ffcecd;
 }
 
-div.input-group > small{
-color:#a94442;
-font-size:12px;
-display:none;
+div.input-group > small {
+    color: #a94442;
+    font-size: 12px;
 }
 
 .has-error .input-group > small{

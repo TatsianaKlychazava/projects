@@ -4,6 +4,7 @@
     apotekaApp.controller('checkoutController', function ($scope, $http) {
         $scope.init = function (checkoutModel) {
             $scope.checkoutModel = checkoutModel;
+            $scope.voucherCodeApplyed = true;
         }
 
         $scope.navigate = function (stepNumber) {
@@ -12,12 +13,17 @@
             }
         }
 
-        $scope.next = function () {
-            //if ($scope.shippingForm.$isvalid) {
-                $scope.checkoutModel.CurrentStep++;
+        $scope.next = function() {
+            $scope.checkoutModel.CurrentStep++;
+            $scope.save();
+        }
 
-                $scope.save();
-            //}
+        $scope.applyCode = function() {
+            $scope.voucherCodeApplyed = !$scope.voucherCodeApplyed;
+        }
+
+        $scope.voucherCodeIsValid = function () {
+            return $scope.voucherCodeApplyed;
         }
 
         $scope.back = function () {

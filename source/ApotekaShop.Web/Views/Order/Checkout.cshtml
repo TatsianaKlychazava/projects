@@ -60,16 +60,16 @@
                 <div class="form-group">
                     <label for="voucher_code" class="col-sm-3 control-label">Enter voucher code</label>
                     <div class="col-sm-4">
-                        <div class="input-group has-error">
+                        <div class="input-group" ng-class="{ 'has-error': !voucherCodeIsValid() }">
                             <input type="text" class="form-control" ng-model="checkoutModel.VoucherCode" id="voucher_code" placeholder="code">
                             @*<span class="input-group-addon">
                                 <i data-toggle="tooltip" title="Error msg here" data-container="body" class="glyphicon glyphicon-alert"></i>
                             </span>*@
                             <span class="input-group-btn">
-                                <button class="btn btn-success" type="button">Apply code</button>
+                                <button class="btn btn-success" ng-click="applyCode()" type="button">Apply code</button>
                             </span>
                         </div>
-                        <div class="input-group has-error"> <!-- if no has-error, it won't be displayed by default -->
+                        <div class="input-group"  ng-hide="voucherCodeIsValid()"> <!-- if no has-error, it won't be displayed by default -->
                             <small class="">Incorrect code applied. Check it or type in another code.</small>
                         </div>
                     </div>
