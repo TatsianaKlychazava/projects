@@ -19,7 +19,7 @@
                 <div class="col-md-12">
                     <div id="custom-search-input">
                         <div class="input-group">
-                            @Html.TextBox("query", Model.Filters.Query, new { @class = "form-control input-lg" })
+                            @Html.TextBox("query", Model.Filters.Query, new { @class = "form-control input-lg", @placeholder = "Search" })
                             <span class="input-group-btn">
                                 <button class="btn btn-info btn-lg" type="submit">
                                     <i class="glyphicon glyphicon-search"></i> Search
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="panel-footer">
-           Found: <b>@Model.Total</b> results
+           Found: <span>@Model.Total</span> results
         </div>
     </div>
 }
@@ -77,9 +77,9 @@
 <div class="row products">
     @foreach (var product in Model.Products)
     {
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-4">
             <div class="thumbnail">
-                <img src="http://placehold.it/200x200" alt="">
+                <img src="http://placehold.it/240x200/ffffff/bbbbbb" alt="">
                 <hr/>
                 <div class="caption">
                     <a href="@Url.Action("Details", new {id = product.PackageId})" title="@product.ProductNames.GetAllProductNames()"><h3 class="text-hidden-overflow">{{ '@product.ProductNames.GetFirstProductName()' | capitalize }}</h3></a>

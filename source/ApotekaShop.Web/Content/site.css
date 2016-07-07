@@ -1,4 +1,5 @@
-﻿.valign {
+﻿@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,100);
+.valign {
   display: flex;
   flex-direction: row;
 }
@@ -16,19 +17,33 @@
  background-color:#E4E4E4;
 }
 
-.thumbnail{
-padding:10px;
-border-radius:0;
-}
-
-.caption > .btn-primary {
+.caption .btn-primary {
     width:100%;
     display:block;
+    background-color: #e5f1f8;
+    padding: 10px;
+    border-radius: 3px;
+    
+    color: #007abc;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size:16px;
+    border-width:0;
 }
 
-/*.caption > a > h3{
-text-transform:capitalize;
-}*/
+.caption .btn-primary:hover {
+    color: #ffffff;
+    background-color: #007abc;
+}
+
+.caption .btn-primary:active {
+    color: #ffffff;
+    background-color: #005b8c;
+}
+
+.caption p:last-child{
+    margin:0;
+}
 
 .has-error input {
 background-color:#ffcecd;
@@ -40,15 +55,38 @@ div.input-group > small {
 }
 
 .has-error .input-group > small{
-display:initial;
+    display:initial;
 }
 
+.thumbnail{
+    padding:20px;
+    border-radius:0;
+}
 .thumbnail > hr{
     margin-bottom:0px;
 }
 
-.thumbnail > h3 {
-    margin-top:5px;
+.thumbnail .caption{
+    padding:0px
+}
+
+.caption p{
+margin-bottom:2px;
+}
+
+.caption a+p {
+font-weight:500;
+}
+
+.caption p + p:last-child {
+    margin-top:12px;
+}
+
+.text-hidden-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top:10px
 }
 
 .navbar{
@@ -84,6 +122,11 @@ margin: 30px 10px;
 
 .panel-footer{
     background-color:#cce9d7;
+    font-weight: 300;
+}
+
+.panel-footer > span {
+    font-weight: 500;
 }
 
 #custom-search-input{
@@ -97,6 +140,12 @@ margin: 30px 10px;
     border-radius:0;
     border-bottom: solid #bbbebc;
     background-color: transparent;
+    padding:0;
+}
+
+#custom-search-input input::-webkit-input-placeholder{
+    font-size:14px;
+    font-weight:300;
 }
 
 #custom-search-input .input-group-btn {
@@ -132,15 +181,11 @@ margin: 30px 10px;
     right: 3px;
 }
 
-.text-hidden-overflow {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
 
 body {
     padding-top: 90px;
     padding-bottom: 20px;
+    font-family: Roboto, sans-serif; 
 }
 
 /* Set padding to keep content from hitting the edges */
