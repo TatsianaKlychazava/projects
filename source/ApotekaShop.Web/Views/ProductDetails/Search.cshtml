@@ -92,17 +92,17 @@
                 <div class="caption">
                     <a href="@Url.Action("Details", new {id = product.PackageId})" title="@product.ProductNames.GetAllProductNames()"><h3 class="text-hidden-overflow">{{ '@product.ProductNames.GetFirstProductName()' | capitalize }}</h3></a>
                     <p>
-                        <i class="icon-tablet-any"></i>
+                        <span class="apoteka-icon-tablet-any"></span>
                         @* <!--other icons-->
-                        <i class="icon-tablet-partable"></i>
-                        <i class="icon-tablet-round"></i>
-                        <i class="icon-pill"></i>
-                        <i class="icon-liquid"></i>
-                        <i class="icon-spray"></i>
-                        <i class="icon-patch"></i>
-                        <i class="icon-powder"></i>
+                        <span class="apoteka-icon-tablet-partable"></span>
+                        <span class="apoteka-icon-tablet-round"></span>
+                        <span class="apoteka-icon-pill"></span>
+                        <span class="apoteka-icon-liquid"></span>
+                        <span class="apoteka-icon-spray"></span>
+                        <span class="apoteka-icon-patch"></span>
+                        <span class="apoteka-icon-powder"></span>
                         *@
-                        <span style="font-weight:500; vertical-align:super">@product.NormalizedPackageSize.ToString("F2", CultureInfo.InvariantCulture) pcs</span>
+                        <span style="font-weight:500">@product.NormalizedPackageSize.ToString("F2", CultureInfo.InvariantCulture) pcs</span>
                     </p>
                     <p>
                         @Html.Currency(product.NormalizedPrice)

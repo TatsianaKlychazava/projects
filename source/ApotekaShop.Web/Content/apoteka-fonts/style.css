@@ -9,47 +9,52 @@
     font-style: normal;
 }
 
-i {
-    /* use !important to prevent issues with browser extensions that change fonts */
+span[class*="apoteka-icon-"] {
+ vertical-align:middle;
+}
+
+span[class*="apoteka-icon-"]:before{
+/* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'apoteka-meds' !important;
     speak: none;
     font-style: normal;
-    font-size: 24px;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
+    font-size: 24px;
+    margin-left:-3px;
 
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-tablet-any:before {
+.apoteka-icon-tablet-any:before {
     content: "\e900";
 }
-.icon-tablet-round:before {
+.apoteka-icon-tablet-round:before {
     content: "\e901";
 }
-.icon-tablet-partable:before {
+.apoteka-icon-tablet-partable:before {
     content: "\e902";
 }
-.icon-pill:before {
+.apoteka-icon-pill:before {
     content: "\e903";
 }
-.icon-liquid:before {
+.apoteka-icon-liquid:before {
     content: "\e904";
 }
-.icon-cream:before {
+.apoteka-icon-cream:before {
     content: "\e904";
 }
-.icon-spray:before {
+.apoteka-icon-spray:before {
     content: "\e905";
 }
-.icon-patch:before {
+.apoteka-icon-patch:before {
     content: "\e906";
 }
-.icon-powder:before {
+.apoteka-icon-powder:before {
     content: "\e907";
 }
 
