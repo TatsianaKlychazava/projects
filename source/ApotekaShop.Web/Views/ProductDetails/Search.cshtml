@@ -102,7 +102,7 @@
                         <span class="apoteka-icon-patch"></span>
                         <span class="apoteka-icon-powder"></span>
                         *@
-                        <span style="font-weight:500">@product.NormalizedPackageSize.ToString("F2", CultureInfo.InvariantCulture) pcs</span>
+                        <span style="font-weight:500">@product.NormalizedPackageSize.ToString("F0", CultureInfo.InvariantCulture) pcs</span>
                     </p>
                     <p>
                         @Html.Currency(product.NormalizedPrice)
