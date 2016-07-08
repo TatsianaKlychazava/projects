@@ -1,4 +1,6 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,100);
+@import url(apoteka-fonts/style.css);
+
 .valign {
   display: flex;
   flex-direction: row;
