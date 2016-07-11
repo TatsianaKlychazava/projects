@@ -20,7 +20,7 @@
                 <div class="col-md-12">
                     <div id="custom-search-input">
                         <div class="input-group">
-                            @Html.TextBox("query", Model.Filters.Query, new {@class = "form-control input-lg"})
+                            @Html.TextBox("query", Model.Filters.Query, new { @class = "form-control input-lg", @placeholder = "Search" })
                             <span class="input-group-btn">
                                 <button class="btn btn-info btn-lg" type="submit">
                                     <i class="glyphicon glyphicon-search"></i> Search
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="panel-footer">
-            Found: <b>@Model.Total</b> results
+           Found: <span>@Model.Total</span> results
         </div>
     </div>
 
@@ -80,17 +80,72 @@
 <div class="row products">
     @foreach (var product in Model.Products)
     {
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-4">
             <div class="thumbnail">
-                <img src="http://placehold.it/200x200" alt="">
+                <div style="position:relative">
+                    <div style="position:absolute">
+                        <span class="label label-success">New</span>
+                        <span class="label label-info">Discount</span>
+                        <span class="label label-warning">Few left</span>
+                        <span class="label label-danger">Prescription only</span>
+                    </div>
+                </div>
+                <img src="http://placehold.it/240x200/ffffff/bbbbbb" alt="">
                 <hr/>
                 <div class="caption">
                     <a href="@Url.Action("Details", new {id = product.PackageId})" title="@product.ProductNames.GetAllProductNames()"><h3 class="text-hidden-overflow">{{ '@product.ProductNames.GetFirstProductName()' | capitalize }}</h3></a>
-                    <p>Price: @Html.Currency(product.NormalizedPrice)</p>
-                    <p>Size: @product.NormalizedPackageSize.ToString("F2", CultureInfo.InvariantCulture)</p>
+                    <p>
+                        <span class="apoteka-icon-tablet-any"></span>
+                        @* <!--other icons-->
+                        <span class="apoteka-icon-tablet-partable"></span>
+                        <span class="apoteka-icon-tablet-round"></span>
+                        <span class="apoteka-icon-pill"></span>
+                        <span class="apoteka-icon-liquid"></span>
+                        <span class="apoteka-icon-spray"></span>
+                        <span class="apoteka-icon-patch"></span>
+                        <span class="apoteka-icon-powder"></span>
+                        *@
+                        <span style="font-weight:500">@product.NormalizedPackageSize.ToString("F0", CultureInfo.InvariantCulture) pcs</span>
+                    </p>
+                    <p>
+                        @Html.Currency(product.NormalizedPrice)
+                    </p>
 
-                    <p><a href="#" ng-click="addOrder(@product.PackageId, $event)" class="btn btn-primary">Add to card</a> </p>
+                    <p>
+                        <a href="#" ng-click="addOrder(@product.PackageId, $event)" class="btn btn-primary">Add to card</a>
+                    </p>
+
+                    <p class="btn-group">
+                            <button class="btn btn-success">
+                                @*<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>*@
+                                <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
+                                <span>&nbsp;Checkout</span>
+                            </button>
+                            <button class="btn btn-default">
+                                <span class="glyphicon glyphicon-plus"></span>
+                                @*<span>1</span>*@
+                            </button>
+                            <button class="btn btn-default">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                    </p>
                 </div>
+
+                @*<div class="caption">
+                    <a href="@Url.Action(" Details", new {id=product.PackageId})" title="@product.ProductNames.GetAllProductNames()"><h3 class="text-hidden-overflow">{{ '@product.ProductNames.GetFirstProductName()' | capitalize }}</h3></a>
+                    <p>
+                        <span class="pull-right"></span>
+                        <span>@product.NormalizedPackageSize.ToString("F2", CultureInfo.InvariantCulture) pcs</span>
+                    </p>
+
+                    <p class="input-group">
+                        <span class="input-group-addon">@Html.Currency(product.NormalizedPrice)</span>
+                        <span class="input-group-btn">
+                            <a href="#" ng-click="addOrder(@product.PackageId, $event)" class="btn btn-primary">Add to card</a>
+                        </span>
+                    </p>
+                </div>*@
+
             </div>
         </div>
     }

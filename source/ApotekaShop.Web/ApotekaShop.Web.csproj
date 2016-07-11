@@ -127,6 +127,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\apoteka-fonts\fonts\apoteka-meds.svg" />
+    <Content Include="Content\apoteka-fonts\style.css" />
     <Content Include="Content\bootstrap-nav-wizard.css" />
     <Content Include="Content\bootstrap-nav-wizard.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -182,6 +184,9 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Content\bootstrap-nav-wizard.less" />
+    <Content Include="Content\apoteka-fonts\fonts\apoteka-meds.eot" />
+    <Content Include="Content\apoteka-fonts\fonts\apoteka-meds.ttf" />
+    <Content Include="Content\apoteka-fonts\fonts\apoteka-meds.woff" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\app\autocomplete.js" />
     <Content Include="Scripts\app\сheckout-module.js" />
