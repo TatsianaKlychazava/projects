@@ -149,6 +149,7 @@
 </div>
 
 <ul class="pagination">
+    <li><a href="#">&larr; </a></li>
     @for (var i = 0; i < Model.PageCount; i++)
     {
         if (i < 10)
@@ -158,15 +159,16 @@
             </li>
         }
     }
+    <li><a href="#">&rarr;</a></li>
 </ul>
 
 @helper PageLink(int page)
 {
-var filter = Model.Filters;
+    var filter = Model.Filters;
 
-filter.PageNumber = page;
+    filter.PageNumber = page;
 
-var routeParms = new RouteValueDictionary(filter.GetType().GetProperties().ToDictionary(p => p.Name, p => p.GetValue(Model.Filters, null)));
+    var routeParms = new RouteValueDictionary(filter.GetType().GetProperties().ToDictionary(p => p.Name, p => p.GetValue(Model.Filters, null)));
 
     @Html.ActionLink((page).ToString(), "Search", routeParms)
 }
