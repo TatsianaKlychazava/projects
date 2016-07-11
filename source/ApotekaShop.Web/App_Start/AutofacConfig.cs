@@ -27,6 +27,8 @@ namespace ApotekaShop.Web
             builder.RegisterType<ProductDetailsElasticService>().As<IProductDetailsElasticService>();
             builder.RegisterType<ProductDetailsService>().As<IProductDetailsService>();
             builder.RegisterType<OrderSessionService>().As<IOrderService>();
+            builder.RegisterType<PaymentService>().As<IPaymentService>();
+
             var container = builder.Build();
 
             var webApiResolver = new AutofacWebApiDependencyResolver(container);

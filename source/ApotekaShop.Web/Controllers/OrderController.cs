@@ -1,4 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using ApotekaShop.Services.Interfaces;
 using ApotekaShop.Services.Models;
@@ -9,10 +14,12 @@ namespace ApotekaShop.Web.Controllers
     public class OrderController : Controller
     {
         private readonly IOrderService _orderService;
+        private readonly IPaymentService _paymentService;
 
-        public OrderController(IOrderService orderService)
+        public OrderController(IOrderService orderService, IPaymentService paymentService)
         {
             _orderService = orderService;
+            _paymentService = paymentService;
         }
 
         public ActionResult Details()
@@ -35,9 +42,16 @@ namespace ApotekaShop.Web.Controllers
         }
 
 
-        public ActionResult Checkout()
+        public ActionResult Checkout(string status)
         {
             var model = _orderService.GetOrder();
+
+            if (!string.IsNullOrEmpty(status))
+            {
+                model.CurrentStep++;
+                model.Status = status;
+                _orderService.SaveOrder(model);
+            }
 
             return View(model);
         }
@@ -62,5 +76,18 @@ namespace ApotekaShop.Web.Controllers
             _orderService.UpdateOrderItemCount(id, count);
         }
 
+        public JsonResult AggregatePaymentData()
+        {
+            var model = _orderService.GetOrder();
+            if (model.CurrentStep != 1) return null;
+
+            var baseUri = new UriBuilder(Request.Url.AbsoluteUri)
+            {
+                Path = Url.Action("Checkout", "Order"),
+            }.Uri.ToString();
+
+            object data = _paymentService.AggregatePaymentData(model.Items, baseUri);
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
     }
 }

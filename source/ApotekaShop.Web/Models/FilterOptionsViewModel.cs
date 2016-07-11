@@ -10,5 +10,6 @@ namespace ApotekaShop.Web.Models
         public int PageNumber { get; set; }
         public int MinPrice { get; set; }
         public int MaxPrice { get; set; }
+        public int PageSize { get; set; }
     }
 }

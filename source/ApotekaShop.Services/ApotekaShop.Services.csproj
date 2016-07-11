@@ -59,6 +59,7 @@
     <Compile Include="Helpers\ProductHelper.cs" />
     <Compile Include="Interfaces\IConfigurationSettingsProvider.cs" />
     <Compile Include="Interfaces\IOrderService.cs" />
+    <Compile Include="Interfaces\IPaymentService.cs" />
     <Compile Include="Interfaces\IProductDetailsDataProvider.cs" />
     <Compile Include="Interfaces\IProductDetailsElasticService.cs" />
     <Compile Include="Interfaces\IProductDetailsService.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="Models\ProductDetailsDTO.cs" />
     <Compile Include="Models\BulkOperationResult.cs" />
     <Compile Include="Models\SearchResultModel.cs" />
+    <Compile Include="PaymentService.cs" />
     <Compile Include="ProductDetailsDataProvider.cs" />
     <Compile Include="ProductDetailsElasticService.cs" />
     <Compile Include="ProductDetailsService.cs" />
