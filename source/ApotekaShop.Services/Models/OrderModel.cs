@@ -11,7 +11,11 @@ namespace ApotekaShop.Services.Models
         public string Address { get; set; }
         public string BillingAddress { get; set; }
         public string Email { get; set; }
+        public string PostCode { get; set; }
+        public string City { get; set; }
         public string VoucherCode { get; set; }
+        public string MobileNumber { get; set; }
         public IEnumerable<OrderItemModel> Items { get; set; }
+        public string Status { get; set; }
     }
 }

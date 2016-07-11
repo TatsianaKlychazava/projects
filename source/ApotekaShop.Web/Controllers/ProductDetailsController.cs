@@ -33,10 +33,15 @@ namespace ApotekaShop.Web.Controllers
                 page--;
             }
 
+            if (filters.PageSize == 0)
+            {
+                filters.PageSize = PageSize;
+            } 
+
             var filterModel = new FilterOptionsModel()
             {
                 PageFrom = page,
-                PageSize = PageSize,
+                PageSize = filters.PageSize,
                 MaxPrice = filters.MaxPrice * 100,
                 MinPrice = filters.MinPrice * 100,
                 Order = filters.Order,

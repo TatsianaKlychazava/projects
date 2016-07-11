@@ -125,7 +125,7 @@
         <div ng-switch-when="1">
             <h1>Shipping</h1>
             <hr />
-            <form name="shippingForm" class="form-horizontal" novalidate>
+            <form name="shippingForm"  method="POST" action="https://payment.quickpay.net" ng-submit="submitPayment($event, shippingForm)" class="form-horizontal" novalidate>
                 @*<div class="form-group required">
                     <label class="col-sm-3 control-label">I Order as</label>
                     <div class="col-sm-9">
@@ -219,7 +219,7 @@
                 <div class="form-group required" ng-class="{ 'has-error': shippingForm.mobile.$invalid && shippingForm.mobile.$dirty }">
                     <label for="mobile" class="col-sm-3 control-label">Mobile</label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" required name="mobile" ng-model="checkoutModel.MobileNumber" placeholder="Mobile number" required>
+                        <input type="text" class="form-control" required name="mobile" ng-model="checkoutModel.MobileNumber" placeholder="Mobile number" required>
                     </div>
                 </div>
 
@@ -254,7 +254,19 @@
             </div>
 
             <div class="col-sm-5">
-                <button type="submit" ng-click="next()"  ng-disabled="shippingForm.$invalid" class="btn btn-primary pull-right">Payment &rarr;</button>
+                <input type="hidden" name="version" ng-value="paymentData.Version">
+                <input type="hidden" name="merchant_id" ng-value="paymentData.MerchantId">
+                <input type="hidden" name="agreement_id" ng-value="paymentData.AgreementId">
+                <input type="hidden" name="order_id" ng-value="paymentData.OrderId">
+                <input type="hidden" name="amount" ng-value="paymentData.Amount">
+                <input type="hidden" name="currency" ng-value="paymentData.Currency">
+                <input type="hidden" name="continueurl" ng-value="paymentData.ContinueUrl">
+                <input type="hidden" name="cancelurl" ng-value="paymentData.CancelUrl">
+                <input type="hidden" name="callbackurl" ng-value="paymentData.CallbackUrl">
+                <input type="hidden" name="checksum" ng-value="paymentData.Checksum">
+                <button type="submit" ng-disabled="shippingForm.$invalid" class="btn btn-primary pull-right">Payment &rarr;</button>
+
+                <!--<button type="submit" ng-click="next()" ng-disabled="shippingForm.$invalid" class="btn btn-primary pull-right">Payment &rarr;</button>-->
             </div>
         </div>
         </form>

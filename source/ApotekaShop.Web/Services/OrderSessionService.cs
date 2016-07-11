@@ -23,9 +23,7 @@ namespace ApotekaShop.Web.Services
 
         public OrderModel GetOrder()
         {
-
-            //todo need additional requirements from ux guy
-            /*if (HttpContext.Current.Session[OrderKey] == null)
+            if (HttpContext.Current.Session[OrderKey] == null)
             {
                 return new OrderModel()
                 {
@@ -33,12 +31,7 @@ namespace ApotekaShop.Web.Services
                     CurrentStep = 0
                 };
             }
-            return HttpContext.Current.Session[OrderKey] as OrderModel;*/
-            return new OrderModel()
-            {
-                Items = GetOrderItems(),
-                CurrentStep = 0
-            };
+            return HttpContext.Current.Session[OrderKey] as OrderModel;
         }
         
         public void SaveOrder(OrderModel order)
