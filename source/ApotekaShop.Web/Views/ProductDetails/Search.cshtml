@@ -32,24 +32,28 @@
             </div>
             <div class="row filters">
                 <div class="col-sm-2 col-xs-6">
-                    <label class="control-label">Min price (@ShopResources.CurrencyName):</label> @Html.TextBox("minPrice", Model.Filters.MinPrice, new {@class = "form-control input-sm"})
+                    @Html.TextBox("minPrice", Model.Filters.MinPrice, new {@class = "form-control input-sm", @placeholder=string.Format("Min price ({0})", @ShopResources.CurrencyName), @type="Number"})
+                    <label for="minPrice" class="control-label">Min price (@ShopResources.CurrencyName)</label>
                 </div>
                 <div class="col-sm-2 col-xs-6">
-                    <label class="control-label">Max price (@ShopResources.CurrencyName):</label> @Html.TextBox("maxPrice", Model.Filters.MaxPrice, new {@class = "form-control input-sm"})
+                    @Html.TextBox("maxPrice", Model.Filters.MaxPrice, new {@class = "form-control input-sm", @placeholder=string.Format("Max price ({0})", @ShopResources.CurrencyName), @type="Number"})
+                    <label for="maxPrice" class="control-label">Max price (@ShopResources.CurrencyName):</label>
                 </div>
                 <div class="col-sm-2 col-xs-12">
-                    <label class="control-label">Order By:</label> @Html.DropDownList("orderBy", new SelectList(orderBy, Model.Filters.OrderBy), new
+                    @Html.DropDownList("orderBy", new SelectList(orderBy, Model.Filters.OrderBy), new
                                                                    {
                                                                        onchange = "this.form.submit();",
                                                                        @class = "form-control input-sm"
-                                                                   })
+                                                                   }) 
+                    <label class="control-label">Order By:</label>
                 </div>
                 <div class="col-sm-2 col-xs-12">
-                    <label class="control-label">Order:</label> @Html.DropDownList("order", new SelectList(order, Model.Filters.Order), new
+                    @Html.DropDownList("order", new SelectList(order, Model.Filters.Order), new
                                                                 {
                                                                     onchange = "this.form.submit();",
                                                                     @class = "form-control input-sm"
                                                                 })
+                                                                <label class="control-label">Order:</label>
                 </div>
             </div>
         </div>
@@ -90,7 +94,8 @@
                         <span class="label label-danger">Prescription only</span>
                     </div>
                 </div>
-                <img src="http://placehold.it/240x200/ffffff/bbbbbb" alt="">
+                @*<img src="http://placehold.it/240x200/ffffff/bbbbbb" alt="">*@
+                <img src="~/Content/site-images/no-product-image.png" />
                 <hr/>
                 <div class="caption">
                     <a href="@Url.Action("Details", new {id = product.PackageId})" title="@product.ProductNames.GetAllProductNames()"><h3 class="text-hidden-overflow">{{ '@product.ProductNames.GetFirstProductName()' | capitalize }}</h3></a>
@@ -152,7 +157,7 @@
 </div>
 
 <ul class="pagination">
-    <li><a href="#">&larr; </a></li>
+    <li><a href="#">&larr; </a></li> <!-- need to hide if pages number is less or equal to 5 -->
     @for (var i = 0; i < Model.PageCount; i++)
     {
         if (i < 10)
@@ -162,7 +167,7 @@
             </li>
         }
     }
-    <li><a href="#">&rarr;</a></li>
+    <li><a href="#">&rarr;</a></li> <!-- need to hide if pages number is less or equal to 5 -->
 </ul>
 
 @helper PageLink(int page)

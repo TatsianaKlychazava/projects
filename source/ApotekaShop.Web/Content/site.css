@@ -63,6 +63,13 @@ div.input-group > small {
 .thumbnail{
     padding:20px;
     border-radius:0;
+    /*border-width:0 0 1px 0;*/
+}
+
+.thumbnail:hover{
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+    background-color:#fcfeff;
+    
 }
 
 .thumbnail > img, .thumbnail a > img {
@@ -118,6 +125,8 @@ margin-bottom:2px;
 
 .navbar-nav{
     margin:7.5px 0px;
+    font-size:16px;
+    font-weight:500;
 }
 
 .navbar-brand {
@@ -156,26 +165,26 @@ margin: 30px 10px;
     background-color: transparent;
 }
 
-#custom-search-input input{
-    border-width: 0px 0px 2px 0px;
+.panel-search input{
+    border-width: 0px;
     box-shadow: none;
     border-radius:0;
-    border-bottom: solid #bbbebc;
+    border-bottom: 2px solid #bbbebc;
     background-color: transparent;
-    padding:0;
+    padding:2px;
 }
 
-#custom-search-input input::-webkit-input-placeholder{
+.panel-search input::-webkit-input-placeholder{
     font-size:14px;
     font-weight:300;
 }
 
-#custom-search-input .input-group-btn {
+.panel-search .input-group-btn {
     border: 2px solid rgba(255,255,255,0);
     padding:2px 0px 2px 20px;
 }
 
-#custom-search-input button{
+.panel-search button{
     margin: 0;
     background: none;
     box-shadow: none;
@@ -184,25 +193,33 @@ margin: 30px 10px;
     background-color:#007abc;
 }
 
-#custom-search-input button:hover{
+.panel-search button:hover{
     border: 0;
     box-shadow: none;
     background-color:#286090;
 }
 
-#custom-search-input .btn{
+.panel-search .btn{
     border-radius:3px;
     padding:8px 20px 10px;
     font-size:16px;
     font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#custom-search-input .glyphicon-search{
+.panel-search .glyphicon-search{
     font-size: 20px;
     top:4px;
     right: 3px;
 }
 
+.panel-search select{
+    border-width: 0px;
+    box-shadow: none;
+    border-radius:0;
+    border-bottom: 2px solid #bbbebc;
+    background-color: transparent;
+    padding:0;
+}
 
 body {
     padding-top: 90px;
@@ -225,10 +242,6 @@ body {
 
 .products {
     padding-top: 10px;
-}
-
-.row {
-    margin-top: 3px;    
 }
 
 .ui-autocomplete {
@@ -298,7 +311,6 @@ body {
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
-  margin: 0; 
 }
 
 .form-group.required .control-label:after { 
@@ -347,4 +359,33 @@ margin-top:20px;
 
 .pagination > li > a.active {
     background-color: white;
+}
+
+input ~ label, select ~ label{
+font-weight:500;
+font-size:12px;
+}
+
+input:focus, select:focus, .form-control:focus{
+    box-shadow: none;
+    color:#66afe9;
+}
+
+input:focus::-webkit-input-placeholder, select:focus::-webkit-input-placeholder{
+    color:#66afe9;
+}
+
+input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label {
+    display: inline-block;
+    position: absolute;
+    top: -12px;
+}
+
+input:placeholder-shown ~ label, select:placeholder-shown ~ label{
+    display:none;
+}
+
+.row.filters{
+    margin-top:20px;
+    margin-bottom:10px;
 }
