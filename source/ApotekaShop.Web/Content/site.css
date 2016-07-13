@@ -21,7 +21,7 @@
 
 .caption .btn-primary {
     width:100%;
-    display:block;
+    /*display:block;*/
     background-color: #e5f1f8;
     padding: 10px;
     border-radius: 3px;
@@ -67,13 +67,11 @@ div.input-group > small {
 }
 
 .thumbnail:hover{
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
-    background-color:#fcfeff;
-    
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04), -2px -2px 0px #ddd inset, 2px 2px 0px #ddd inset; 
 }
 
 .thumbnail > img, .thumbnail a > img {
-    border: 1px dashed #eee;
+    /*border: 1px dashed #eee;*/
 }
 
 .thumbnail > hr{
@@ -144,7 +142,7 @@ padding: 13px 0;
 background: #ffffff;
 }
 .navbar-header>button{
-margin: 30px 10px;
+margin:30px 30px 30px 10px;
 }
 
 .navbar-toggle .icon-bar{
@@ -165,18 +163,28 @@ margin: 30px 10px;
     background-color: transparent;
 }
 
-.panel-search input{
+.panel-search input, .panel-search select{
     border-width: 0px;
     box-shadow: none;
     border-radius:0;
     border-bottom: 2px solid #bbbebc;
     background-color: transparent;
     padding:2px;
+    margin-bottom:15px;
+    margin-top:-5px;
+}
+.panel-search select option {
+    padding:2px;
+}
+
+.panel-search label{
+    margin:0px;
 }
 
 .panel-search input::-webkit-input-placeholder{
     font-size:14px;
     font-weight:300;
+    display:none;
 }
 
 .panel-search .input-group-btn {
@@ -201,6 +209,7 @@ margin: 30px 10px;
 
 .panel-search .btn{
     border-radius:3px;
+    width:100%;
     padding:8px 20px 10px;
     font-size:16px;
     font-family: Roboto, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -212,18 +221,10 @@ margin: 30px 10px;
     right: 3px;
 }
 
-.panel-search select{
-    border-width: 0px;
-    box-shadow: none;
-    border-radius:0;
-    border-bottom: 2px solid #bbbebc;
-    background-color: transparent;
-    padding:0;
-}
 
 body {
-    padding-top: 90px;
-    padding-bottom: 20px;
+    padding-top: 94px;
+    /*padding-bottom: 20px;*/
     font-family: Roboto, sans-serif; 
 }
 
@@ -361,20 +362,17 @@ margin-top:20px;
     background-color: white;
 }
 
-input ~ label, select ~ label{
-font-weight:500;
-font-size:12px;
-}
-
 input:focus, select:focus, .form-control:focus{
     box-shadow: none;
-    color:#66afe9;
+    /*color:#66afe9;*/
 }
 
 input:focus::-webkit-input-placeholder, select:focus::-webkit-input-placeholder{
-    color:#66afe9;
+    /*color:#66afe9;*/
+    font-weight:300;
 }
 
+/*
 input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label {
     display: inline-block;
     position: absolute;
@@ -385,7 +383,7 @@ input:placeholder-shown ~ label, select:placeholder-shown ~ label{
     display:none;
 }
 
-.row.filters{
+.row.filters div{
     margin-top:20px;
     margin-bottom:10px;
-}
+}*/
