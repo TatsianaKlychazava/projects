@@ -1,6 +1,20 @@
 ﻿@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,100);
 @import url(apoteka-fonts/style.css);
 
+
+
+body {
+    padding-top: 80px;
+    /*padding-bottom: 20px;*/
+    font-family: Roboto, sans-serif; 
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .valign {
   display: flex;
   flex-direction: row;
@@ -14,10 +28,14 @@
                               horizontally inside the column */
 }
 
+
+
 .divider {
  height:1px;
  background-color:#E4E4E4;
 }
+
+
 
 .caption .btn-primary {
     width:100%;
@@ -47,18 +65,7 @@
     margin:0;
 }
 
-.has-error input {
-background-color:#ffcecd;
-}
 
-div.input-group > small {
-    color: #a94442;
-    font-size: 12px;
-}
-
-.has-error .input-group > small{
-    display:initial;
-}
 
 .thumbnail{
     padding:20px;
@@ -82,20 +89,6 @@ div.input-group > small {
     padding:0px
 }
 
-.label{
-font-size:11px;
-font-weight:500;
-line-height:2;
-padding: .2em .6em .2em .6em;
-vertical-align:middle;
-}
-
-.input-group .label{
-font-size:14px;
-font-weight:300;
-display:inline-block;
-}
-
 .caption p{
 margin-bottom:6px;
 }
@@ -116,13 +109,15 @@ margin-bottom:2px;
     margin-top:10px
 }
 
+
+
 .navbar{
     background:#ffffff;
     border-bottom:1px solid #E4E4E4;
 }
 
 .navbar-nav{
-    margin:7.5px 0px;
+    margin: auto 0px;
     font-size:16px;
     font-weight:500;
 }
@@ -131,9 +126,10 @@ margin-bottom:2px;
   padding: 0px; /* firefox bug fix */
   height:auto;
 }
+
 .navbar-brand>img {
   height: auto;
-  padding: 15px; /* firefox bug fix */
+  padding: 7.5px; /* firefox bug fix */
   width: auto;
 }
 
@@ -141,27 +137,21 @@ margin-bottom:2px;
 padding: 13px 0;
 background: #ffffff;
 }
+
 .navbar-header>button{
-margin:30px 30px 30px 10px;
+margin:22.5px 30px 22.5px 10px;
 }
 
 .navbar-toggle .icon-bar{
     background-color: black;
 }
 
-.panel-footer{
-    background-color:#cce9d7;
-    font-weight: 300;
-}
-
-.panel-footer > span {
-    font-weight: 500;
-}
 
 #custom-search-input{
     padding: 0px;
     background-color: transparent;
 }
+
 
 .panel-search input, .panel-search select{
     border-width: 0px;
@@ -173,6 +163,7 @@ margin:30px 30px 30px 10px;
     margin-bottom:15px;
     margin-top:-5px;
 }
+
 .panel-search select option {
     padding:2px;
 }
@@ -221,22 +212,42 @@ margin:30px 30px 30px 10px;
     right: 3px;
 }
 
+.panel-search{
+    border:0px;
+    border-color:white;
+    background-color:#fafdfb;
+    box-shadow: none;
+    margin:0px;
+    }
 
-body {
-    padding-top: 94px;
-    /*padding-bottom: 20px;*/
-    font-family: Roboto, sans-serif; 
+.panel-primary > .panel-heading {
+    display:none;
+    
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 0;
-    padding-right: 0;
+.panel > .table > tbody > tr > * {
+    vertical-align: middle;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
+.panel-footer{
+    background-color:#cce9d7;
+    font-weight: 300;
+}
+
+.panel-footer > span {
+    font-weight: 500;
+}
+
+#ProductsPerPage * {
+ display:inline-block !important;
+ width: auto;
+}
+
+#ProductsPerPage .form-group{
+padding:0px 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists will truncate terms that are too long to fit in the left column */
 .dl-horizontal dt {
     white-space: normal;
 }
@@ -290,22 +301,6 @@ body {
         background-image: none;
     }
 
-.panel-search{
-    border:0px;
-    border-color:white;
-    background-color:#fafdfb;
-    box-shadow: none;
-    margin:0px;
-    }
-
-.panel-primary > .panel-heading {
-    display:none;
-    
-}
-
-.panel > .table > tbody > tr > * {
-    vertical-align: middle;
-}
 
 /*removing inner arrows from input:number*/
 
@@ -313,6 +308,77 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
 }
+
+.has-error input {
+background-color:#ffcecd;
+}
+
+div.input-group > small {
+    color: #a94442;
+    font-size: 12px;
+}
+
+.has-error .input-group > small{
+    display:initial;
+}
+
+.label{
+font-size:11px;
+font-weight:500;
+line-height:2;
+padding: .2em .6em .2em .6em;
+vertical-align:middle;
+}
+
+#autocomplete{
+    width:0px;
+    -webkit-transition:width 0.3s ease-in-out;
+    border:0px;
+    border-bottom:2px solid transparent;
+    margin-left:7px;
+    padding:2px 4px;
+}
+
+#autocomplete:focus{
+    width:200px;
+    box-shadow: none;
+    display:table-cell;
+    -webkit-transition:width 0.5s ease-in-out;
+    border-bottom:2px solid #66afe9;
+    outline: none;
+}
+
+.input-group .label{
+font-size:14px;
+font-weight:300;
+display:inline-block;
+}
+
+input:focus, select:focus, .form-control:focus{
+    box-shadow: none;
+    /*color:#66afe9;*/
+}
+
+input:focus::-webkit-input-placeholder, select:focus::-webkit-input-placeholder{
+    /*color:#66afe9;*/
+    font-weight:300;
+}
+
+/*
+input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label {
+    display: inline-block;
+    position: absolute;
+    top: -12px;
+}
+
+input:placeholder-shown ~ label, select:placeholder-shown ~ label{
+    display:none;
+}
+
+.row.filters div{
+    margin-top:20px;
+    margin-bottom:10px;
+}*/
 
 .form-group.required .control-label:after { 
    content:" *";
@@ -323,6 +389,8 @@ input[type=number]::-webkit-outer-spin-button {
 .nav-wizard {
 margin-top:20px;
 }
+
+/* pagination */
 
 .pagination > li:first-child > a, .pagination > li:last-child > a {
     margin: 1px 12px;
@@ -361,29 +429,3 @@ margin-top:20px;
 .pagination > li > a.active {
     background-color: white;
 }
-
-input:focus, select:focus, .form-control:focus{
-    box-shadow: none;
-    /*color:#66afe9;*/
-}
-
-input:focus::-webkit-input-placeholder, select:focus::-webkit-input-placeholder{
-    /*color:#66afe9;*/
-    font-weight:300;
-}
-
-/*
-input:not(:placeholder-shown) ~ label, select:not(:placeholder-shown) ~ label {
-    display: inline-block;
-    position: absolute;
-    top: -12px;
-}
-
-input:placeholder-shown ~ label, select:placeholder-shown ~ label{
-    display:none;
-}
-
-.row.filters div{
-    margin-top:20px;
-    margin-bottom:10px;
-}*/
