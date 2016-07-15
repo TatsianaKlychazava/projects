@@ -77,6 +77,10 @@ body {
 
 .thumbnail > img, .thumbnail a > img {
     /*border: 1px dashed #eee;*/
+    width:100%;
+    height:auto;
+    min-width: 100%;
+    max-width: 50vmin;
 }
 
 .thumbnail > hr{
