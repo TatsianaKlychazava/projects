@@ -29,12 +29,10 @@ body {
 }
 
 
-
 .divider {
  height:1px;
  background-color:#E4E4E4;
 }
-
 
 
 .caption .btn-primary {
@@ -146,6 +144,13 @@ margin:22.5px 30px 22.5px 10px;
     background-color: black;
 }
 
+.nav select{
+ border-radius: 0px;
+ box-shadow:none;
+ border:2px solid #337ab7;
+ color:#337ab7;
+ height:auto;
+}
 
 #custom-search-input{
     padding: 0px;

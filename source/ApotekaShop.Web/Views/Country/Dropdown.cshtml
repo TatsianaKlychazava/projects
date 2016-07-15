@@ -1,9 +1,10 @@
-﻿<div class="col-sm-12">
+﻿<div>
     @using ApotekaShop.Services.Models
     @model Country
     @using (Html.BeginForm("SetCountry", "Country", FormMethod.Get, new {@class = "navbar-form", role = "culture"}))
     {
-    <div>
+    <div class="col-sm-12 visible-xs"><label for="country" class="control-label">Currency</label></div>
+    <div class="col-sm-12">
         @Html.DropDownList("country",
         EnumHelper.GetSelectList(typeof(Country), Model),
         new {onchange = "this.form.submit();", @class = "form-control input-sm"})
