@@ -9,7 +9,7 @@
 <div ng-controller="checkoutController" ng-init="init(@JsonConvert.SerializeObject(Model))">
     <div ng-switch="checkoutModel.CurrentStep">
 
-        <ul class="nav nav-wizard">
+        <ul class="nav nav-wizard visible-lg visible-md">
             <li ng-class="{ active: isActive(0) }" ng-click="navigate(0, $event)"><a href="">Checkout</a></li>
             <li ng-class="{ active: isActive(1), disabled: isDisabled(1) }" ng-click="navigate(1, $event)"><a href="">Shipping</a></li>
             <li ng-class="{ active: isActive(2), disabled: isDisabled(2) }" ng-click="navigate(2, $event)"><a href="">Payment</a></li>
@@ -153,15 +153,15 @@
                 <hr class="col-sm-offset-3" />*@
 
                 <div class="form-group required" ng-class="{ 'has-error': shippingForm.firstname.$invalid && shippingForm.firstname.$dirty}">
-                    <label for="firstname" class="col-sm-3 control-label">First Name</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" required name="firstname" ng-model="checkoutModel.FirstName" placeholder="First Name" required/>
+                    <label for="firstname" class="col-xs-12 col-md-3 control-label">First Name</label>
+                    <div class="col-xs-12 col-sm-9 col-md-9">
+                        <input type="text" class="form-control" name="firstname" ng-model="checkoutModel.FirstName" placeholder="First Name" required/>
                     </div>
                 </div>
                 <div class="form-group required" ng-class="{ 'has-error': shippingForm.surname.$invalid && shippingForm.surname.$dirty}">
-                    <label for="surname" class="col-sm-3 control-label">Surname</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" required name="surname" ng-model="checkoutModel.Surname" placeholder="Surname" required/>
+                    <label for="surname" class="col-xs-12 col-sm-3 control-label">Surname</label>
+                    <div class="col-xs-12 col-sm-9">
+                        <input type="text" class="form-control" name="surname" ng-model="checkoutModel.Surname" placeholder="Surname" required/>
                     </div>
                 </div>
 
@@ -182,24 +182,24 @@
                 *@
 
                 <div class="form-group required"  ng-class="{ 'has-error': shippingForm.address.$invalid && shippingForm.address.$dirty }">
-                    <label for="address" class="col-sm-3 control-label">Address</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" required name="address" ng-model="checkoutModel.Address" placeholder="Address" required/>
+                    <label for="address" class="col-xs-12 col-sm-3 control-label">Address</label>
+                    <div class="col-xs-12 col-sm-9">
+                        <input type="text" class="form-control" name="address" ng-model="checkoutModel.Address" placeholder="Address" required/>
                     </div>
                 </div>
 
                 <div class="form-group required">
-                    <label for="postcode" class="col-sm-3 control-label">Post Code &amp; City</label>
-                    <div class="col-sm-4" ng-class="{ 'has-error': shippingForm.postcode.$invalid && shippingForm.postcode.$dirty }">
-                        <input type="text" class="form-control" required name="postcode" ng-model="checkoutModel.PostCode" placeholder="Post Code" required>
+                    <label for="postcode" class="col-xs-12 col-sm-3 control-label">Post Code &amp; City</label>
+                    <div class="col-xs-4 col-sm-4" ng-class="{ 'has-error': shippingForm.postcode.$invalid && shippingForm.postcode.$dirty }">
+                        <input type="text" class="form-control" name="postcode" ng-model="checkoutModel.PostCode" placeholder="Post Code" required>
                     </div>
-                    <div class="col-sm-5" ng-class="{ 'has-error': shippingForm.city.$invalid && shippingForm.city.$dirty }">
-                        <input type="text" class="form-control" required name="city" ng-model="checkoutModel.City" placeholder="City" required>
+                    <div class="col-xs-8 col-sm-5" ng-class="{ 'has-error': shippingForm.city.$invalid && shippingForm.city.$dirty }">
+                        <input type="text" class="form-control" name="city" ng-model="checkoutModel.City" placeholder="City" required>
                     </div>
                 </div>
                 <div class="form-group required">
-                    <label for="country" class="col-sm-3 control-label">Country</label>
-                    <div class="col-sm-9">
+                    <label for="country" class="col-xs-12 col-sm-3 control-label">Country</label>
+                    <div class="col-xs-12 col-sm-9">
                         <select class="form-control" required id="country">
                             <option>Denmark</option>
                         </select>
@@ -209,39 +209,39 @@
                 <hr class="col-sm-offset-3" />
 
                 <div class="form-group required" ng-class="{ 'has-error': shippingForm.email.$invalid && shippingForm.email.$dirty }">
-                    <label for="email" class="col-sm-3 control-label">Email</label>
-                    <div class="col-sm-9">
-                        <input type="email" class="form-control" required name="email" ng-model="checkoutModel.Email" placeholder="Email" required><br />
+                    <label for="email" class="col-xs-12 col-sm-3 control-label">Email</label>
+                    <div class="col-xs-12 col-sm-9">
+                        <input type="email" class="form-control" name="email" ng-model="checkoutModel.Email" placeholder="Email" required><br />
                         <p class="form-control-static"><input type="checkbox" ng-model="checkoutModel.IsSubscribe"> Sign up and get a special offers on our products. You can always unsubscribe.</p>
                     </div>
                 </div>
 
                 <div class="form-group required" ng-class="{ 'has-error': shippingForm.mobile.$invalid && shippingForm.mobile.$dirty }">
-                    <label for="mobile" class="col-sm-3 control-label">Mobile</label>
-                    <div class="col-sm-9">
-                        <input type="text" class="form-control" required name="mobile" ng-model="checkoutModel.MobileNumber" placeholder="Mobile number" required>
+                    <label for="mobile" class="col-xs-12 col-sm-3 control-label">Mobile</label>
+                    <div class="col-xs-12 col-sm-9">
+                        <input type="text" class="form-control" name="mobile" ng-model="checkoutModel.MobileNumber" placeholder="Mobile number" required>
                     </div>
                 </div>
 
                 <hr class="col-sm-offset-3" />
 
                 <div class="form-group">
-                    <label for="subscribe_check" class="col-sm-3 control-label">Got some comments?</label>
-                    <div class="col-sm-9">
+                    <label for="subscribe_check" class="col-xs-12 col-sm-3 control-label">Got some comments?</label>
+                    <div class="col-xs-12 col-sm-9">
                         <p class="form-control-static"><input type="checkbox" ng-model="checkoutModel.GotComments" id="subscribe_check" checked> Yes</p>
                     </div>
                 </div>
                 <div  ng-class="{ hidden: !checkoutModel.GotComments }">
                     <div class="form-group ">
-                        <label for="order_comment" class="col-sm-3 control-label">Comment to order</label>
-                        <div class="col-sm-9">
+                        <label for="order_comment" class="col-xs-12 col-sm-3 control-label">Comment to order</label>
+                        <div class="col-xs-12 col-sm-9">
                             <textarea class="form-control" rows="3" id="order_comment" ng-model="checkoutModel.OrderComments" placeholder="Ex. for service questions"></textarea>
                         </div>
                     </div>
 
                     <div class="form-group ">
-                        <label for="delivery_comment" class="col-sm-3 control-label">Comment on delivery</label>
-                        <div class="col-sm-9">
+                        <label for="delivery_comment" class="col-xs-12 col-sm-3 control-label">Comment on delivery</label>
+                        <div class="col-xs-12 col-sm-9">
                             <textarea class="form-control" rows="3" id="delivery_comment" ng-model="checkoutModel.DeliveryComment" placeholder="Ex. how and when we must deliver package."></textarea>
                         </div>
                     </div>
@@ -249,11 +249,11 @@
         <hr class="col-sm-offset-3" />
 
         <div class="form-group">
-            <div class="col-sm-offset-3 col-sm-4">
+            <div class="col-xs-6 col-sm-offset-3 col-sm-4">
                 <button type="button" ng-click="back()" class="btn btn-default">&larr; Checkout</button>
             </div>
 
-            <div class="col-sm-5">
+            <div class="col-xs-6 col-sm-5">
                 <input type="hidden" name="version" ng-value="paymentData.Version">
                 <input type="hidden" name="merchant_id" ng-value="paymentData.MerchantId">
                 <input type="hidden" name="agreement_id" ng-value="paymentData.AgreementId">
@@ -264,6 +264,7 @@
                 <input type="hidden" name="cancelurl" ng-value="paymentData.CancelUrl">
                 <input type="hidden" name="callbackurl" ng-value="paymentData.CallbackUrl">
                 <input type="hidden" name="checksum" ng-value="paymentData.Checksum">
+
                 <button type="submit" ng-disabled="shippingForm.$invalid" class="btn btn-primary pull-right">Payment &rarr;</button>
 
                 <!--<button type="submit" ng-click="next()" ng-disabled="shippingForm.$invalid" class="btn btn-primary pull-right">Payment &rarr;</button>-->
@@ -278,8 +279,8 @@
             <hr />
             <form class="form-horizontal">
                 <div class="form-group">
-                    <label for="id" class="col-sm-3 control-label">Label</label>
-                    <div class="col-sm-9">
+                    <label for="id" class="col-xs-12 col-sm-3 control-label">Label</label>
+                    <div class="col-xs-12 col-sm-9">
                         <p class="form-control-static">
                             Contents
                         </p>
@@ -289,11 +290,11 @@
                 <hr class="col-sm-offset-3" />
 
                 <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-4">
+                    <div class="col-xs-6 col-sm-offset-3 col-sm-4">
                         <button type="button" ng-click="back()" class="btn btn-default">&larr; Shipping</button>
                     </div>
 
-                    <div class="col-sm-5">
+                    <div class="col-xs-6 col-sm-5">
                         <button type="submit" ng-click="next()" class="btn btn-primary pull-right">Receipt &rarr;</button>
                     </div>
                 </div>
@@ -304,8 +305,8 @@
             <hr />
             <form class="form-horizontal">
                 <div class="form-group">
-                    <label for="id" class="col-sm-3 control-label">Label</label>
-                    <div class="col-sm-9">
+                    <label for="id" class="col-xs-12 col-sm-3 control-label">Label</label>
+                    <div class="col-xs-12 col-sm-9">
                         <p class="form-control-static">
                             Contents
                         </p>
@@ -315,11 +316,11 @@
                 <hr class="col-sm-offset-3" />
 
                 <div class="form-group">
-                    <div class="col-sm-offset-3 col-sm-4">
+                    <div class="col-xs-6 col-sm-offset-3 col-sm-4">
                         <button type="button" ng-click="back()" class="btn btn-default">&larr; Payment</button>
                     </div>
 
-                    <div class="col-sm-5">
+                    <div class="col-xs-6 col-sm-5">
                         <button type="submit" ng-click="next()" class="btn btn-primary pull-right">Finish</button>
                     </div>
                 </div>
@@ -330,22 +331,22 @@
         <hr />
         <form class="form-horizontal">
             <div class="form-group">
-                <label for="id" class="col-sm-4 control-label">Label</label>
-                <div class="col-sm-8">
+                <label for="id" class="col-xs-12 col-sm-3 control-label">Label</label>
+                <div class="col-xs-12 col-sm-9">
                     <p class="form-control-static">
                         Contents
                     </p>
                 </div>
             </div>
 
-            <hr class="col-sm-offset-4" />
+            <hr class="col-sm-offset-3" />
 
             <div class="form-group">
-                <div class="col-sm-offset-4 col-sm-4">
+                <div class="col-xs-6 col-sm-offset-3 col-sm-4">
                     <button type="button" ng-click="back()" class="btn btn-default">Back</button>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-xs-6 col-sm-5">
                     <button type="submit" class="btn btn-primary pull-right">Next Step</button>
                 </div>
             </div>
@@ -357,13 +358,13 @@
         <hr />
         <form class="form-horizontal ">
             <div class="form-group required">
-                <label for="Email" class="col-sm-2 control-label">Email</label>
-                <div class="col-sm-10">
+                <label for="Email" class="col-xs-12 col-sm-2 control-label">Email</label>
+                <div class="col-xs-12 col-sm-10">
                     <input type="email" class="form-control" required id="Email" placeholder="Email">
                 </div>
             </div>
             <div class="form-group required">
-                <label for="Password" class="col-sm-2 control-label">Password</label>
+                <label for="Password" class="col-xs-12 col-sm-2 control-label">Password</label>
                 <div class="col-sm-10">
                     <input type="password" class="form-control" required id="Password" placeholder="Password">
                 </div>

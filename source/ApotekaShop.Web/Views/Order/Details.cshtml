@@ -24,7 +24,7 @@
                 <tr>
                     <th>#</th>
                     <th>Product</th>
-                    <th>Price</th>
+                    <th class="visible-lg visible-md">Price</th>
                     <th>Amount</th>
                     <th>Sum</th>
                     <th></th>
@@ -45,7 +45,7 @@
                             <b>{{order.Name | capitalize}}</b>
                         </a>
                     </td>
-                    <td>
+                    <td class="visible-lg visible-md">
                         {{currencyName}} {{(order.PricePerUnit / 100).toFixed(2)}}
                     </td>
                     <td style="max-width:120px;">
@@ -53,7 +53,7 @@
                             <span class="input-group-btn">
                                 <button class="btn btn-default" ng-click="changeCount(order, order.Count - 1)" type="button">-</button>
                             </span>
-                            <input type="number" name="input" min="1" class="form-control" ng-model="order.Count" ng-keypress="changed($event)" ng-change="changeCount(order, order.Count)" />
+                            <input type="number" name="input" min="1" class="form-control" ng-model="order.Count" ng-keypress="changed($event)" ng-change="changeCount(order, order.Count)"/>
                             <span class="input-group-btn">
                                 <button class="btn btn-default" ng-click="changeCount(order,order.Count + 1)" type="button">+</button>
                             </span>
@@ -69,7 +69,7 @@
                 <tr> <!--  style="background: #cce9d7;" -->
                     <th></th>
                     <td></td>
-                    <td></td>
+                    <td class="visible-lg visible-md"></td>
                     <td><b class="pull-right">Total:</b></td>
                     <td><span id="totalPrice">{{currencyName}} {{(total / 100).toFixed(2)}}</span></td>
                     <td></td>

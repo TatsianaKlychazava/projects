@@ -11,8 +11,8 @@ body {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .valign {
@@ -114,7 +114,7 @@ margin-bottom:2px;
 
 
 .navbar{
-    background:#ffffff;
+    background:#f5faf7;
     border-bottom:1px solid #E4E4E4;
 }
 
@@ -137,11 +137,15 @@ margin-bottom:2px;
 
 .navbar-collapse{
 padding: 13px 0;
-background: #ffffff;
+background: #f5faf7;
 }
 
 .navbar-header>button{
 margin:22.5px 10px 22.5px 10px;
+}
+
+.navbar-toggle {
+    float:none;
 }
 
 .navbar-toggle .icon-bar{
@@ -154,7 +158,13 @@ margin:22.5px 10px 22.5px 10px;
  border:2px solid #337ab7;
  color:#337ab7;
  height:auto;
+ background-color:transparent;
 }
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background-color:white;
+}
+
 
 #custom-search-input{
     padding: 0px;
@@ -332,29 +342,31 @@ div.input-group > small {
 }
 
 .label{
-font-size:11px;
-font-weight:500;
-line-height:2;
-padding: .2em .6em .2em .6em;
-vertical-align:middle;
+    font-size:11px;
+    font-weight:500;
+    line-height:2;
+    padding: .2em .6em .2em .6em;
+    vertical-align:middle;
 }
 
 #autocomplete{
     width:0px;
-    -webkit-transition:width 0.3s ease-in-out;
+    -webkit-transition:width 0.0s ease-in-out;
     border:0px;
     border-bottom:2px solid transparent;
     margin-left:7px;
     padding:2px 4px;
+    background-color:transparent;
 }
 
 #autocomplete:focus{
-    width:200px;
+    width:100%;
     box-shadow: none;
     display:table-cell;
-    -webkit-transition:width 0.5s ease-in-out;
+    -webkit-transition:width 0.0s ease-in-out;
     border-bottom:2px solid #66afe9;
     outline: none;
+    background-color:#ffffff;
 }
 
 .input-group .label{

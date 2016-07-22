@@ -13,7 +13,7 @@
 
 @using (Html.BeginForm("Search", "ProductDetails", FormMethod.Get))
 {
-<div class="panel panel-primary panel-search">
+<div class="panel panel-primary panel-search visible-lg visible-md">
     <div class="panel-heading">Search</div>
     <div class="panel-body">
         <div class="row">
@@ -62,8 +62,8 @@
 </div>
 
 
-<p>
-    <div class="form-inline" id="ProductsPerPage">
+<p class="">
+    <div class="form-inline visible-lg visible-md" id="ProductsPerPage">
         <div class="form-group">
             <span >Show</span>
             @Html.DropDownList("PageSize", new SelectList(itemsPerPage, Model.Filters.PageSize), new
@@ -79,7 +79,7 @@
 <div class="products">
     @foreach (var product in Model.Products)
     {
-    <div class="col-md-3 col-sm-4">
+    <div class="col-md-3 col-sm-6">
         <div class="thumbnail">
             <div style="position:relative">
                 <div style="position:absolute">
@@ -116,19 +116,18 @@
                 </p>
 
                 <p class="btn-group">
-                    <button class="btn btn-success">
-                        @*<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>*@
-                        <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
-                        <span>&nbsp;Checkout</span>
-                    </button>
-                    <button class="btn btn-default">
-                        <span class="glyphicon glyphicon-plus"></span>
-                        @*<span>1</span>*@
-                    </button>
-                    <button class="btn btn-default">
-                        <span class="glyphicon glyphicon-trash"></span>
-                    </button>
-                </p>
+                        <a class="btn btn-success" href="@Url.Action("Details", "Order")">
+                            <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
+                            <span>&nbsp;Checkout</span>
+                        </a>
+                        <button class="btn btn-default">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            @*<span>1</span>*@
+                        </button>
+                        <button class="btn btn-default">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+</p>
             </div>
 
             @*<div class="caption">
