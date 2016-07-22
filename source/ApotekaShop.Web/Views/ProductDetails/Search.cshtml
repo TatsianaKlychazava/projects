@@ -90,10 +90,12 @@
                 </div>
             </div>
             @*<img src="http://placehold.it/240x200/ffffff/bbbbbb" alt="">*@
-            <img src="~/Content/site-images/no-product-image.png" />
+            <img class="img-responsive img-center" src="~/Content/site-images/no-product-image.png" />
             <hr />
             <div class="caption">
-                <a href="@Url.Action("Details", new {id=product.PackageId})" title="@product.ProductNames.GetAllProductNames()"><h3 class="text-hidden-overflow">{{ '@product.ProductNames.GetFirstProductName()' | capitalize }}</h3></a>
+                <a href="@Url.Action("Details", new {id=product.PackageId})" title="@product.ProductNames.GetAllProductNames()">
+                    <h3 class="text-hidden-overflow">{{ '@product.ProductNames.GetFirstProductName()' | capitalize }}</h3>
+                </a>
                 <p>
                     <span class="apoteka-icon-tablet-any"></span>
                     @* <!--other icons-->
@@ -112,7 +114,7 @@
                 </p>
 
                 <p>
-                    <a href="#" ng-click="addOrder(@product.PackageId, $event)" class="btn btn-primary">Add to card</a>
+                    <a href="#" ng-click="addOrder(@product.PackageId, $event)" class="btn btn-primary">Add to cart</a>
                 </p>
 
                 <p class="btn-group">

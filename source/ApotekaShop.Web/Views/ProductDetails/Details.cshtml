@@ -9,38 +9,76 @@
 @model ApotekaShop.Services.Models.ProductDetailsDTO
 
 <div class="row">
-    <div class="col-md-3" vocab="http://schema.org/" typeof="Product">
-        <img class="img-responsive img-center" src="http://placehold.it/200x200" height="200" width="200" title="this image needs to be centered">
-
-        <h1 property="name"> {{ '@Model.ProductNames.GetFirstProductName()' | capitalize }}</h1>
-        <div property="offers" typeof="Offer">
+    <div vocab="http://schema.org/" typeof="Product">
+        <div class="col-xs-12 col-sm-4 col-md-3 caption" property="offers" typeof="Offer">
             <meta property="priceCurrency" content="@ShopResources.CurrencyName" />
-            <p><label>Price:</label>@ShopResources.CurrencyName <span property="price">@Html.Currency(Model.NormalizedPrice, true)</span></p>
-            <p><label>Size:</label> @Model.NormalizedPackageSize.ToString("F2", CultureInfo.InvariantCulture)</p>
+
+
+            <p style="margin:25px 0 10px 0;">
+                <img class="img-responsive img-center" src="~/Content/site-images/no-product-image.png">
+            </p>
+
+            <p>
+                <span class="apoteka-icon-tablet-any"></span>
+                @* <!--other icons-->
+                    <span class="apoteka-icon-tablet-partable"></span>
+                    <span class="apoteka-icon-tablet-round"></span>
+                    <span class="apoteka-icon-pill"></span>
+                    <span class="apoteka-icon-liquid"></span>
+                    <span class="apoteka-icon-spray"></span>
+                    <span class="apoteka-icon-patch"></span>
+                    <span class="apoteka-icon-powder"></span>
+                *@
+                <span style="font-weight:500">@Model.NormalizedPackageSize.ToString("F0", CultureInfo.InvariantCulture) pcs</span>
+            </p>
+            <p>
+                <span style="font-weight:500">@ShopResources.CurrencyName <span property="price">@Html.Currency(Model.NormalizedPrice, true)</span></span>
+            </p>
+            <p>
+                <a href="#" ng-click="addOrder(@Model.PackageId, $event)" class="btn btn-primary">Add to cart</a>
+            </p>
+
             <link property="availability" href="http://schema.org/InStock" />
+            <p class="btn-group">
+                <a class="btn btn-success" href="@Url.Action("Details", "Order")">
+                    <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
+                    <span>&nbsp;Checkout</span>
+                </a>
+                <button class="btn btn-default">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    @*<span>1</span>*@
+                </button>
+                <button class="btn btn-default">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </p>
+
         </div>
-        <label>Details:</label>
-        <p>@Model.ProductDescription</p>
+        <div class="col-xs-12 col-sm-8">
+            <h1 property="name"> {{ '@Model.ProductNames.GetFirstProductName()' | capitalize }}</h1>
 
-        <label>Display text:</label>
-        <p>@Model.DisplayText</p>
+            <label>Details:</label>
+            <p>@Model.ProductDescription</p>
 
-        @if (Model.Indications != null)
-        {
-            <label>Indications:</label>
-            <p>@String.Join(", ", Model.Indications.Select(indication => indication.Name))</p>
-        }
-        @if (Model.Substances != null)
-        {
-            <label>Substances:</label>
-            <p>@String.Join(", ", Model.Substances.Select(substance => substance.Name))</p>
-        }
+            <label>Display text:</label>
+            <p>@Model.DisplayText</p>
 
-        @if (Model.Treaments != null)
-        {
-            <label>Treaments:</label>
-            <p>@String.Join(", ", Model.Treaments.Select(treament => treament.Name))</p>
-        }
-        <p><a href="#" class="btn btn-primary" ng-click="addOrder(@Model.PackageId, $event)">Add to card</a> </p>
+            @if (Model.Indications != null)
+            {
+                <label>Indications:</label>
+                <p>@String.Join(", ", Model.Indications.Select(indication => indication.Name))</p>
+            }
+            @if (Model.Substances != null)
+            {
+                <label>Substances:</label>
+                <p>@String.Join(", ", Model.Substances.Select(substance => substance.Name))</p>
+            }
+
+            @if (Model.Treaments != null)
+            {
+                <label>Treaments:</label>
+                <p>@String.Join(", ", Model.Treaments.Select(treament => treament.Name))</p>
+            }
+        </div>
     </div>
 </div>
